@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ScratchControl" x:Class="ScratchControl.MainWindow"
+    Loaded="Window_Loaded"
+    FontSize="12"
+        Title="MainWindow" Height="350" Width="525">
+    <Canvas Background="White">
+
+        <local:NumberExpressionControl x:Name="NbExp" Canvas.Top="20" Canvas.Left="20"/>
+        <local:BooleanExpressionControl x:Name="BnExp" Canvas.Left="75" Canvas.Top="109"/>
+        <Button Content="Button" Canvas.Left="187" Canvas.Top="57" Width="75" Click="Button_Click"/>
+
+    </Canvas>
+</Window>

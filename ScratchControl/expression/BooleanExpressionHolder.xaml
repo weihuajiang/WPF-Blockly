@@ -1,0 +1,25 @@
+﻿<Grid x:Class="ScratchControl.BooleanExpressionHolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="auto"/>
+    </Grid.ColumnDefinitions>
+    <Polygon Name="LeftPart"
+                     VerticalAlignment="Stretch" Stretch="Fill" Points="0, 4, 4, 0, 4, 8" 
+                    Fill="White" Stroke="White"
+                     SnapsToDevicePixels="True" Width="7"/>
+    <Grid Name="CenterPart" Grid.Column="1" MinWidth="20"  Margin="0"
+                SnapsToDevicePixels="True"
+                Background="White">
+    </Grid>
+    <Polygon Name="RightPart" 
+                     VerticalAlignment="Stretch" Stretch="Fill" Grid.Column="2"
+                 Fill="White" Stroke="White"
+                     Points="0, 0, 0, 8, 4, 4" SnapsToDevicePixels="True" Width="7"/>
+</Grid>

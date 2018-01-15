@@ -1,0 +1,101 @@
+﻿<UserControl xmlns:ScratchNet="clr-namespace:ScratchNet"  x:Class="ScratchNet.GraphicScriptEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScratchNet"
+             xmlns:script="clr-namespace:ScratchNet;assembly=ScriptEngine"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d" AllowDrop="True"
+             BorderBrush="Gray" BorderThickness="1"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ContainerWidthConverter x:Key="ContainerWidthConverter"/>
+        <local:ActualWidthMinusConverter2 x:Key="WithConvert"/>
+    </UserControl.Resources>
+    <Canvas Name="ScriptContainer">
+        <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Name="StepContainer"
+            Canvas.Left="0" Canvas.Top="0" Height="{Binding ElementName=ScriptContainer, Path=ActualHeight}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition MinHeight="10" MaxHeight="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Name="GroupList" Orientation="Vertical" HorizontalAlignment="Center">
+                    <Button Content="运动" Width="65" Margin="1,1"/>
+                    <Button Content="外观" Width="65" Margin="1,1"/>
+                    <Button Content="数据" Width="65" Margin="1,1"/>
+                    <Button Content="事件" Width="65" Margin="1,1"/>
+                    <Button Content="控制" Width="65" Margin="1,1"/>
+                    <Button Content="侦测" Width="65" Margin="1,1"/>
+                    <Button Content="运算" Width="65" Margin="1,1"/>
+                    <Button Content="更多积木" Width="65" Margin="1,1"/>
+                </StackPanel>
+                <Popup Name="StepListPopup" StaysOpen="False" IsOpen="False" Placement="Right" 
+                       PlacementTarget="{Binding ElementName=GroupList}" HorizontalOffset="5" VerticalOffset="0">
+                    <Border BorderBrush="LightGray" BorderThickness="1" Height="{Binding ElementName=StepContainer, Path=ActualHeight}">
+                 <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Background="White">
+                    <StackPanel Grid.Row="1" Name="StepList" SnapsToDevicePixels="True" HorizontalAlignment="Left">
+                    </StackPanel>
+                </ScrollViewer>
+                    </Border>
+                </Popup>
+                <Border Name="DeleteIndicator" Grid.Row="0" Grid.RowSpan="3"  Background="#99808080" Opacity="90" Visibility="Collapsed">
+                    <Image VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                           Width="70"
+                           Source="images/delete-512.png"
+                           />
+                </Border>
+            </Grid>
+        </Border>
+        <ScrollViewer Canvas.Left="{Binding ElementName=StepContainer, Path=ActualWidth}" Name="ScriptScroller" Canvas.Top="0"
+       HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto" 
+                  Height="{Binding ElementName=ScriptContainer, Path=ActualHeight}">
+            <ScrollViewer.Width>
+                <MultiBinding Converter="{StaticResource ContainerWidthConverter}">
+                    <Binding ElementName="ScriptContainer" Path="ActualWidth"/>
+                    <Binding ElementName="StepContainer" Path="ActualWidth"/>
+                </MultiBinding>
+            </ScrollViewer.Width>
+            <Canvas Name="ScriptBoard" Background="White" AllowDrop="True">
+                <Canvas.LayoutTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1" ScaleY="1"/>
+                </Canvas.LayoutTransform>
+            </Canvas>
+        </ScrollViewer>
+        <Grid Name="ZoomToolbar" Margin="0">
+            <Canvas.Left>
+                <MultiBinding Converter="{StaticResource WithConvert}">
+                    <Binding ElementName="ScriptContainer" Path="ActualWidth"/>
+                    <Binding ElementName="ZoomToolbar" Path="ActualWidth"/>
+                </MultiBinding>
+            </Canvas.Left>
+            <Canvas.Top>
+                <MultiBinding Converter="{StaticResource WithConvert}">
+                    <Binding ElementName="ScriptContainer" Path="ActualHeight"/>
+                    <Binding ElementName="ZoomToolbar" Path="ActualHeight"/>
+                </MultiBinding>
+            </Canvas.Top>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Margin="0,0,10,20" Click="OnZoomIn">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="SearchMinus"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="1" Margin="0,0,20,20" Click="OnZoomOut">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="SearchPlus"/>
+                    </ControlTemplate>
+                </Button.Template></Button>
+        </Grid>
+    </Canvas>
+</UserControl>

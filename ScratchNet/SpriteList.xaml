@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="ScratchNet.SpriteList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:local="clr-namespace:ScratchNet"
+             mc:Ignorable="d" 
+             Background="#FFF5F4F4"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:SpriteToImageConverter x:Key="imageConverter"/>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--
+        <Border BorderBrush="LightGray" BorderThickness="0, 0, 0,1" SnapsToDevicePixels="True">
+            <TextBlock VerticalAlignment="Center" Margin="5,0,0,0">背景</TextBlock>
+        </Border>
+        -->
+        <Border BorderBrush="LightGray" BorderThickness="1, 0, 0, 1" SnapsToDevicePixels="True" Grid.Column="0">
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0">角色</TextBlock>
+        </Border>
+        <Border BorderBrush="LightGray" BorderThickness="0, 0, 0, 1" SnapsToDevicePixels="True" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" SnapsToDevicePixels="True">
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0">新建角色</TextBlock>
+                <Button Margin="5" Click="OnImportSprite">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="CloudUpload"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+        <!--
+        <ToggleButton Name="BackgroundContainer" BorderThickness="0" Grid.Row="1" Margin="0" Grid.Column="0" VerticalAlignment="Top">
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border BorderBrush="LightGray" Width="80" BorderThickness="1" CornerRadius="5" Margin="2">
+                        <Grid Margin="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Border Background="White">
+                            </Border>
+                            <Image Margin="1" Source="{Binding Converter={StaticResource imageConverter}}" Height="60"/>
+                            <TextBlock Margin="0,3" HorizontalAlignment="Center" Grid.Row="1" Text="{Binding Path=Name}"/>
+                            <Border Margin="0" Name="BD_Collector" BorderThickness="1"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BD_Collector" Property="BorderBrush" Value="YellowGreen" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="BD_Collector" Property="BorderBrush" Value="Blue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+        -->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="1, 0, 0,0" SnapsToDevicePixels="True">
+            <ListView Name="SpriteListView">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.Template>
+                    <ControlTemplate>
+                        <ScrollViewer Margin="0" Padding="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ListView.Template>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <Border BorderBrush="LightGray" Width="80" BorderThickness="1" CornerRadius="5" Margin="2">
+                                        <Grid Margin="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Border Background="White">
+                                            </Border>
+                                            <Image Margin="1" Source="{Binding Converter={StaticResource imageConverter}}" Height="60"/>
+                                            <TextBlock Margin="0,3" HorizontalAlignment="Center" Grid.Row="1" Text="{Binding Path=Name}"/>
+                                            <Border Margin="0" Name="BD_Collector" BorderThickness="1"/>
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="BD_Collector" Property="BorderBrush" Value="YellowGreen" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="BD_Collector" Property="BorderBrush" Value="Blue" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Border>
+    </Grid>
+</UserControl>
