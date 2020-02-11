@@ -25,13 +25,13 @@ namespace ScratchNet
                 Descriptor desc = new Descriptor();
                 if (Direction == RotationDirection.CounterClockwise)
                 {
-                    desc.Add(new TextItemDescriptor(this, "向左"));
+                    desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_ToLeft")));
                 }
                 else
-                    desc.Add(new TextItemDescriptor(this, "向右"));
-                desc.Add(new TextItemDescriptor(this, "旋转"));
+                    desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_ToRight")));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_Spin")));
                 desc.Add(new ExpressionDescriptor(this, "Degree", "number"));
-                desc.Add(new TextItemDescriptor(this, "度"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_Degree")));
                 return desc;
             }
         }

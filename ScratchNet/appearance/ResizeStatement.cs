@@ -26,7 +26,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "将大小设为"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_SetSizeTo")));
                 desc.Add(new ExpressionDescriptor(this, "Size", "number"));
                 return desc;
             }

@@ -25,9 +25,11 @@ namespace ScratchNet
             {
                 Descriptor desc = new Descriptor();
                 desc.Add(new ExpressionDescriptor(this, "Min", "number"));
-                desc.Add(new TextItemDescriptor(this, "和"));
+                //desc.Add(new TextItemDescriptor(this, "和"));
+                desc.Add(new TextItemDescriptor(this, Properties.Resources.random1));
                 desc.Add(new ExpressionDescriptor(this, "Max", "number"));
-                desc.Add(new TextItemDescriptor(this, "之间的随机数"));
+                //desc.Add(new TextItemDescriptor(this, "之间的随机数"));
+                desc.Add(new TextItemDescriptor(this, Properties.Resources.random2));
                 return desc;
             }
         }

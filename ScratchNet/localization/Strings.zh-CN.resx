@@ -117,4 +117,124 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="xaml_Roles" xml:space="preserve">
+    <value>角色</value>
+  </data>
+  <data name="xaml_NewRole" xml:space="preserve">
+    <value>新建角色</value>
+  </data>
+  <data name="xaml_Modeling" xml:space="preserve">
+    <value>造型</value>
+  </data>
+  <data name="xaml_CharacterImg" xml:space="preserve">
+    <value>角色图片</value>
+  </data>
+  <data name="xaml_Sound" xml:space="preserve">
+    <value>声音</value>
+  </data>
+  <data name="m_Move" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="m_Step" xml:space="preserve">
+    <value>步</value>
+  </data>
+  <data name="m_Wall" xml:space="preserve">
+    <value>撞到墙壁就转向</value>
+  </data>
+  <data name="a_Hide" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="xc_Motion" xml:space="preserve">
+    <value>运动</value>
+  </data>
+  <data name="xc_Looks" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="xc_Logic" xml:space="preserve">
+    <value>逻辑</value>
+  </data>
+  <data name="xc_Operation" xml:space="preserve">
+    <value>运算</value>
+  </data>
+  <data name="xc_Control" xml:space="preserve">
+    <value>控制</value>
+  </data>
+  <data name="xc_Event" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="xc_Variable" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="xc_Method" xml:space="preserve">
+    <value>方法</value>
+  </data>
+  <data name="cs_Coordinates_X" xml:space="preserve">
+    <value>坐标设置为x </value>
+  </data>
+  <data name="cs_ToLeft" xml:space="preserve">
+    <value>向左</value>
+  </data>
+  <data name="cs_ToRight" xml:space="preserve">
+    <value>向右</value>
+  </data>
+  <data name="cs_Spin" xml:space="preserve">
+    <value>旋转</value>
+  </data>
+  <data name="cs_Degree" xml:space="preserve">
+    <value>度</value>
+  </data>
+  <data name="cs_SetDirection" xml:space="preserve">
+    <value>设置方向为</value>
+  </data>
+  <data name="cs_X_CoordinatesSetTo" xml:space="preserve">
+    <value>X坐标设置为 </value>
+  </data>
+  <data name="cs_Y_CoordinatesSetTo" xml:space="preserve">
+    <value>Y坐标设置为 </value>
+  </data>
+  <data name="cs_SetRotationMode" xml:space="preserve">
+    <value>设置旋转模式</value>
+  </data>
+  <data name="cs_LRFlip" xml:space="preserve">
+    <value>左右翻转</value>
+  </data>
+  <data name="cs_NoFlip" xml:space="preserve">
+    <value>不翻转</value>
+  </data>
+  <data name="cs_Arbitrary" xml:space="preserve">
+    <value>任意</value>
+  </data>
+  <data name="cs_In" xml:space="preserve">
+    <value>在</value>
+  </data>
+  <data name="cs_MoveXinSec" xml:space="preserve">
+    <value>秒内移动到坐标X </value>
+  </data>
+  <data name="cs_LoseTo" xml:space="preserve">
+    <value>输到</value>
+  </data>
+  <data name="cs_ToLogWindow" xml:space="preserve">
+    <value>到日志窗口</value>
+  </data>
+  <data name="cs_SetSizeTo" xml:space="preserve">
+    <value>将大小设为</value>
+  </data>
+  <data name="cs_Say" xml:space="preserve">
+    <value>说</value>
+  </data>
+  <data name="cs_ChangePicture" xml:space="preserve">
+    <value>将图片为</value>
+  </data>
+  <data name="cs_ShowNextImg" xml:space="preserve">
+    <value>显示下一个图片</value>
+  </data>
+  <data name="cs_Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="cs_Thinking" xml:space="preserve">
+    <value>思考</value>
+  </data>
+  <data name="cs_Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
 </root>

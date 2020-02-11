@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="title_SetVariable" xml:space="preserve">
+    <value>设置变量名称</value>
+  </data>
+  <data name="xaml_VariableName" xml:space="preserve">
+    <value>变量名：</value>
+  </data>
+  <data name="xaml_Global" xml:space="preserve">
+    <value>适用于全部角色</value>
+  </data>
+  <data name="xaml_Local" xml:space="preserve">
+    <value>适用于全部角色</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="btnCreateVariables" xml:space="preserve">
+    <value>创建变量</value>
+  </data>
+  <data name="btnCreateBlocks" xml:space="preserve">
+    <value>创建积木</value>
+  </data>
+  <data name="lblAddNumericParam" xml:space="preserve">
+    <value>添加一个数字参数：</value>
+  </data>
+  <data name="lblAddStringParam" xml:space="preserve">
+    <value>添加一个字符串参数：</value>
+  </data>
+  <data name="lblAddBoolParam" xml:space="preserve">
+    <value>添加一个布尔参数：</value>
+  </data>
+  <data name="lblAddTextLabel" xml:space="preserve">
+    <value>添加一个文本标签：</value>
+  </data>
+  <data name="btnNumber" xml:space="preserve">
+    <value>数字</value>
+  </data>
+  <data name="btnString" xml:space="preserve">
+    <value>字符串</value>
+  </data>
+  <data name="btnBool" xml:space="preserve">
+    <value>布尔</value>
+  </data>
+  <data name="btnText" xml:space="preserve">
+    <value>文字</value>
+  </data>
 </root>

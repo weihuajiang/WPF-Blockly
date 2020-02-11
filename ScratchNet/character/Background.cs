@@ -12,7 +12,7 @@ namespace ScratchNet
         public Background()
         {
             Images = new ResourcesList();
-            Name = "背景";
+            Name = Localize.GetString("cs_Background");
             CurrentImage = 0;
         }
 

@@ -27,8 +27,8 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "设置旋转模式"));
-                desc.Add(new SelectionItemDescriptor(this, "RotationMode", new object[] { "左右翻转", "不翻转", "任意" },
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_SetRotationMode")));
+                desc.Add(new SelectionItemDescriptor(this, "RotationMode", new object[] { Localize.GetString("cs_LRFlip"), Localize.GetString("cs_NoFlip"), Localize.GetString("cs_Arbitrary") },
                     new object[] { CharacterRotationMode.LeftRight, CharacterRotationMode.None, CharacterRotationMode.Any}));
                 return desc;
             }

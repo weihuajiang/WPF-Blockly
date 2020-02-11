@@ -117,4 +117,124 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="xaml_Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="xaml_NewRole" xml:space="preserve">
+    <value>New Role</value>
+  </data>
+  <data name="xaml_Modeling" xml:space="preserve">
+    <value>Modeling</value>
+  </data>
+  <data name="xaml_CharacterImg" xml:space="preserve">
+    <value>Character Image</value>
+  </data>
+  <data name="xaml_Sound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="m_Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="m_Step" xml:space="preserve">
+    <value>Steps</value>
+  </data>
+  <data name="m_Wall" xml:space="preserve">
+    <value>If on edge, bounce</value>
+  </data>
+  <data name="a_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="xc_Motion" xml:space="preserve">
+    <value>Motion</value>
+  </data>
+  <data name="xc_Looks" xml:space="preserve">
+    <value>Looks</value>
+  </data>
+  <data name="xc_Logic" xml:space="preserve">
+    <value>Logic</value>
+  </data>
+  <data name="xc_Operation" xml:space="preserve">
+    <value>Operators</value>
+  </data>
+  <data name="xc_Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="xc_Event" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="xc_Variable" xml:space="preserve">
+    <value>Variables</value>
+  </data>
+  <data name="xc_Method" xml:space="preserve">
+    <value>My Blocks</value>
+  </data>
+  <data name="cs_Coordinates_X" xml:space="preserve">
+    <value>Set x to</value>
+  </data>
+  <data name="cs_ToLeft" xml:space="preserve">
+    <value>To the Left</value>
+  </data>
+  <data name="cs_ToRight" xml:space="preserve">
+    <value>To the Right</value>
+  </data>
+  <data name="cs_Spin" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="cs_Degree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="cs_SetDirection" xml:space="preserve">
+    <value>Set Direction To</value>
+  </data>
+  <data name="cs_X_CoordinatesSetTo" xml:space="preserve">
+    <value>X Coordinate is set to </value>
+  </data>
+  <data name="cs_Y_CoordinatesSetTo" xml:space="preserve">
+    <value>Y Coordinate is set to </value>
+  </data>
+  <data name="cs_SetRotationMode" xml:space="preserve">
+    <value>Set the rotation mode</value>
+  </data>
+  <data name="cs_LRFlip" xml:space="preserve">
+    <value>Flip left and right</value>
+  </data>
+  <data name="cs_NoFlip" xml:space="preserve">
+    <value>Not flipped</value>
+  </data>
+  <data name="cs_Arbitrary" xml:space="preserve">
+    <value>Arbitrary</value>
+  </data>
+  <data name="cs_In" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="cs_MoveXinSec" xml:space="preserve">
+    <value>Move to coordinate X in seconds </value>
+  </data>
+  <data name="cs_LoseTo" xml:space="preserve">
+    <value>Lose to</value>
+  </data>
+  <data name="cs_ToLogWindow" xml:space="preserve">
+    <value>To log window</value>
+  </data>
+  <data name="cs_SetSizeTo" xml:space="preserve">
+    <value>Set size to</value>
+  </data>
+  <data name="cs_Say" xml:space="preserve">
+    <value>Say</value>
+  </data>
+  <data name="cs_ChangePicture" xml:space="preserve">
+    <value>Change the picture to</value>
+  </data>
+  <data name="cs_ShowNextImg" xml:space="preserve">
+    <value>Show next picture</value>
+  </data>
+  <data name="cs_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="cs_Thinking" xml:space="preserve">
+    <value>Thinking</value>
+  </data>
+  <data name="cs_Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
 </root>

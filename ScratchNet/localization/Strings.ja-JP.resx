@@ -117,4 +117,124 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="xaml_Roles" xml:space="preserve">
+    <value>役割</value>
+  </data>
+  <data name="xaml_NewRole" xml:space="preserve">
+    <value>新しい役割</value>
+  </data>
+  <data name="xaml_Modeling" xml:space="preserve">
+    <value>モデリング</value>
+  </data>
+  <data name="xaml_CharacterImg" xml:space="preserve">
+    <value>キャラクター画像</value>
+  </data>
+  <data name="xaml_Sound" xml:space="preserve">
+    <value>音</value>
+  </data>
+  <data name="m_Move" xml:space="preserve">
+    <value>動かす</value>
+  </data>
+  <data name="m_Step" xml:space="preserve">
+    <value>歩</value>
+  </data>
+  <data name="m_Wall" xml:space="preserve">
+    <value>もし端に着いたら、跳ね返る</value>
+  </data>
+  <data name="a_Hide" xml:space="preserve">
+    <value>隠す</value>
+  </data>
+  <data name="xc_Motion" xml:space="preserve">
+    <value>動き</value>
+  </data>
+  <data name="xc_Looks" xml:space="preserve">
+    <value>見た目</value>
+  </data>
+  <data name="xc_Logic" xml:space="preserve">
+    <value>ロジック</value>
+  </data>
+  <data name="xc_Operation" xml:space="preserve">
+    <value>演算</value>
+  </data>
+  <data name="xc_Control" xml:space="preserve">
+    <value>制御</value>
+  </data>
+  <data name="xc_Event" xml:space="preserve">
+    <value>イベント</value>
+  </data>
+  <data name="xc_Variable" xml:space="preserve">
+    <value>変数</value>
+  </data>
+  <data name="xc_Method" xml:space="preserve">
+    <value>ブロック定義</value>
+  </data>
+  <data name="cs_Coordinates_X" xml:space="preserve">
+    <value>xに設定された座標 </value>
+  </data>
+  <data name="cs_ToLeft" xml:space="preserve">
+    <value>左へ</value>
+  </data>
+  <data name="cs_ToRight" xml:space="preserve">
+    <value>右へ</value>
+  </data>
+  <data name="cs_Spin" xml:space="preserve">
+    <value>回転</value>
+  </data>
+  <data name="cs_Degree" xml:space="preserve">
+    <value>度</value>
+  </data>
+  <data name="cs_SetDirection" xml:space="preserve">
+    <value>方向を設定</value>
+  </data>
+  <data name="cs_X_CoordinatesSetTo" xml:space="preserve">
+    <value>X座標は </value>
+  </data>
+  <data name="cs_Y_CoordinatesSetTo" xml:space="preserve">
+    <value>Y座標は </value>
+  </data>
+  <data name="cs_SetRotationMode" xml:space="preserve">
+    <value>回転モードを設定する</value>
+  </data>
+  <data name="cs_LRFlip" xml:space="preserve">
+    <value>左右反転</value>
+  </data>
+  <data name="cs_NoFlip" xml:space="preserve">
+    <value>反転しない</value>
+  </data>
+  <data name="cs_Arbitrary" xml:space="preserve">
+    <value>任意</value>
+  </data>
+  <data name="cs_In" xml:space="preserve">
+    <value>で</value>
+  </data>
+  <data name="cs_MoveXinSec" xml:space="preserve">
+    <value>秒単位で座標Xに移動する </value>
+  </data>
+  <data name="cs_LoseTo" xml:space="preserve">
+    <value>失う</value>
+  </data>
+  <data name="cs_ToLogWindow" xml:space="preserve">
+    <value>ログウィンドウに</value>
+  </data>
+  <data name="cs_SetSizeTo" xml:space="preserve">
+    <value>サイズを設定</value>
+  </data>
+  <data name="cs_Say" xml:space="preserve">
+    <value>言う</value>
+  </data>
+  <data name="cs_ChangePicture" xml:space="preserve">
+    <value>画像を変更</value>
+  </data>
+  <data name="cs_ShowNextImg" xml:space="preserve">
+    <value>次の写真を表示</value>
+  </data>
+  <data name="cs_Show" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="cs_Thinking" xml:space="preserve">
+    <value>考える</value>
+  </data>
+  <data name="cs_Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
 </root>

@@ -25,7 +25,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "撞到墙壁就转向"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("m_Wall")));
                 return desc;
             }
         }

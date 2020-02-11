@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="title_SetVariable" xml:space="preserve">
+    <value>変数名を設定</value>
+  </data>
+  <data name="xaml_VariableName" xml:space="preserve">
+    <value>変数名：</value>
+  </data>
+  <data name="xaml_Global" xml:space="preserve">
+    <value>すべての役割に適用</value>
+  </data>
+  <data name="xaml_Local" xml:space="preserve">
+    <value>すべての役割に適用</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="btnCreateVariables" xml:space="preserve">
+    <value>変数を作成</value>
+  </data>
+  <data name="btnCreateBlocks" xml:space="preserve">
+    <value>ブロックを定義</value>
+  </data>
+  <data name="lblAddNumericParam" xml:space="preserve">
+    <value>数値パラメータを追加：</value>
+  </data>
+  <data name="lblAddStringParam" xml:space="preserve">
+    <value>文字列パラメータを追加：</value>
+  </data>
+  <data name="lblAddBoolParam" xml:space="preserve">
+    <value>ブール型パラメータを追加：</value>
+  </data>
+  <data name="lblAddTextLabel" xml:space="preserve">
+    <value>テキストラベルを追加：</value>
+  </data>
+  <data name="btnNumber" xml:space="preserve">
+    <value>数字</value>
+  </data>
+  <data name="btnString" xml:space="preserve">
+    <value>文字列</value>
+  </data>
+  <data name="btnBool" xml:space="preserve">
+    <value>ブール値</value>
+  </data>
+  <data name="btnText" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
 </root>

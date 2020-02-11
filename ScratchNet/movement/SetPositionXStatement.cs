@@ -27,7 +27,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "X坐标设置为 "));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_X_CoordinatesSetTo")));
                 desc.Add(new ExpressionDescriptor(this, "X", "number"));
                 return desc;
             }

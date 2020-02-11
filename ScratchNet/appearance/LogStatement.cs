@@ -27,9 +27,9 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "输到"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_LoseTo")));
                 desc.Add(new ExpressionDescriptor(this, "Message", "string|number|boolean"){IsOnlyNumberAllowed=false});
-                desc.Add(new TextItemDescriptor(this, "到日志窗口"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_ToLogWindow")));
                 return desc;
             }
         }

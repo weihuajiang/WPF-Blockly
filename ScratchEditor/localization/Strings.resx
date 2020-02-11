@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="title_SetVariable" xml:space="preserve">
+    <value>Set Variable Name</value>
+  </data>
+  <data name="xaml_VariableName" xml:space="preserve">
+    <value>Variable Name：</value>
+  </data>
+  <data name="xaml_Global" xml:space="preserve">
+    <value>Apply for all roles</value>
+  </data>
+  <data name="xaml_Local" xml:space="preserve">
+    <value>Apply for all roles</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCreateVariables" xml:space="preserve">
+    <value>Create Variables</value>
+  </data>
+  <data name="btnCreateBlocks" xml:space="preserve">
+    <value>Define Blocks</value>
+  </data>
+  <data name="lblAddNumericParam" xml:space="preserve">
+    <value>Add a numeric parameter：</value>
+  </data>
+  <data name="lblAddStringParam" xml:space="preserve">
+    <value>Add a string parameter：</value>
+  </data>
+  <data name="lblAddBoolParam" xml:space="preserve">
+    <value>Add a boolean parameter：</value>
+  </data>
+  <data name="lblAddTextLabel" xml:space="preserve">
+    <value>Add a text label：</value>
+  </data>
+  <data name="btnNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="btnString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="btnBool" xml:space="preserve">
+    <value>Bool</value>
+  </data>
+  <data name="btnText" xml:space="preserve">
+    <value>Text</value>
+  </data>
 </root>
