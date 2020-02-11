@@ -28,9 +28,9 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "在"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_In")));
                 desc.Add(new ExpressionDescriptor(this, "Time", "number"));
-                desc.Add(new TextItemDescriptor(this, "秒内移动到坐标X "));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_MoveXinSec")));
                 desc.Add(new ExpressionDescriptor(this, "X", "number"));
                 desc.Add(new TextItemDescriptor(this, ", Y "));
                 desc.Add(new ExpressionDescriptor(this, "Y", "number"));

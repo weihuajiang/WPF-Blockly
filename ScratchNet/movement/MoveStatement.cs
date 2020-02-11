@@ -26,9 +26,9 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "移动"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("m_Move")));
                 desc.Add(new ExpressionDescriptor(this, "Step", "number"));
-                desc.Add(new TextItemDescriptor(this, "步"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("m_Step")));
                 return desc;
             }
         }

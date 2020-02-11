@@ -15,11 +15,26 @@ namespace ScratchNet
         static void LoadColor()
         {
             StepColors = new Dictionary<string, Brush>();
-            StreamReader reader=new StreamReader(System.IO.Directory.GetCurrentDirectory()+@"\config\colors.config");
-            string line;
-            while((line=reader.ReadLine())!=null){
-                string[] spt=line.Split(new string[]{":"}, StringSplitOptions.RemoveEmptyEntries);
-                if(spt.Length<2)
+            //StreamReader reader=new StreamReader(System.IO.Directory.GetCurrentDirectory()+@"\config\colors.config");
+            //string line;
+            //while((line=reader.ReadLine())!=null){
+            //    string[] spt=line.Split(new string[]{":"}, StringSplitOptions.RemoveEmptyEntries);
+            //    if(spt.Length<2)
+            //        continue;
+            //    try
+            //    {
+            //        StepColors.Add(spt[0].Trim(), new SolidColorBrush((Color)ColorConverter.ConvertFromString(spt[1].Trim())));
+            //    }
+            //    catch (Exception e) { }
+            //}
+            //reader.Close();
+
+            string colors = ScratchEditor.Properties.Resources.colors;
+            foreach (var line in colors.Split(new[] { Environment.NewLine }, StringSplitOptions.None))
+            {
+                if (line.Length == 0) continue;
+                string[] spt = line.Split(new string[] { ":" }, StringSplitOptions.RemoveEmptyEntries);
+                if (spt.Length < 2)
                     continue;
                 try
                 {
@@ -27,8 +42,14 @@ namespace ScratchNet
                 }
                 catch (Exception e) { }
             }
-            reader.Close();
         }
+
+        private List<string> GetLines(byte[] content)
+        {
+            string s = Encoding.Default.GetString(content, 0, content.Length - 1);
+            return new List<string>(s.Split(new[] { Environment.NewLine }, StringSplitOptions.None));
+        }
+
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (StepColors == null)

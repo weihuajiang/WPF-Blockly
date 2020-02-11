@@ -26,9 +26,9 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "设置方向为"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_SetDirection")));
                 desc.Add(new ExpressionDescriptor(this, "Degree", "number"));
-                desc.Add(new TextItemDescriptor(this, "度"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_Degree")));
                 return desc;
             }
         }

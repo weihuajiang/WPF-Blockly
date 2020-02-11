@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="random1" xml:space="preserve">
+    <value>with</value>
+  </data>
+  <data name="random2" xml:space="preserve">
+    <value>Random number between</value>
+  </data>
 </root>

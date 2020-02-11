@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              xmlns:local="clr-namespace:ScratchNet"
+             xmlns:lclz="clr-namespace:ScratchNet.localization"
              mc:Ignorable="d" 
              Background="#FFF5F4F4"
              d:DesignHeight="300" d:DesignWidth="300">
@@ -27,11 +28,12 @@
         </Border>
         -->
         <Border BorderBrush="LightGray" BorderThickness="1, 0, 0, 1" SnapsToDevicePixels="True" Grid.Column="0">
-            <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0">角色</TextBlock>
+            <!--Role-->
+            <TextBlock Text="{x:Static lclz:Strings.xaml_Roles}" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0"/>
         </Border>
         <Border BorderBrush="LightGray" BorderThickness="0, 0, 0, 1" SnapsToDevicePixels="True" Grid.Column="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" SnapsToDevicePixels="True">
-                <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0">新建角色</TextBlock>
+                <TextBlock Text="{x:Static lclz:Strings.xaml_NewRole}" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0"/>
                 <Button Margin="5" Click="OnImportSprite">
                     <Button.Template>
                         <ControlTemplate>

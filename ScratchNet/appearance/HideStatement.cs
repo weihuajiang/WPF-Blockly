@@ -21,7 +21,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "隐藏"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("a_Hide")));
                 return desc;
             }
         }

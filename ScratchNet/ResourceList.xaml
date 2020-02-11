@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScratchNet"
+             xmlns:lclz="clr-namespace:ScratchNet.localization"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              IsEnabled="False"
              mc:Ignorable="d" 
@@ -24,7 +25,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0">角色图片</TextBlock>
+                    <TextBlock Text="{x:Static lclz:Strings.xaml_CharacterImg}" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0"/>
                     <Button Margin="5" Click="OnImportImage">
                         <Button.Template>
                             <ControlTemplate>
@@ -101,7 +102,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0">声音</TextBlock>
+                    <TextBlock Text="{x:Static lclz:Strings.xaml_Sound}" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0"/>
                     <Button Margin="5" Click="OnImportSound">
                         <Button.Template>
                             <ControlTemplate>

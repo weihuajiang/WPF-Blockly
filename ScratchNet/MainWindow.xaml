@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:ScratchNet" 
+        xmlns:lclz="clr-namespace:ScratchNet.localization"
         x:Class="ScratchNet.MainWindow"
     FontSize="12" WindowState="Maximized" 
     xmlns:gui="clr-namespace:ScratchNet;assembly=ScratchEditor"
@@ -56,7 +57,7 @@
             <TabItem Header="Script" Name="ScriptTab">
                 <gui:GraphicScriptEditor x:Name="ScriptEditor"/>
             </TabItem>
-            <TabItem Header="造型">
+            <TabItem Header="{x:Static lclz:Strings.xaml_Modeling}">
                 <local:ResourceList x:Name="ResourceEditor"/>
             </TabItem>
         </TabControl>

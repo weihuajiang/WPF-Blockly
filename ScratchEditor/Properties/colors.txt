@@ -1,0 +1,45 @@
+// Motion
+ScratchNet.WaitStatement:#4C97FF
+ScratchNet.MoveStatement:#4C97FF
+ScratchNet.RotationStatement:#4C97FF
+ScratchNet.ReflectionStatement:#4C97FF
+ScratchNet.SetRotationModeStatement:#4C97FF
+ScratchNet.SetDegreeStatement:#4C97FF
+ScratchNet.SetPositionStatement:#4C97FF
+ScratchNet.SetPositionXStatement:#4C97FF
+ScratchNet.SetPositionYStatement:#4C97FF
+ScratchNet.TimedMoveStatement:#4C97FF
+ScratchNet.XPositionExpression:#4C97FF
+ScratchNet.YPositionExpression:#4C97FF
+ScratchNet.DegreeExpression:#4C97FF
+// Looks
+ScratchNet.ResizeStatement:#9966FF
+ScratchNet.SetImageStatement:#9966FF
+ScratchNet.SetNextImageStatement:#9966FF
+ScratchNet.ShowStatement:#9966FF
+ScratchNet.HideStatement:#9966FF
+ScratchNet.SizeExpression:#9966FF
+// Logic
+ScratchNet.CompareExpression:#59C059
+ScratchNet.LogicExpression:#59C059
+ScratchNet.NotExpression:#59C059
+// Operator
+ScratchNet.BinaryExpression:#59C059
+ScratchNet.ConditionalExpression:#59C059
+ScratchNet.RandomExpression:#59C059
+// Control
+ScratchNet.IfStatement:#FFAB19
+ScratchNet.ForStatement:#FFAB19
+ScratchNet.WhileStatement:#FFAB19
+ScratchNet.BreakStatement:#FFAB19
+ScratchNet.ContinueStatement:#FFAB19
+ScratchNet.ReturnStatement:#FFAB19
+ScratchNet.LogStatement:#FFAB19
+ScratchNet.TryStatement:#FFAB19
+// Event
+ScratchNet.StartEventHandler:#FFBF00
+ScratchNet.KeyEventHandler:#FFBF00
+ScratchNet.ClickEventHandler:#FFBF00
+ScratchNet.MessageEvetHandler:#FFBF00
+// Variable
+ScratchNet.AssignmentStatement:#FF8C1A

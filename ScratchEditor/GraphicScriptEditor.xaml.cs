@@ -40,11 +40,11 @@ namespace ScratchNet
             };
             
             //generate group, future load from file
-            CreateVariableButton = new Button() { Content = "创建变量", Margin = new Thickness(5), Width = 80 };
+            CreateVariableButton = new Button() { Content = ScratchEditor.Localize.GetString("btnCreateVariables"), Margin = new Thickness(5), Width = 80 };
             CreateVariableButton.Click += CreateVariableButton_Click;
             CreateVariableButton.HorizontalAlignment = HorizontalAlignment.Left;
             
-            CreateFunctionButton = new Button() { Content = "创建积木", Margin = new Thickness(5), Width = 80 };
+            CreateFunctionButton = new Button() { Content = ScratchEditor.Localize.GetString("btnCreateBlocks"), Margin = new Thickness(5), Width = 80 };
             CreateFunctionButton.Click += CreateFunctionButton_Click;
             CreateFunctionButton.HorizontalAlignment = HorizontalAlignment.Left;
 

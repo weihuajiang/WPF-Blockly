@@ -21,7 +21,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "显示下一个图片"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_ShowNextImg")));
                 return desc;
             }
         }

@@ -26,7 +26,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "说"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_Say")));
                 desc.Add(new ExpressionDescriptor(this, "Message", "string"));
                 desc.Add(new TextItemDescriptor(this, ""));
                 return desc;

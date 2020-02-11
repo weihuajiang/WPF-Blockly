@@ -25,7 +25,7 @@ namespace ScratchNet
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "将图片为"));
+                desc.Add(new TextItemDescriptor(this, Localize.GetString("cs_ChangePicture")));
                 desc.Add(new SelectionExpressionItemDescriptor(this, "ImageIndex", CurrentEnviroment.CurrentSpriteImages,
                     new ExpressionDescriptor(this, "ImageIndex", "number")));
                 return desc;

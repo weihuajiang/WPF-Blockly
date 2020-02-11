@@ -37,7 +37,7 @@ namespace ScratchNet
             List<ScriptStepGroup> toolbar = new List<ScriptStepGroup>();
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "运动",
+                Name = Localize.GetString("xc_Motion"),
                 Types = new List<object>(){
                     new WaitStatement(),
                     new MoveStatement(),
@@ -57,7 +57,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "外观",
+                Name = Localize.GetString("xc_Looks"),
                 Types = new List<object>(){
                     new ResizeStatement(),
                     new SetImageStatement(),
@@ -69,7 +69,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "逻辑",
+                Name = Localize.GetString("xc_Logic"),
                 Types = new List<object>(){
                     new CompareExpression(),
                     new LogicExpression(),
@@ -78,7 +78,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "运算",
+                Name = Localize.GetString("xc_Operation"),
                 Types = new List<object>(){
                     new BinaryExpression(),
                     new ConditionalExpression(),
@@ -87,7 +87,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "控制",
+                Name = Localize.GetString("xc_Control"),
                 Types = new List<object>(){
                     new IfStatement(),
                     new IfStatement(){Alternate=new BlockStatement()},
@@ -102,7 +102,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "事件",
+                Name = Localize.GetString("xc_Event"),
                 Types = new List<object>(){
                     new StartEventHandler(),
                     new KeyEventHandler(),
@@ -112,7 +112,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "数据",
+                Name = Localize.GetString("xc_Variable"),
                 Types = new List<object>(){
                     "CreateVariable",
                     new AssignmentStatement(),
@@ -120,7 +120,7 @@ namespace ScratchNet
             });
             toolbar.Add(new ScriptStepGroup()
             {
-                Name = "方法",
+                Name = Localize.GetString("xc_Method"),
                 Types = new List<object>(){
                     "CreateFunction"
                 }

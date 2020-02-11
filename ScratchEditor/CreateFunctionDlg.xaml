@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ScratchNet"
+        xmlns:lclz="clr-namespace:ScratchEditor.localization"
         FontSize="12"  SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
         Title="CreateFunctionDlg" Height="300" Width="400" MinWidth="400">
     <Window.Resources>
@@ -132,17 +133,17 @@
                 </ControlTemplate>
             </ItemsControl.Template>
         </ItemsControl>
-        <TextBlock Text="添加一个数字参数：" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-        <TextBlock Text="添加一个字符串参数：" Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-        <TextBlock Text="添加一个布尔参数：" Grid.Row="4" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-        <TextBlock Text="添加一个文本标签：" Grid.Row="5" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="2" Width="80" Click="OnAddNumber" Margin="5" >数字</Button>
-        <Button Grid.Row="3" Grid.Column="2" Width="80" Click="OnAddString" Margin="5">字符串</Button>
-        <Button Grid.Row="4" Grid.Column="2" Width="80" Click="OnAddBoolean" Margin="5">布尔</Button>
-        <Button Grid.Row="5" Grid.Column="2" Width="80" Click="OnAddText" Margin="5">文字</Button>
+        <TextBlock Text="{x:Static lclz:Strings.lblAddNumericParam}" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+        <TextBlock Text="{x:Static lclz:Strings.lblAddStringParam}" Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+        <TextBlock Text="{x:Static lclz:Strings.lblAddBoolParam}" Grid.Row="4" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+        <TextBlock Text="{x:Static lclz:Strings.lblAddTextLabel}" Grid.Row="5" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+        <Button Content="{x:Static lclz:Strings.btnNumber}" Grid.Row="2" Grid.Column="2" Width="80" Click="OnAddNumber" Margin="5"/>
+        <Button Content="{x:Static lclz:Strings.btnString}" Grid.Row="3" Grid.Column="2" Width="80" Click="OnAddString" Margin="5"/>
+        <Button Content="{x:Static lclz:Strings.btnBool}" Grid.Row="4" Grid.Column="2" Width="80" Click="OnAddBoolean" Margin="5"/>
+        <Button Content="{x:Static lclz:Strings.btnText}" Grid.Row="5" Grid.Column="2" Width="80" Click="OnAddText" Margin="5"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="7" Grid.ColumnSpan="4">
-            <Button Name="ButtonOK" Width="120" Content="确定" Margin="5" Click="OnConfirm"/>
-            <Button Name="ButtonCancel" Width="120" Content="取消" Margin="5" Click="OnCancel"/>
+            <Button Name="ButtonOK" Width="120" Content="{x:Static lclz:Strings.btnOK}" Margin="5" Click="OnConfirm"/>
+            <Button Name="ButtonCancel" Width="120" Content="{x:Static lclz:Strings.btnCancel}" Margin="5" Click="OnCancel"/>
         </StackPanel>
     </Grid>
 </Window>
