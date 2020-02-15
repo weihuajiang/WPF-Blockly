@@ -64,7 +64,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Margin="5" Grid.Column="3" Click="OnStopRun" Name="ButtonStop" IsEnabled="False">
+            <Button Margin="5" Grid.Column="3" Click="OnStopRun" Name="ButtonStop" IsEnabled="False" Visibility="Collapsed">
                 <Button.Template>
                     <ControlTemplate>
                         <fa:FontAwesome Name="Icon" FontSize="25" Foreground="DarkRed" Icon="Stop"/>

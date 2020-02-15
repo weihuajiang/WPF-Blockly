@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,6 +13,8 @@ namespace ScratchNet
         //List<Class> Classes { get; set; }
         List<Instance> Instances { get; set; }
         public ExecutionEnvironment BaseEnvironment { get; internal set; }
+        public ExecutionMode Mode { get; set; } = ExecutionMode.Infinite;
+        public bool IsCompleted { get; internal set; } = false;
         List<RunThread> Threads = new List<RunThread>();
         Dictionary<RunThread, DateTime> ThreadNextRun = new Dictionary<RunThread, DateTime>();
         Thread RunThread;
@@ -103,6 +106,7 @@ namespace ScratchNet
                         }
                     }
                 }
+                bool allCompleted = true;
                 foreach (RunThread t in Threads)
                 {
                     if(t.IsCompleted)
@@ -110,11 +114,22 @@ namespace ScratchNet
                         Threads.Remove(t);
                         break;
                     }
+                    else
+                    {
+                        allCompleted = false;
+                    }
                 }
                 UnLock();
+                
                 if (nextRun != null)
                 {
                     Thread.Sleep(10);
+                }
+                if (allCompleted && Mode == ExecutionMode.ExitWhenFinish)
+                {
+                    IsCompleted = true;
+                    Console.WriteLine("run finished");
+                    return;
                 }
             }
         }

@@ -3,6 +3,7 @@ using ScratchNet;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -125,9 +126,10 @@ namespace DemoScriptEditor
                         engine = null;
                     }
                     engine = new ExecutionEngine();
+                    engine.Mode = ExecutionMode.ExitWhenFinish;
                     engine.AddInstance(new Instance(Editor.Script));
-                    engine.Start();
                     engine.RunFunction(func);
+                    engine.Start();
                     Console.WriteLine("Start run");
                     return;
                 }
@@ -142,6 +144,11 @@ namespace DemoScriptEditor
                 engine.Stop();
                 engine = null;
             }
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            OnStopRun(this, null);
+            base.OnClosing(e);
         }
         public string File { get; set; }
         private void OnOpen(object sender, RoutedEventArgs e)

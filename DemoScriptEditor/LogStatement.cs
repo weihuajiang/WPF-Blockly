@@ -1,6 +1,7 @@
 ﻿using ScratchNet;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,9 +67,7 @@ namespace DemoScriptEditor
 
         public Completion EndCall(ExecutionEnvironment e)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Error.WriteLine(DateTime.Now + ":" + DateTime.Now.Millisecond + " " + logValue);
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(DateTime.Now + ":" + DateTime.Now.Millisecond + " " + logValue);
             if (WriteLine != null)
             {
                 WriteLine(logValue);
