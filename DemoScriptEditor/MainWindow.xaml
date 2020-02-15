@@ -1,0 +1,90 @@
+﻿<Window xmlns:ScratchNet="clr-namespace:ScratchNet;assembly=DemoScriptEditor"  x:Class="DemoScriptEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoScriptEditor"
+        xmlns:editor="clr-namespace:ScratchNet;assembly=ScriptEditor"
+        mc:Ignorable="d" WindowState="Maximized"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Grid.Column="2" Click="OnNew" Name="ButtonNew">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome Name="StartIcon" FontSize="25" Foreground="Green" Icon="NewspaperOutlined"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="StartIcon" Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Grid.Column="2" Click="OnOpen" Name="ButtonOpen" IsEnabled="True">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome Name="StartIcon" FontSize="25" Foreground="Green" Icon="FolderOpenOutlined"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="StartIcon" Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Grid.Column="2" Click="OnSave" Name="ButtonSave" IsEnabled="False">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome Name="StartIcon" FontSize="25" Foreground="Green" Icon="Save"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="StartIcon" Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Grid.Column="2" Click="OnStartRun" Name="ButtonStart" IsEnabled="False">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome Name="StartIcon" FontSize="25" Foreground="Green" Icon="Play"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="StartIcon" Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Grid.Column="3" Click="OnStopRun" Name="ButtonStop" IsEnabled="False">
+                <Button.Template>
+                    <ControlTemplate>
+                        <fa:FontAwesome Name="Icon" FontSize="25" Foreground="DarkRed" Icon="Stop"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Icon" Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <GridSplitter Height="5" Background="Black" Grid.Row="2" VerticalAlignment="Center" IsEnabled="True"
+                      ResizeBehavior="PreviousAndNext" ResizeDirection="Rows" ShowsPreview="True"/>
+        <editor:GraphicScriptEditor Grid.Row="1" Name="Editor"/>
+        <DataGrid Grid.Row="3" Height="150" IsReadOnly="True" Name="ConsoleList" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Width="150"/>
+                <DataGridTextColumn Header="Text" Binding="{Binding Path=Text}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -118,6 +118,21 @@ namespace ScratchNet
                 }
             }
         }
+        public void RunFunction(Function function)
+        {
+            Lock();
+            foreach (Instance inst in Instances)
+            {
+                foreach (var func in inst.Class.Functions)
+                {
+                    if (func.Equals(function))
+                    {
+                        Threads.Add(new RunThread(inst, func, BaseEnvironment));
+                    }
+                }
+            }
+            UnLock();
+        }
         public void SendEvent(Event e)
         {
             Lock();

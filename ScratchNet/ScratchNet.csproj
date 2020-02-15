@@ -192,9 +192,9 @@
       <Project>{7006ac9f-d218-4d7b-98eb-5d2d91f69c57}</Project>
       <Name>FontAwesome.WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScratchEditor\ScratchEditor.csproj">
+    <ProjectReference Include="..\ScratchEditor\ScriptEditor.csproj">
       <Project>{801cfd14-89d2-4b1e-9332-b22ec959baba}</Project>
-      <Name>ScratchEditor</Name>
+      <Name>ScriptEditor</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>

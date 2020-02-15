@@ -13,6 +13,18 @@ namespace ScratchNet
         public bool IsStarted { get; internal set; }
         public bool IsCompleted { get; internal set; }
         Stack<ExecStackItem> Stacks { get; set; }
+        public RunThread(Instance instance, Function fun, ExecutionEnvironment environment)
+        {
+            Instance = instance;
+            IsStarted = false;
+            IsCompleted = false;
+            Stacks = new Stack<ExecStackItem>();
+            Execution2 exe = fun as Execution2;
+            Environment = new ExecutionEnvironment(environment, instance);
+
+            ExecutionEnvironment env = exe.StartCall(Environment);
+            Stacks.Push(new ExecStackItem(exe, FinishCallback, env, Environment));
+        }
         public RunThread(Instance instance, EventHandler fun, Event e, ExecutionEnvironment environment)
         {
             Instance = instance;

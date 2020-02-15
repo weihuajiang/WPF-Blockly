@@ -640,9 +640,10 @@ namespace ScratchNet
         {
             FunctionControl ectrl = new FunctionControl();
             ectrl.Function = fc;
-            ScriptBoard.Children.Add(ectrl);
             Canvas.SetLeft(ectrl, pt.X);
             Canvas.SetTop(ectrl, pt.Y);
+
+            ScriptBoard.Children.Add(ectrl);
         }
         private bool DropFunction(Function fc, Point pt)
         {

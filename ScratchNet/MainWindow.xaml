@@ -6,7 +6,7 @@
         xmlns:lclz="clr-namespace:ScratchNet.localization"
         x:Class="ScratchNet.MainWindow"
     FontSize="12" WindowState="Maximized" 
-    xmlns:gui="clr-namespace:ScratchNet;assembly=ScratchEditor"
+    xmlns:gui="clr-namespace:ScratchNet;assembly=ScriptEditor"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
     </Window.Resources>
