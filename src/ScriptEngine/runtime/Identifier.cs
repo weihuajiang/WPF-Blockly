@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ScratchNet
+{
+    public class Identifier:Expression
+    {
+        public String Variable { get; set; }
+        public string VarType { get; set; }
+        public string ReturnType
+        {
+            get { return VarType; }
+        }
+        
+        public Completion Execute(ExecutionEnvironment enviroment)
+        {
+            var value = enviroment.GetValue(Variable);
+            return new Completion(value);
+        }
+
+        public Descriptor Descriptor
+        {
+            get
+            {
+                Descriptor desc = new Descriptor();
+                desc.Add(new TextItemDescriptor(this, Variable));
+                return desc;
+            }
+        }
+
+        public string Type
+        {
+            get { return VarType; }
+        }
+        
+    }
+}
