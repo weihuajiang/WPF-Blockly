@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2D6D3D3-338A-4E2E-9AD1-118A131BC38A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ScratchNet</RootNamespace>
+    <AssemblyName>VisualCodeEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ToastNotifications, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ToastNotifications.2.5.1\lib\net40\ToastNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="ToastNotifications.Messages, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ToastNotifications.Messages.2.5.1\lib\net40\ToastNotifications.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\AbountWindow.xaml.cs">
+      <DependentUpon>AbountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\LibraryImageConverter.cs" />
+    <Compile Include="Converter\StoreVisibilityConverter.cs" />
+    <Compile Include="Example\ExampleItem.cs" />
+    <Compile Include="Example\ExampleWindow.xaml.cs">
+      <DependentUpon>ExampleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Library\LibraryItem.cs" />
+    <Compile Include="Library\LibraryWindow.xaml.cs">
+      <DependentUpon>LibraryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.zh-CN.Designer.cs">
+      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Script.cs" />
+    <Compile Include="Toast.cs" />
+    <Compile Include="VideoWindow.xaml.cs">
+      <DependentUpon>VideoWindow.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="scripts\array.vsc" />
+    <EmbeddedResource Include="scripts\array2.vsc" />
+    <EmbeddedResource Include="scripts\binaryTree.vsc" />
+    <EmbeddedResource Include="scripts\draw2.vsc" />
+    <EmbeddedResource Include="scripts\if.vsc" />
+    <EmbeddedResource Include="scripts\linkedList.vsc" />
+    <EmbeddedResource Include="scripts\list.vsc" />
+    <EmbeddedResource Include="scripts\loop.vsc" />
+    <EmbeddedResource Include="scripts\main.vsc" />
+    <EmbeddedResource Include="scripts\narcissistic.vsc" />
+    <EmbeddedResource Include="scripts\prime.vsc" />
+    <EmbeddedResource Include="scripts\queue.vsc" />
+    <EmbeddedResource Include="scripts\recursion.vsc" />
+    <EmbeddedResource Include="scripts\speech.vsc" />
+    <EmbeddedResource Include="scripts\stack.vsc" />
+    <EmbeddedResource Include="scripts\variable.vsc" />
+    <EmbeddedResource Include="scripts\variableScope.vsc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="About\AbountWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Example\ExampleWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\LibraryWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scrollbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VideoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\collection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\EV3MEG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Math.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\PAINT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Translate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="video2.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Array\Array.csproj">
+      <Project>{bc85cf16-0fee-4ca2-acf0-dc2c47d5177f}</Project>
+      <Name>Array</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Canvas\Canvas.csproj">
+      <Project>{4d7fbaef-c988-4a4a-8a4d-d74d9682456a}</Project>
+      <Name>Canvas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Collection\Collection.csproj">
+      <Project>{cc6c079a-842e-4d81-a549-bc029a7fdff3}</Project>
+      <Name>Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Console\Console.csproj">
+      <Project>{64ab2104-7f4d-469c-86fb-1af4921947c0}</Project>
+      <Name>Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\DataStructure\DataStructure.csproj">
+      <Project>{3a0d0af9-915e-43d8-b7f2-9d6a37686d21}</Project>
+      <Name>DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Math\Math.csproj">
+      <Project>{a0ff7df5-1936-4cc7-9e49-e2af197ec70f}</Project>
+      <Name>Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ScratchEditor\ScriptEditor.csproj">
+      <Project>{801cfd14-89d2-4b1e-9332-b22ec959baba}</Project>
+      <Name>ScriptEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ScriptEngine\ScriptEngine.csproj">
+      <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
+      <Name>ScriptEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Speech\Speech.csproj">
+      <Project>{8b998c9f-bfac-4575-9452-3966264d4957}</Project>
+      <Name>Speech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\String\String.csproj">
+      <Project>{9de591a0-f8f8-40a8-ab27-1ed54be84951}</Project>
+      <Name>String</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Thread\Thread.csproj">
+      <Project>{6e2ff20a-0a70-42eb-9d7f-232825741aff}</Project>
+      <Name>Thread</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conifg\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

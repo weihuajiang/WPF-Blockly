@@ -1,0 +1,118 @@
+<Script>
+  <Class type="ScratchNet.Script, VisualCodeEditor">
+    <Variables />
+    <Functions>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="371.566666666667" y="127.5">
+        <Format value="" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]" />
+        <Name value="main" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.PrintLnStatement, Console">
+                <Message type="ScratchNet.Identifier">
+                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                    <Variable value="a" />
+                    <VarType value="number|string|boolean" />
+                  </Expression>
+                </Message>
+              </Statement>
+              <Statement type="ScratchNet.IfStatement, ScriptEngine">
+                <Test type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="1" />
+                      </Expression>
+                    </Left>
+                    <Operator value="Equal" />
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="1" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="boolean" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Test>
+                <Consequent type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.CommentStatement, ScriptEngine">
+                        <Comment value="local variable" />
+                        <AllowMultiLine value="False" />
+                      </Statement>
+                      <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                        <Expression type="ScratchNet.VariableDeclarationExpression">
+                          <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                            <CanAssignValue value="True" />
+                            <Variable>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="a" />
+                              </Expression>
+                            </Variable>
+                            <Value>
+                              <Expression type="ScratchNet.Literal, ScriptEngine">
+                                <Raw value="5" />
+                              </Expression>
+                            </Value>
+                          </Expression>
+                        </Expression>
+                      </Statement>
+                      <Statement type="ScratchNet.PrintLnStatement, Console">
+                        <Message type="ScratchNet.Identifier">
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="a" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Message>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Consequent>
+              </Statement>
+              <Statement type="ScratchNet.PrintLnStatement, Console">
+                <Message type="ScratchNet.Identifier">
+                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                    <Variable value="a" />
+                    <VarType value="number|string|boolean" />
+                  </Expression>
+                </Message>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+    </Functions>
+    <Handlers />
+    <Expressions />
+    <BlockStatements>
+      <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine" x="158.233333333333" y="119.5">
+        <Body>
+          <Statement type="ScratchNet.CommentStatement, ScriptEngine">
+            <Comment value="global variable" />
+            <AllowMultiLine value="False" />
+          </Statement>
+          <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+            <Expression type="ScratchNet.VariableDeclarationExpression">
+              <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                <CanAssignValue value="True" />
+                <Variable>
+                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                    <Variable value="a" />
+                  </Expression>
+                </Variable>
+                <Value>
+                  <Expression type="ScratchNet.Literal, ScriptEngine">
+                    <Raw value="3" />
+                  </Expression>
+                </Value>
+              </Expression>
+            </Expression>
+          </Statement>
+        </Body>
+      </BlockStatement>
+    </BlockStatements>
+  </Class>
+</Script>

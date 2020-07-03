@@ -264,5 +264,19 @@ namespace ScratchNet
             DrawScript();
         }
 
+        private void OnPalyerKeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void OnPlayerKeyUp(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+        public bool IsFullSize = false;
+        private void OnChangeSizeClicked(object sender, RoutedEventArgs e)
+        {
+            IsFullSize = !IsFullSize;
+        }
     }
 }

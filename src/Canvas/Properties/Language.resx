@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AngleDescription" xml:space="preserve">
+    <value>heading direction</value>
+  </data>
+  <data name="ArcDescription" xml:space="preserve">
+    <value>draw a arc</value>
+  </data>
+  <data name="ClearDescription" xml:space="preserve">
+    <value>clear all the drawing</value>
+  </data>
+  <data name="ColorBlackDesc" xml:space="preserve">
+    <value>black</value>
+  </data>
+  <data name="ColorBlueDesc" xml:space="preserve">
+    <value>blue</value>
+  </data>
+  <data name="ColorCategory" xml:space="preserve">
+    <value>color</value>
+  </data>
+  <data name="ColorCategoryDesc" xml:space="preserve">
+    <value>color values</value>
+  </data>
+  <data name="ColorGreenDesc" xml:space="preserve">
+    <value>green</value>
+  </data>
+  <data name="ColorOrangeDesc" xml:space="preserve">
+    <value>orange</value>
+  </data>
+  <data name="ColorRedDesc" xml:space="preserve">
+    <value>red</value>
+  </data>
+  <data name="ColorValueOutRangeException" xml:space="preserve">
+    <value>value is out of range 0 to 255</value>
+  </data>
+  <data name="ColorWhiteDesc" xml:space="preserve">
+    <value>white</value>
+  </data>
+  <data name="ColorYellowDesc" xml:space="preserve">
+    <value>yello</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>drawing canvas</value>
+  </data>
+  <data name="DrawCategory" xml:space="preserve">
+    <value>draw</value>
+  </data>
+  <data name="DrawCategoryDesc" xml:space="preserve">
+    <value>draw on canvas</value>
+  </data>
+  <data name="FillColorDesc" xml:space="preserve">
+    <value>fill color</value>
+  </data>
+  <data name="FontSizeDesc" xml:space="preserve">
+    <value>font size</value>
+  </data>
+  <data name="LineColorDesc" xml:space="preserve">
+    <value>line color</value>
+  </data>
+  <data name="LineDescription" xml:space="preserve">
+    <value>draw a line</value>
+  </data>
+  <data name="LineSizeDesc" xml:space="preserve">
+    <value>line thickness</value>
+  </data>
+  <data name="LineToDescription" xml:space="preserve">
+    <value>draw a line to point</value>
+  </data>
+  <data name="MoveDescription" xml:space="preserve">
+    <value>move to position</value>
+  </data>
+  <data name="NotColorException" xml:space="preserve">
+    <value>only color value is accepted</value>
+  </data>
+  <data name="NullException" xml:space="preserve">
+    <value>Null Exception</value>
+  </data>
+  <data name="ParameterCategory" xml:space="preserve">
+    <value>parameter</value>
+  </data>
+  <data name="ParameterCategoryDesc" xml:space="preserve">
+    <value>drawing parameter</value>
+  </data>
+  <data name="PenDownDescription" xml:space="preserve">
+    <value>pen down to start painting</value>
+  </data>
+  <data name="PenUpDescription" xml:space="preserve">
+    <value>pen up to stop painting</value>
+  </data>
+  <data name="PositionCategory" xml:space="preserve">
+    <value>position</value>
+  </data>
+  <data name="PositionCategoryDesc" xml:space="preserve">
+    <value>drawing position</value>
+  </data>
+  <data name="ResetDescription" xml:space="preserve">
+    <value>reset canvas</value>
+  </data>
+  <data name="RGBDesc" xml:space="preserve">
+    <value>get color from rgb value</value>
+  </data>
+  <data name="RotateDescription" xml:space="preserve">
+    <value>rotate</value>
+  </data>
+  <data name="SetFontDesc" xml:space="preserve">
+    <value>set font</value>
+  </data>
+  <data name="StartFillDescription" xml:space="preserve">
+    <value>start fill</value>
+  </data>
+  <data name="StopFillDescription" xml:space="preserve">
+    <value>stop fill</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>draw a text</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Canvas</value>
+  </data>
+  <data name="ValueNotNumberException" xml:space="preserve">
+    <value>value is not number</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Drawing Canvas</value>
+  </data>
+  <data name="XPosDescription" xml:space="preserve">
+    <value>x position</value>
+  </data>
+  <data name="YPosDescription" xml:space="preserve">
+    <value>y position</value>
+  </data>
+</root>

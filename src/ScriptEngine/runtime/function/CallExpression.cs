@@ -13,6 +13,7 @@ namespace ScratchNet
             get;
             set;
         }
+        //public DelegateFunction DelegateFunction { get; set; }
         public string FunctionNameFormat { get; set; }
         public CallExpression()
         {
@@ -21,19 +22,34 @@ namespace ScratchNet
         }
         public List<Expression> Args { get; set; }
         public List<string> ArgTyps { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number|boolean|string"; }
         }
-
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
-            ExecutionEnvironment current = new ExecutionEnvironment();
+            /*
+            if (DelegateFunction != null)
+            {
+                List<object> ps = new List<object>();
+                for (int i = 0; i < Args.Count; i++)
+                {
+                    Expression e = Args[i];
+                    string name = ArgTyps[i];
 
+                    Completion cp = e.Execute(enviroment);
+                    if (cp.Type != CompletionType.Value)
+                        return cp;
+                    ps.Add(cp.ReturnValue);
+                }
+                DelegateFunction.Invoke(ps.ToArray());
+                return Completion.Void;
+            }*/
             foreach (var f in enviroment.Module.Functions)
             {
                 if (Function.Equals(f.Name))
                 {
+                    ExecutionEnvironment current = new ExecutionEnvironment(enviroment.GetInstanceEnvironment());
                     for (int i = 0; i < Args.Count; i++)
                     {
                         Expression e = Args[i];
@@ -58,7 +74,10 @@ namespace ScratchNet
                     {
                         Expression e = Args[i];
                         string name = ArgTyps[i];
-
+                        if (e == null)
+                        {
+                            return Completion.Exception(Properties.Language.ParameterNullException, this);
+                        }
                         Completion cp = e.Execute(enviroment);
                         if (cp.Type != CompletionType.Value)
                             return cp;
@@ -74,12 +93,13 @@ namespace ScratchNet
             return Completion.Void;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                if (string.IsNullOrEmpty(FunctionNameFormat))
+              
+                //if (string.IsNullOrEmpty(FunctionNameFormat))
                 {
                     desc.Add(new TextItemDescriptor(this, Function + "("));
                     if (Args != null && Args.Count > 0)
@@ -98,7 +118,7 @@ namespace ScratchNet
                     }
                     desc.Add(new TextItemDescriptor(this, ")"));
                 }
-                else
+                /*else
                 {
                     string[] part = FunctionNameFormat.Split(new string[] { "[[", "]]" }, StringSplitOptions.RemoveEmptyEntries);
                     int i = 0;
@@ -117,12 +137,12 @@ namespace ScratchNet
                         else
                             desc.Add(new TextItemDescriptor(this, s));
                     }
-                }
+                }*/
                 return desc;
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return ""; }
         }

@@ -7,9 +7,9 @@
     <ProjectGuid>{801CFD14-89D2-4B1E-9332-B22EC959BABA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScratchEditor</RootNamespace>
+    <RootNamespace>ScratchNet</RootNamespace>
     <AssemblyName>ScriptEditor</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -40,9 +40,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +68,7 @@
     <Compile Include="BlockStatementControl.xaml.cs">
       <DependentUpon>BlockStatementControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="color\EditorColors.cs" />
     <Compile Include="control\CurrentEnviroment.cs" />
     <Compile Include="control\ScriptStepGroup.cs" />
     <Compile Include="convertor\ActualWidthMinusConverter.cs" />
@@ -75,11 +81,19 @@
     <Compile Include="convertor\ImageConverter.cs" />
     <Compile Include="convertor\IsExpressionConverter.cs" />
     <Compile Include="convertor\IsNullVisibilityConverter.cs" />
+    <Compile Include="convertor\KeywordForegroundConverter.cs" />
     <Compile Include="convertor\ScriptContainerWidthConverter.cs" />
     <Compile Include="convertor\StringLiteralConverter.cs" />
     <Compile Include="convertor\TextNotEmptyConverter.cs" />
+    <Compile Include="convertor\VerticalAlignmentConverter.cs" />
+    <Compile Include="CreateFunctionDialogEx.xaml.cs">
+      <DependentUpon>CreateFunctionDialogEx.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateFunctionDlg.xaml.cs">
       <DependentUpon>CreateFunctionDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditorItemControl.xaml.cs">
+      <DependentUpon>EditorItemControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpressionControl.xaml.cs">
       <DependentUpon>ExpressionControl.xaml</DependentUpon>
@@ -90,38 +104,22 @@
     <Compile Include="GraphicScriptEditor.xaml.cs">
       <DependentUpon>GraphicScriptEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IErrorHighlight.cs" />
-    <Compile Include="localization\Localize.cs" />
-    <Compile Include="localization\Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="localization\Strings.ja-JP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.ja-JP.resx</DependentUpon>
-    </Compile>
-    <Compile Include="localization\Strings.zh-CN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.zh-CN.resx</DependentUpon>
-    </Compile>
+    <Compile Include="ISelectable.cs" />
     <Compile Include="ParameterIndicator.xaml.cs">
       <DependentUpon>ParameterIndicator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Language.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Language.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <Compile Include="Properties\Language.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="ScriptControlDataTemplateSelector.cs" />
     <Compile Include="SetVariableNameDialog.xaml.cs">
@@ -133,34 +131,12 @@
     <Compile Include="TextBoxExpressionHolder.xaml.cs">
       <DependentUpon>TextBoxExpressionHolder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TypeColorChangeEventArgs.cs" />
+    <Compile Include="util\DrawVisual.cs" />
     <Compile Include="util\Utility.cs" />
-    <EmbeddedResource Include="localization\Strings.ja-JP.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.ja-JP.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="localization\Strings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="localization\Strings.zh-CN.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.zh-CN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FontAwesome.WPF\FontAwesome.WPF.csproj">
-      <Project>{7006ac9f-d218-4d7b-98eb-5d2d91f69c57}</Project>
-      <Name>FontAwesome.WPF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
@@ -175,9 +151,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="CreateFunctionDialogEx.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateFunctionDlg.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditorItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExpressionControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -211,10 +195,20 @@
   <ItemGroup>
     <Resource Include="images\delete-512.png" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\colors.txt" />
-  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Language.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Language.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

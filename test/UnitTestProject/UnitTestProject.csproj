@@ -54,11 +54,16 @@
     <Compile Include="TestEnvronment.cs" />
     <Compile Include="TestExpression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestMath.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Math\Math.csproj">
+      <Project>{a0ff7df5-1936-4cc7-9e49-e2af197ec70f}</Project>
+      <Name>Math</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>

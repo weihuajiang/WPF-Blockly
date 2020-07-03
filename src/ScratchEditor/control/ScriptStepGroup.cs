@@ -5,6 +5,18 @@ using System.Text;
 
 namespace ScratchNet
 {
+    public class ScriptStep
+    {
+        public ScriptStep(Object step, bool isEditable = false, string tooltip=null)
+        {
+            StepObject = step;
+            IsColorEditable = isEditable;
+            Tooltip = tooltip;
+        }
+        public object StepObject { get; set; }
+        public bool IsColorEditable { get; set; } = false;
+        public string Tooltip { get; set; }
+    }
     public class ScriptStepGroup
     {
         public string Name { get; set; }

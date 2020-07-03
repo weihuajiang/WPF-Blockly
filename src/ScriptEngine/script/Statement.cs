@@ -7,17 +7,17 @@ using System.Text;
 namespace ScratchNet
 {
     //定义程序步骤,单步可执行语句
-    public interface Statement: Execution, INode
+    public abstract class Statement: Node
     {
-        string ReturnType { get; }
+        public abstract string ReturnType { get; }
 
         //描述步骤组成，用来绘制
-        Descriptor Descriptor { get; }
+        public abstract Descriptor Descriptor { get; }
 
         //ID used to store and load
-        string Type { get; }
-        BlockDescriptor BlockDescriptor { get; }
-        bool IsClosing { get; }
+        public abstract string Type { get; }
+        public abstract BlockDescriptor BlockDescriptor { get; }
+        public abstract bool IsClosing { get; }
     }
     
 }

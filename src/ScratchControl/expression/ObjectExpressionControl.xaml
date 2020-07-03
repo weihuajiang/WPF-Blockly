@@ -11,7 +11,7 @@
         <ColumnDefinition Width="auto"/>
     </Grid.ColumnDefinitions>
     <Border Name="LeftPart" Grid.Column="0"  Background="Green" BorderBrush="LightGray"
-                Width="8"
+                Width="8" SnapsToDevicePixels="True"
                 BorderThickness="1, 1, 0, 1"/>
     <Border Name="CenterPart" Grid.Column="1" MinWidth="20" BorderBrush="LightGray" BorderThickness="0,1,0,1" 
                 SnapsToDevicePixels="True"
@@ -19,6 +19,6 @@
         <StackPanel Margin="3,0" Orientation="Horizontal"  Name="Container" VerticalAlignment="Center"/>
     </Border>
     <Border Name="RightPart" Grid.Column="2" Background="Green" BorderBrush="LightGray"
-                Width="8"
+                Width="8" SnapsToDevicePixels="True"
                 BorderThickness="0, 1, 1, 1"/>
 </Grid>

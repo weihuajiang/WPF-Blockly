@@ -1,0 +1,173 @@
+<Script>
+  <Class type="ScratchNet.Script, VisualCodeEditor">
+    <Variables />
+    <Functions>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="220.233333333333" y="68.8333333333333">
+        <Format value="" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]" />
+        <Name value="main" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.CallExpression">
+                  <Expression type="ScratchNet.CallExpression, ScriptEngine">
+                    <Function value="test" />
+                    <FunctionNameFormat value="[[{{0}}]]" />
+                    <Args type="System.Collections.Generic.List`1[ScratchNet.Expression]">
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="5" />
+                      </Expression>
+                    </Args>
+                    <ArgTyps type="System.Collections.Generic.List`1[System.String]">
+                      <String value="number" />
+                    </ArgTyps>
+                  </Expression>
+                </Expression>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="443.566666666667" y="77.5">
+        <Format value="[[{{0}}]]" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]">
+          <Parameter type="ScratchNet.Parameter, ScriptEngine">
+            <Name value="number1" />
+            <Type value="number" />
+            <Direction value="In" />
+          </Parameter>
+        </Params>
+        <Name value="test" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ForStatement, ScriptEngine">
+                <Init type="ScratchNet.VariableDeclarationExpression">
+                  <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                    <Variable>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                      </Expression>
+                    </Variable>
+                    <Value>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="number1" />
+                        <VarType value="number" />
+                      </Expression>
+                    </Value>
+                  </Expression>
+                </Init>
+                <Test type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                        <VarType value="number|string|boolean" />
+                      </Expression>
+                    </Left>
+                    <Operator value="GreatOrEqual" />
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="0" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="boolean" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Test>
+                <Update type="ScratchNet.UpdateExpression">
+                  <Expression type="ScratchNet.UpdateExpression, ScriptEngine">
+                    <Expression>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                        <VarType value="number|string|boolean" />
+                      </Expression>
+                    </Expression>
+                    <Operator value="Minus" />
+                    <IsPrefix value="False" />
+                  </Expression>
+                </Update>
+                <Body type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.PrintLnStatement, Console">
+                        <Message type="ScratchNet.Identifier">
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="i" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Message>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Body>
+              </Statement>
+              <Statement type="ScratchNet.IfStatement, ScriptEngine">
+                <Test type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="number1" />
+                        <VarType value="number" />
+                      </Expression>
+                    </Left>
+                    <Operator value="GreatOrEqual" />
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="1" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="boolean" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Test>
+                <Consequent type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                        <Expression type="ScratchNet.CallExpression">
+                          <Expression type="ScratchNet.CallExpression, ScriptEngine">
+                            <Function value="test" />
+                            <FunctionNameFormat value="[[{{0}}]]" />
+                            <Args type="System.Collections.Generic.List`1[ScratchNet.Expression]">
+                              <Expression type="ScratchNet.UpdateExpression, ScriptEngine">
+                                <Expression>
+                                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                    <Variable value="number1" />
+                                    <VarType value="number" />
+                                  </Expression>
+                                </Expression>
+                                <Operator value="Minus" />
+                                <IsPrefix value="True" />
+                              </Expression>
+                            </Args>
+                            <ArgTyps type="System.Collections.Generic.List`1[System.String]">
+                              <String value="number" />
+                            </ArgTyps>
+                          </Expression>
+                        </Expression>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Consequent>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+    </Functions>
+    <Handlers />
+    <Expressions />
+    <BlockStatements>
+      <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine" x="352.9" y="23.5">
+        <Body />
+      </BlockStatement>
+      <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine" x="39.5666666666666" y="98.8333333333334">
+        <Body />
+      </BlockStatement>
+    </BlockStatements>
+  </Class>
+</Script>

@@ -13,11 +13,11 @@ namespace ScratchNet
             Y = new Literal() { Raw = "5" };
         }
         public Expression Y { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Y == null)
                 return Completion.Void;
@@ -43,7 +43,7 @@ namespace ScratchNet
 
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -53,7 +53,7 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
@@ -62,13 +62,13 @@ namespace ScratchNet
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
 
 
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

@@ -9,13 +9,20 @@ namespace ScratchNet
 {
     public class TypeConverters
     {
-        public static Type GetNumberTypes(object a, object b)
+        public static Type GetMaxTypes( params object[] values)
         {
-            var ac = (int)(a as IConvertible).GetTypeCode();
-            var bc = (int)(b as IConvertible).GetTypeCode();
-            var t = (TypeCode)Math.Max(ac, bc);
+            int max = 0;
+            foreach(var v in values)
+            {
+                var vc = (int)(v as IConvertible).GetTypeCode();
+                if (vc > max)
+                    max = vc;
+            }
+            var t = (TypeCode)max;
             switch (t)
             {
+                case TypeCode.Char:
+                    return typeof(char);
                 case TypeCode.Int32:
                     return typeof(int);
                 case TypeCode.UInt32:
@@ -34,6 +41,10 @@ namespace ScratchNet
                     return typeof(long);
                 case TypeCode.UInt64:
                     return typeof(ulong);
+                case TypeCode.DateTime:
+                    return typeof(DateTime);
+                case TypeCode.String:
+                    return typeof(string);
                 default:
                     return null;
             }
@@ -47,6 +58,8 @@ namespace ScratchNet
                 return false;
             switch (c.GetTypeCode())
             {
+                case TypeCode.Char:
+                case TypeCode.Byte:
                 case TypeCode.Int32:
                 case TypeCode.UInt32:
                 case TypeCode.Single:
@@ -83,7 +96,7 @@ namespace ScratchNet
                     }
                     catch { }
             }
-            throw new NotSupportedException(string.Format("can not convert {0} to {1}", value.GetType(), T));
+            throw new NotSupportedException(string.Format(Properties.Language.CanNotConvertException, value.GetType(), T));
         }
         public static T GetValue<T>(object value)
         {
@@ -100,7 +113,13 @@ namespace ScratchNet
             {
                 TypeConverter tc2 = TypeDescriptor.GetConverter(value.GetType());
                 if (tc.CanConvertTo(typeof(T)))
-                    return (T)tc2.ConvertTo(value, typeof(T));
+                {
+                    try
+                    {
+                        return (T)tc2.ConvertTo(value, typeof(T));
+                    }
+                    catch { }
+                }
                 else
                     try
                     {
@@ -108,7 +127,48 @@ namespace ScratchNet
                     }
                     catch { }
             }
-            throw new NotSupportedException(string.Format("can not convert {0} to {1}", value.GetType(), typeof(T)));
+            try
+            {
+                return (T)value;
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(int)))
+                    return (T)(object)Convert.ToInt32(value);
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(float)))
+                    return (T)(object)Convert.ToSingle(value);
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(double)))
+                    return (T)(object)Convert.ToDouble(value);
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(bool)))
+                    return (T)(object)Convert.ToBoolean(value);
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(long)))
+                    return (T)(object)Convert.ToInt64(value);
+            }
+            catch { }
+            try
+            {
+                if (typeof(T).Equals(typeof(char)))
+                    return (T)(object)Convert.ToChar(value);
+            }
+            catch { }
+            throw new NotSupportedException(string.Format(Properties.Language.CanNotConvertException, value.GetType(), typeof(T)));
 
         }
     }

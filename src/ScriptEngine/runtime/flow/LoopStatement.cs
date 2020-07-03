@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public class LoopStatement : Loop
+    public class LoopStatement : Statement
     {
         public LoopStatement()
         {
@@ -17,11 +17,11 @@ namespace ScratchNet
             get;
             set;
         }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Loop == null || Body == null || Body.Body.Count == 0)
                 return Completion.Void;
@@ -36,7 +36,7 @@ namespace ScratchNet
                 }
                 catch
                 {
-                    return Completion.Exception("loop parameter is not a number", Loop);
+                    return Completion.Exception(Properties.Language.NotNumber, Loop);
                 }
                 for(int i = 0; i < cycle; i++)
                 {
@@ -57,7 +57,7 @@ namespace ScratchNet
             return c;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -68,7 +68,7 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
@@ -77,14 +77,14 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "WhileStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

@@ -1,0 +1,25 @@
+﻿<Grid x:Class="ScratchControl.ObjectExpressionHolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScratchControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="auto"/>
+    </Grid.ColumnDefinitions>
+    <Border Name="LeftPart" Grid.Column="0" CornerRadius="0, 0, 0, 0" Background="White" BorderBrush="White"
+                Width="7"/>
+    <Grid Name="CenterPart" Grid.Column="1" MinWidth="20"
+                SnapsToDevicePixels="True" Background="White"
+                >
+        <TextBox Grid.Column="1" Name="TextInput" MinWidth="20" BorderThickness="0" TextChanged="TextInput_TextChanged" 
+                 VerticalAlignment="Center" Padding="0" Margin="0" FontSize="12"
+             PreviewTextInput="TextInput_PreviewTextInput"/>
+    </Grid>
+    <Border Name="RightPart" Grid.Column="2" CornerRadius="0, 0, 0, 0" Background="White" BorderBrush="White"
+                Width="7"/>
+</Grid>

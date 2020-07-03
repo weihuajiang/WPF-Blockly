@@ -12,11 +12,11 @@ namespace ScratchNet
             Params = new List<Parameter>();
             Body = new BlockStatement();
         }
-        public List<Parameter> Params { get; set; }
-        public string Name { get; set; }
-        public BlockStatement Body { get; set; }
+        public override List<Parameter> Params { get; set; }
+        public override string Name { get; set; }
+        public override BlockStatement Body { get; set; }
 
-        public virtual Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Body == null)
                 return Completion.Void;
@@ -28,17 +28,17 @@ namespace ScratchNet
             return Completion.Void;
         }
 
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
 
-        public virtual Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, Name+ "("));
+                desc.Add(new TextItemDescriptor(this,"event "+ Name+ "("));
                 int i = 0;
                 foreach (Parameter p in Params)
                 {
@@ -52,13 +52,13 @@ namespace ScratchNet
             }
         }
 
-        public virtual string Type
+        public override string Type
         {
             get { return "FunctionDeclaration"; }
         }
 
 
-        public virtual BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
@@ -73,16 +73,15 @@ namespace ScratchNet
         }
 
 
-        public Event Event
+        public override Event Event
         {
             get;
             set;
         }
 
-        public abstract bool IsProcessEvent(Event e);
 
 
-        public string Format
+        public override string Format
         {
             get;
             set;

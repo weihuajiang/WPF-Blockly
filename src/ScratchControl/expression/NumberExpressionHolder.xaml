@@ -17,7 +17,7 @@
                 SnapsToDevicePixels="True" Background="White"
                 >
         <TextBox Grid.Column="1" Name="TextInput" MinWidth="20" BorderThickness="0" TextChanged="TextInput_TextChanged" 
-                 VerticalAlignment="Center" Padding="0" Margin="0" FontSize="12" BorderBrush="Black"
+                 VerticalAlignment="Center" Padding="0" Margin="0" FontSize="12"
              PreviewTextInput="TextInput_PreviewTextInput"/>
     </Grid>
     <Border Name="RightPart" Grid.Column="2" CornerRadius="0, 7, 7, 0" Background="White" BorderBrush="White"

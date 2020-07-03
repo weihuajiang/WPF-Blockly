@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbountTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ApplicationAbort" xml:space="preserve">
+    <value>application aborted!</value>
+  </data>
+  <data name="ApplicationComplete" xml:space="preserve">
+    <value>application complete, Please press any key to close this window</value>
+  </data>
+  <data name="ArrayCollection" xml:space="preserve">
+    <value>array</value>
+  </data>
+  <data name="ArrayLengthDescription" xml:space="preserve">
+    <value>length of array</value>
+  </data>
+  <data name="ArrayValueDescription" xml:space="preserve">
+    <value>array value</value>
+  </data>
+  <data name="BinaryExpressionDescription" xml:space="preserve">
+    <value>binary operator</value>
+  </data>
+  <data name="BreakDescription" xml:space="preserve">
+    <value>break in loop and switch</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="ClearDescription" xml:space="preserve">
+    <value>clear all text in the console window</value>
+  </data>
+  <data name="ClearError" xml:space="preserve">
+    <value>Clear Error</value>
+  </data>
+  <data name="CommentCategory" xml:space="preserve">
+    <value>comment</value>
+  </data>
+  <data name="CommentCollection" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="CommentDescription" xml:space="preserve">
+    <value>write a comment</value>
+  </data>
+  <data name="CommentDescription1" xml:space="preserve">
+    <value>single line comment</value>
+  </data>
+  <data name="CommentDescription2" xml:space="preserve">
+    <value>multiple line comment</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Beijing Huarui Robotics Ltd,. Co</value>
+  </data>
+  <data name="ConditionExpressionCategory" xml:space="preserve">
+    <value>conditional expression</value>
+  </data>
+  <data name="ConditionExpressionDescription" xml:space="preserve">
+    <value>conditional expression</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ConsoleCategory" xml:space="preserve">
+    <value>console</value>
+  </data>
+  <data name="ContinueDescription" xml:space="preserve">
+    <value>continue in loop</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyRight" xml:space="preserve">
+    <value>Copyright by Beijing Huarui Robotics</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="DoWhileDescription" xml:space="preserve">
+    <value>do-while statement</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="ExampleArray" xml:space="preserve">
+    <value>Array</value>
+  </data>
+  <data name="ExampleArray2" xml:space="preserve">
+    <value>Two Dimensional Array</value>
+  </data>
+  <data name="ExampleArray2Desc" xml:space="preserve">
+    <value>How to use two dimensional array</value>
+  </data>
+  <data name="ExampleArrayDesc" xml:space="preserve">
+    <value>How to use array</value>
+  </data>
+  <data name="ExampleBinaryTree" xml:space="preserve">
+    <value>Binary Tree</value>
+  </data>
+  <data name="ExampleBinaryTreeDesc" xml:space="preserve">
+    <value>How to use binary tree</value>
+  </data>
+  <data name="ExampleCanvas" xml:space="preserve">
+    <value>Paint on Canvas</value>
+  </data>
+  <data name="ExampleCanvasDesc" xml:space="preserve">
+    <value>How to paint using Canvas</value>
+  </data>
+  <data name="ExampleLinkedList" xml:space="preserve">
+    <value>Linked List</value>
+  </data>
+  <data name="ExampleLinkedListDesc" xml:space="preserve">
+    <value>How to use linked list</value>
+  </data>
+  <data name="ExampleList" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="ExampleListDesc" xml:space="preserve">
+    <value>How to use list</value>
+  </data>
+  <data name="ExampleLogic" xml:space="preserve">
+    <value>Logical</value>
+  </data>
+  <data name="ExampleLogicDesc" xml:space="preserve">
+    <value>How to use if statement</value>
+  </data>
+  <data name="ExampleLoop" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="ExampleLoopDesc" xml:space="preserve">
+    <value>How to use loop statement</value>
+  </data>
+  <data name="ExampleNumber" xml:space="preserve">
+    <value>Narcissistic Number</value>
+  </data>
+  <data name="ExampleNumberDesc" xml:space="preserve">
+    <value>Example to calculate narcissistic number</value>
+  </data>
+  <data name="ExamplePrime" xml:space="preserve">
+    <value>Prime Number Calculation</value>
+  </data>
+  <data name="ExamplePrimeDesc" xml:space="preserve">
+    <value>Example to show prime number calculation</value>
+  </data>
+  <data name="ExampleQueue" xml:space="preserve">
+    <value>Queue</value>
+  </data>
+  <data name="ExampleQueueDesc" xml:space="preserve">
+    <value>How to use queue</value>
+  </data>
+  <data name="ExampleRecursive" xml:space="preserve">
+    <value>Recursive Function</value>
+  </data>
+  <data name="ExampleRecursiveDesc" xml:space="preserve">
+    <value>How to use function and recursive function</value>
+  </data>
+  <data name="ExampleSpeech" xml:space="preserve">
+    <value>Speech synthesis</value>
+  </data>
+  <data name="ExampleSpeechDesc" xml:space="preserve">
+    <value>How to use generate the voice</value>
+  </data>
+  <data name="ExampleStack" xml:space="preserve">
+    <value>Stack</value>
+  </data>
+  <data name="ExampleStackDesc" xml:space="preserve">
+    <value>How to use stack</value>
+  </data>
+  <data name="ExampleTitle" xml:space="preserve">
+    <value>Example List</value>
+  </data>
+  <data name="ExampleVariableScope" xml:space="preserve">
+    <value>Variable Scope</value>
+  </data>
+  <data name="ExampleVariableScopeDesc" xml:space="preserve">
+    <value>How to use global and local variables</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Exception during run</value>
+  </data>
+  <data name="ExceptionCategory" xml:space="preserve">
+    <value>exception</value>
+  </data>
+  <data name="ExceptionDuringRun" xml:space="preserve">
+    <value>Excpetion found during run：</value>
+  </data>
+  <data name="ExceptionLoadFile" xml:space="preserve">
+    <value>Exception found when load from {0}</value>
+  </data>
+  <data name="ExpressionStatementCategory" xml:space="preserve">
+    <value>expression statement</value>
+  </data>
+  <data name="ExpressionStatementDescription" xml:space="preserve">
+    <value>expression as one line</value>
+  </data>
+  <data name="ForDescription" xml:space="preserve">
+    <value>for statement</value>
+  </data>
+  <data name="FunctionCallCategory" xml:space="preserve">
+    <value>function call</value>
+  </data>
+  <data name="FunctionCollection" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="FunctionNewCategory" xml:space="preserve">
+    <value>create function</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Highligh Running Step and Value</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>How to use this editor</value>
+  </data>
+  <data name="IfCategory" xml:space="preserve">
+    <value>if</value>
+  </data>
+  <data name="IfDescription" xml:space="preserve">
+    <value>if statement</value>
+  </data>
+  <data name="IfElseStatementDescription" xml:space="preserve">
+    <value>if-else statement</value>
+  </data>
+  <data name="IfStatementDescription" xml:space="preserve">
+    <value>if statement</value>
+  </data>
+  <data name="IOCollection" xml:space="preserve">
+    <value>Input &amp; Output</value>
+  </data>
+  <data name="LanguageChange" xml:space="preserve">
+    <value>Language is changed, please reboot software to take affect.</value>
+  </data>
+  <data name="LanguageTooltip" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LibraryTitle" xml:space="preserve">
+    <value>Add/Remove Library</value>
+  </data>
+  <data name="LocateException" xml:space="preserve">
+    <value>Locate the exception position?</value>
+  </data>
+  <data name="LogicCategory" xml:space="preserve">
+    <value>logic operation</value>
+  </data>
+  <data name="LogicValueCategory" xml:space="preserve">
+    <value>logic</value>
+  </data>
+  <data name="LoopCategory" xml:space="preserve">
+    <value>loop</value>
+  </data>
+  <data name="MainNotFound" xml:space="preserve">
+    <value>main function is not defined, please add a main function!</value>
+  </data>
+  <data name="NewArray2Description" xml:space="preserve">
+    <value>create an two dimensional array</value>
+  </data>
+  <data name="NewArrayDescription" xml:space="preserve">
+    <value>create an array object</value>
+  </data>
+  <data name="NewStringDescription" xml:space="preserve">
+    <value>create a string</value>
+  </data>
+  <data name="NoMain" xml:space="preserve">
+    <value>no main function</value>
+  </data>
+  <data name="NotExpressionDescription" xml:space="preserve">
+    <value>not expression</value>
+  </data>
+  <data name="NullCategory" xml:space="preserve">
+    <value>null</value>
+  </data>
+  <data name="NumberOperatorCategory" xml:space="preserve">
+    <value>number &amp; operator</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open a File</value>
+  </data>
+  <data name="OperatorCollection" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="ParseDoubleDescription" xml:space="preserve">
+    <value>convert value to double value</value>
+  </data>
+  <data name="ParseFloatDescription" xml:space="preserve">
+    <value>convert value to float value</value>
+  </data>
+  <data name="ParseIntDescription" xml:space="preserve">
+    <value>convert value to integer</value>
+  </data>
+  <data name="ParseLongDescription" xml:space="preserve">
+    <value>convert value to long value</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>write text to console</value>
+  </data>
+  <data name="PrintLnDescription" xml:space="preserve">
+    <value>write text to console and followed by the current line terminator</value>
+  </data>
+  <data name="ReadDescripiton" xml:space="preserve">
+    <value>read one char from console</value>
+  </data>
+  <data name="ReadLnDescription" xml:space="preserve">
+    <value>read text of one line from console</value>
+  </data>
+  <data name="RequestRate" xml:space="preserve">
+    <value>Would you like to rate and review this application in Microsoft store?</value>
+  </data>
+  <data name="RequestRateTitle" xml:space="preserve">
+    <value>Rate and Review</value>
+  </data>
+  <data name="RequestSave" xml:space="preserve">
+    <value>Script is modified, would you like to save the script?</value>
+  </data>
+  <data name="RequestSaveTitle" xml:space="preserve">
+    <value>Save script?</value>
+  </data>
+  <data name="RequestVideo" xml:space="preserve">
+    <value>This is your first time using this tool, Would you like see the video to show how to use this tool?</value>
+  </data>
+  <data name="ReturnCategory" xml:space="preserve">
+    <value>return</value>
+  </data>
+  <data name="ReturnDescription" xml:space="preserve">
+    <value>return statement</value>
+  </data>
+  <data name="ReturnValueDescription" xml:space="preserve">
+    <value>return statement with value</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Excecution Speed</value>
+  </data>
+  <data name="StackMessage" xml:space="preserve">
+    <value>Stack exceed the maximum allowed size!</value>
+  </data>
+  <data name="StackTitle" xml:space="preserve">
+    <value>Stack Overflow</value>
+  </data>
+  <data name="StatementCollection" xml:space="preserve">
+    <value>Statement</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="StringCategory" xml:space="preserve">
+    <value>string</value>
+  </data>
+  <data name="StringIndexDescription" xml:space="preserve">
+    <value>find index of substring</value>
+  </data>
+  <data name="StringLastIndexDescription" xml:space="preserve">
+    <value>find the last index of substring</value>
+  </data>
+  <data name="StringLengthDescription" xml:space="preserve">
+    <value>string length</value>
+  </data>
+  <data name="StringSubDescription" xml:space="preserve">
+    <value>get substring from position</value>
+  </data>
+  <data name="SuccessLodFile" xml:space="preserve">
+    <value>successfully load script from {0}</value>
+  </data>
+  <data name="TryDescription" xml:space="preserve">
+    <value>try-catch statement</value>
+  </data>
+  <data name="TypeConvertCategory" xml:space="preserve">
+    <value>type convertion</value>
+  </data>
+  <data name="UpdateExpressionDescription" xml:space="preserve">
+    <value>update operator</value>
+  </data>
+  <data name="VariableAssignmentCategory" xml:space="preserve">
+    <value>variable assignment</value>
+  </data>
+  <data name="VariableAssignmentDescription" xml:space="preserve">
+    <value>assign value to variable</value>
+  </data>
+  <data name="VariableDecDescription" xml:space="preserve">
+    <value>declare a varaible</value>
+  </data>
+  <data name="VariableDecDescription2" xml:space="preserve">
+    <value>declear a variable and assign value</value>
+  </data>
+  <data name="VariableDefCategory" xml:space="preserve">
+    <value>variable defination</value>
+  </data>
+  <data name="VariableExample" xml:space="preserve">
+    <value>Variable</value>
+  </data>
+  <data name="VariableExampleDescription" xml:space="preserve">
+    <value>How to define variables</value>
+  </data>
+  <data name="VariableTypeCollection" xml:space="preserve">
+    <value>Variable &amp; Type</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="VisualCodeEditor" xml:space="preserve">
+    <value>Visual Code Editor</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>https://www.huaruirobot.com</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WhileDescription" xml:space="preserve">
+    <value>while statement</value>
+  </data>
+</root>

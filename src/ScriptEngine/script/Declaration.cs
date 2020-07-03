@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public interface Declaration : Execution, INode
+    public abstract class Declaration : Node
     {
     }
 }

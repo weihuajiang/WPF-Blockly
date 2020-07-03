@@ -1,0 +1,85 @@
+<Script>
+  <Class type="ScratchNet.Script, VisualCodeEditor">
+    <Variables />
+    <Functions>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="186.233333333333" y="24.8333333333333">
+        <Format value="" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]" />
+        <Name value="main" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.VariableDeclarationExpression">
+                  <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                    <CanAssignValue value="True" />
+                    <Variable>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="a" />
+                      </Expression>
+                    </Variable>
+                    <Value>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="5" />
+                      </Expression>
+                    </Value>
+                  </Expression>
+                </Expression>
+              </Statement>
+              <Statement type="ScratchNet.IfStatement, ScriptEngine">
+                <Test type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="a" />
+                        <VarType value="number|string|boolean" />
+                      </Expression>
+                    </Left>
+                    <Operator value="GreatOrEqual" />
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="10" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="boolean" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Test>
+                <Consequent type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.PrintLnStatement, Console">
+                        <Message type="ScratchNet.Literal">
+                          <Expression type="ScratchNet.Literal, ScriptEngine">
+                            <Raw value="&quot;a is great than or equal to 10&quot;" />
+                          </Expression>
+                        </Message>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Consequent>
+                <Alternate type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.PrintLnStatement, Console">
+                        <Message type="ScratchNet.Literal">
+                          <Expression type="ScratchNet.Literal, ScriptEngine">
+                            <Raw value="&quot;a is less than 10&quot;" />
+                          </Expression>
+                        </Message>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Alternate>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+    </Functions>
+    <Handlers />
+    <Expressions />
+    <BlockStatements />
+  </Class>
+</Script>

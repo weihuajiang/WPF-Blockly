@@ -31,7 +31,18 @@ namespace ScratchControl
             AllocConsole();
             NbExp.Expression = new ConditionalExpression() { Test=new Identifier(){Variable="abc"}, Consequent = new BinaryExpression(), Alternate = new Identifier() { Variable = "abc", VarType="boolean" } };
             BnExp.Expression = new ConditionalExpression();
-            
+            var control = ExpressionHelper.Build(new ConditionalExpression() { Test = new Identifier() { Variable = "abc" }, Consequent = new BinaryExpression(), Alternate = new Identifier() { Variable = "abc", VarType = "boolean" } });
+
+            Editor.Children.Add(control as UIElement);
+            Canvas.SetTop(control as UIElement, 200);
+            Canvas.SetLeft(control as UIElement, 50); 
+            var control2 = ExpressionHelper.Build(new BinaryExpression() );
+
+            Editor.Children.Add(control2 as UIElement);
+            Canvas.SetTop(control2 as UIElement, 250);
+            Canvas.SetLeft(control2 as UIElement, 50);
+
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

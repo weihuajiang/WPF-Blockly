@@ -14,7 +14,7 @@ namespace ScratchNet
     class Utility
     {
 
-        public static INode FindParents(Class script, INode node)
+        public static Node FindParents(Class script, Node node)
         {
             foreach (var f in script.Functions)
             {
@@ -27,7 +27,7 @@ namespace ScratchNet
 
             return null;
         }
-        public static INode FindParentsNode(INode container, INode node)
+        public static Node FindParentsNode(Node container, Node node)
         {
             PropertyInfo[] pinfo = container.GetType().GetProperties();
             foreach(var p in pinfo)
@@ -35,13 +35,29 @@ namespace ScratchNet
                 if (!p.CanWrite || !p.CanRead)
                     continue;
                 var value = p.GetValue(container);
-                if(value is INode)
+                if(value is Node)
                 {
                     if (value.Equals(node))
                         return container;
-                    var f = FindParentsNode(value as INode, node);
+                    var f = FindParentsNode(value as Node, node);
                     if (f != null)
                         return f;
+                }
+                else if(value is List<Expression>)
+                {
+                    var list = value as List<Expression>;
+                    foreach(var e in list)
+                    {
+                        if (e.Equals(node))
+                            return container;
+                        else
+                        {
+                            var f = FindParentsNode(e, node);
+                            if (f != null)
+                                return f;
+                        }
+                    }
+                       
                 }
                 if (value is BlockStatement)
                 {
@@ -49,7 +65,7 @@ namespace ScratchNet
                     {
                         if (px.Equals(node))
                             return container;
-                        var f = FindParentsNode(px as INode, node);
+                        var f = FindParentsNode(px as Node, node);
                         if (f != null)
                             return f;
                     }
@@ -57,7 +73,7 @@ namespace ScratchNet
             }
             return null;
         }
-        public static Control FindControl(FrameworkElement depObj, INode node)
+        public static Control FindControl(FrameworkElement depObj, Node node)
         {
             List<FrameworkElement> elements = new List<FrameworkElement>();
             elements.Add(depObj as FrameworkElement);
@@ -113,21 +129,19 @@ namespace ScratchNet
                 }
                 if(current is FunctionControl)
                 {
-                    INode value = (current as FunctionControl).Function;
+                    Node value = (current as FunctionControl).Function;
                     if (node.Equals(value))
                         return current as Control;
                 }
                 else if(current is StatementControl)
                 {
-                    INode value = (current as StatementControl).Statement;
+                    Node value = (current as StatementControl).Statement;
                     if (node.Equals(value))
                         return current as Control;
                 }
                 else if(current is ExpressionControl)
                 {
-                    INode value = (current as ExpressionControl).Expression;
-                    if (value is Literal)
-                        Console.WriteLine(current);
+                    Node value = (current as ExpressionControl).Expression;
                     if (node.Equals(value))
                         return current as Control;
                 }
@@ -416,135 +430,26 @@ namespace ScratchNet
         }
         public static Expression CloneExpression(Expression exp)
         {
-            if (exp == null)
-                return null;
-            Type t = exp.GetType();
-            Expression d = Activator.CreateInstance(t) as Expression;
-            PropertyInfo[] pinf = t.GetProperties();
-            foreach (PropertyInfo p in pinf)
-            {
-                if (p.CanRead && p.CanWrite)
-                {
-                    object v = p.GetValue(exp, null);
-                    if (v is Expression)
-                        v = CloneExpression(v as Expression);
-                     p.SetValue(d, v, null);
-                }
-            }
-            return d;
+            return exp.Clone();
         }
 
 
         public static Statement CloneStatement(Statement st)
         {
-            Type t = st.GetType();
-            Statement d = Activator.CreateInstance(t) as Statement;
-            PropertyInfo[] pinf = t.GetProperties();
-            foreach (PropertyInfo p in pinf)
-            {
-                if (p.CanRead && p.CanWrite)
-                {
-                    object pvalue = p.GetValue(st, null);
-                    if (pvalue is Expression)
-                    {
-                        pvalue = CloneExpression(pvalue as Expression);
-                    }
-                    else if (pvalue is BlockStatement)
-                    {
-                        pvalue = CloneBlockStatement(pvalue as BlockStatement);
-                    }
-                    else if (pvalue is Function)
-                    {
-                        pvalue = CloneFunction(pvalue as Function);
-                    }
-                    if (pvalue == null)
-                        continue;
-                    if (pvalue is List<Expression>)
-                    {
-                        try
-                        {
-                            List<Expression> target = pvalue as List<Expression>;
-                            List<Expression> nexps = new List<Expression>();
-                            foreach (Expression e in target)
-                            {
-                                nexps.Add(CloneExpression(e));
-                            }
-                            p.SetValue(d, nexps, null);
-                        }
-                        catch (Exception ex) { }
-                    }
-                    else if (pvalue is List<string>)
-                    {
-                        List<string> target = pvalue as List<string>;
-                        List<string> newStr = new List<string>();
-                        foreach (string pv in target)
-                            newStr.Add(pv);
-                        p.SetValue(d, newStr, null);
-                    }
-                    else
-                    {
-                        p.SetValue(d, pvalue, null);
-                    }
-
-                }
-            }
-            return d;
+            return st.Clone();
         }
         public static BlockStatement CloneBlockStatement(BlockStatement bs)
         {
-            Type t = bs.GetType();
-            BlockStatement d = Activator.CreateInstance(t) as BlockStatement;
-            foreach (Statement cst in bs.Body)
-            {
-                d.Body.Add(CloneStatement(cst));
-            }
-            return d;
+            return bs.Clone();
         }
 
         public static Function CloneFunction(Function st)
         {
-            Type t = st.GetType();
-            Function d = Activator.CreateInstance(t) as Function;
-            PropertyInfo[] pinf = t.GetProperties();
-            foreach (PropertyInfo p in pinf)
-            {
-                if (p.CanRead && p.CanWrite && p.Name != "Params")
-                {
-                    object pvalue = p.GetValue(st, null);
-                    if (pvalue is Expression)
-                    {
-                        pvalue = CloneExpression(pvalue as Expression);
-                    }
-                    else if (pvalue is Statement)
-                    {
-                        pvalue = CloneStatement(pvalue as Statement);
-                    }
-                    else if (pvalue is BlockStatement)
-                    {
-                        pvalue = CloneBlockStatement(pvalue as BlockStatement);
-                    }
-                    p.SetValue(d, pvalue, null);
-                }
-            }
-            foreach (Parameter p in st.Params)
-            {
-                d.Params.Add(CloneParameter(p));
-            }
-            return d;
+            return st.Clone();
         }
         public static Parameter CloneParameter(Parameter pa)
         {
-            Type t = pa.GetType();
-            Parameter d = Activator.CreateInstance(t) as Parameter;
-            PropertyInfo[] pinf = t.GetProperties();
-            foreach (PropertyInfo p in pinf)
-            {
-                if (p.CanRead && p.CanWrite)
-                {
-                    p.SetValue(d, p.GetValue(pa, null), null);
-                }
-            }
-            return d;
+            return pa.Clone();
         }
         
     }

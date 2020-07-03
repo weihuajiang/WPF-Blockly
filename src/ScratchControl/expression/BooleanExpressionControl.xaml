@@ -16,9 +16,9 @@
                      SnapsToDevicePixels="True" Width="7"/>
     <Polyline Name="Polyline1" 
                       VerticalAlignment="Stretch" Stretch="Fill" Points="4, 0, 0, 4,  4, 8" 
-                     Stroke="Black"
+                     Stroke="LightGray"
                      SnapsToDevicePixels="True" Width="7"/>
-    <Border Name="CenterPart" Grid.Column="1" MinWidth="20" BorderBrush="Black" BorderThickness="0,1,0,1" 
+    <Border Name="CenterPart" Grid.Column="1" MinWidth="20" BorderBrush="LightGray" BorderThickness="0,1,0,1" 
                 SnapsToDevicePixels="True"
                 Background="Green">
         <StackPanel Margin="3,0" Orientation="Horizontal"  Name="Container" VerticalAlignment="Center"/>
@@ -29,6 +29,6 @@
                      Points="0, 0, 0, 8, 4, 4" SnapsToDevicePixels="True" Width="7"/>
     <Polyline Name="Polyline2"
                       VerticalAlignment="Stretch" Stretch="Fill" Grid.Column="2" 
-                     Stroke="Black"
+                     Stroke="LightGray"
                      Points="0, 0, 4, 4, 0, 8"  SnapsToDevicePixels="True" Width="7"/>
 </Grid>

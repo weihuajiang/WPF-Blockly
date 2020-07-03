@@ -35,7 +35,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <t:ButtonChrome x:Name="Chrome" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}">
+                        <t:ButtonChrome x:Name="Chrome" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}">
                             <!-- Remove ToggleButton appearance; we still need the ToggleButton because it displays the content.
                         <Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                             <Path x:Name="Arrow" Fill="Black" HorizontalAlignment="Center" Margin="3,1,0,0" VerticalAlignment="Center" Data="{StaticResource DownArrowGeometry}"/>
@@ -168,7 +168,7 @@
                                     </Border>
                                 </t:SystemDropShadowChrome>
                             </Popup>
-                            <ToggleButton Style="{StaticResource ComboBoxReadonlyToggleButton}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <ToggleButton Style="{StaticResource ComboBoxReadonlyToggleButton}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" IsHitTestVisible="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -209,11 +209,15 @@
         <local:CanNumberConverter x:Key="CanNumberConverter"/>
         <local:CurrentEnviroment x:Key="AllVariable"/>
         <local:ImageConverter x:Key="ImageConverter"/>
-
+        <local:KeywordForegroundConverter x:Key="KeywordForegroundConverter"/>
+        <local:KeywordFontWeightConverter x:Key="KeywordFontWeightConverter"/>
+        <DataTemplate DataType="{x:Type script:VariableDeclarationDescription}">
+            <local:ParameterIndicator Parameter="{Binding}" VerticalAlignment="Center"/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type script:SelectionItemDescriptor}">
-            <ComboBox Margin="0" MinWidth="30" BorderThickness="0" Padding="3,2,3,2"  Style="{DynamicResource ButtonlessComboBoxStyle}"
+            <ComboBox Margin="0" MinWidth="30" BorderThickness="0" Padding="3,2,3,2"  Style="{DynamicResource ButtonlessComboBoxStyle}" VerticalAlignment="Center"
                       Background="{Binding ElementName=FunctionListView, Path=Backgroud}" HorizontalAlignment="Center" HorizontalContentAlignment="Center"
-                      SelectedValue="{Binding Path=Value}" ItemsSource="{Binding Path=Texts}" >
+                      SelectedValue="{Binding Path=Value}" ItemsSource="{Binding Path=Texts}">
                 <ComboBox.ItemContainerStyle>
                     <Style TargetType="ComboBoxItem">
                         <Setter Property="Padding" Value="0"/>
@@ -230,8 +234,14 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:TextItemDescriptor}">
             <TextBlock Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
-                       VerticalAlignment="Center" Padding="0"
+                       Foreground="{Binding Path=IsKeyword, Converter={StaticResource KeywordForegroundConverter}}"
+                       FontWeight="{Binding Path=IsKeyword, Converter={StaticResource KeywordFontWeightConverter}}"
+                       VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center"
                        Focusable="False" Margin="0" Text="{Binding Path=Text}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type script:StringInputDesciptor}">
+            <TextBox Margin="3,2, 3, 2" MinWidth="20" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Text="{Binding Path=Value}" 
+                     Padding="0" VerticalAlignment="Center" BorderThickness="0"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:ExpressionDescriptor}">
             <local:TextBoxExpressionHolder ExpressionDescriptor="{Binding}" BkColor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"/>
@@ -268,30 +278,30 @@
                              Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanBooleanConverter}}"/>
                     <Polyline VerticalAlignment="Stretch" Points="4, 0, 0, 4, 4, 8" SnapsToDevicePixels="True"
                               Margin="0" Stretch="Fill" Width="7"
-                             Stroke="Black"
+                             Stroke="LightGray"
                              Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanBooleanConverter}}"/>
                     <Polygon VerticalAlignment="Stretch" Grid.Column="2" Points="0, 0, 0, 8, 4, 4" Stretch="Fill"
                              Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                              SnapsToDevicePixels="True" Width="7"
                              Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanBooleanConverter}}"/>
                     <Polyline VerticalAlignment="Stretch" Grid.Column="2" Points="0, 0, 4, 4, 0, 8" Stretch="Fill"
-                             Stroke="Black"
+                             Stroke="LightGray"
                              SnapsToDevicePixels="True" Width="7"
                              Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanBooleanConverter}}"/>
                     <Border VerticalAlignment="Stretch" CornerRadius="6,0,0,6 " Width="7" Grid.Column="0" 
-                            BorderBrush="Black"
+                            BorderBrush="LightGray"
                             BorderThickness="1, 1, 0, 1"
                             Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" 
                             SnapsToDevicePixels="True"
                             Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanNotBooleanConverter}}"/>
                     <Border VerticalAlignment="Stretch" CornerRadius="0,6,6,0 " Width="7" Grid.Column="2" 
-                            BorderBrush="Black"
+                            BorderBrush="LightGray"
                             BorderThickness="0, 1, 1, 1"
                             Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" 
                             SnapsToDevicePixels="True"
                             Visibility="{Binding Path=Expression.ReturnType, Converter={StaticResource CanNotBooleanConverter}}"/>
                     <Border Margin="0,0,0,0" Grid.Column="1" 
-                            BorderBrush="Black"
+                            BorderBrush="LightGray"
                             BorderThickness="0, 1, 0, 1"
                             Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                             SnapsToDevicePixels="True">

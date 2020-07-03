@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScratchNet.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,15 +29,17 @@ namespace ScratchNet
             }
         }
 
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Test == null)
-                return Completion.Void;
+                return Completion.Exception(Language.NullException, this);
             var t = Test.Execute(enviroment);
+            if (t.Type != CompletionType.Value)
+                return t;
             if (t.ReturnValue is bool)
             {
                 if ((bool)t.ReturnValue)
@@ -55,21 +58,22 @@ namespace ScratchNet
                 }
             }
             else
-                return new Completion("Test return not boolean value", CompletionType.Exception);
+                return Completion.Exception(Properties.Language.NotBoolean, Test);
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "If "));
-                desc.Add(new ExpressionDescriptor(this, "Test", "boolean"));
-                desc.Add(new TextItemDescriptor(this, " then"));
+                desc.Add(new TextItemDescriptor(this, "if ", true));
+                desc.Add(new TextItemDescriptor(this, "("));
+                desc.Add(new ExpressionDescriptor(this, "Test", "boolean") { IsOnlyNumberAllowed = false });
+                desc.Add(new TextItemDescriptor(this, ")"));
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
@@ -77,20 +81,22 @@ namespace ScratchNet
                 block.Add(new BlockStatementDescriptor(this, "Consequent"));
                 if (Alternate != null)
                 {
-                    block.Add(new TextBlockStatementDescritor(this, "Alternate", "Else"));
+                    Descriptor d = new Descriptor();
+                    d.Add(new TextItemDescriptor(this, "else", true));
+                    block.Add(new ExpressionStatementDescription(this, "else", d));
                     block.Add(new BlockStatementDescriptor(this, "Alternate"));
                 }
                 return block;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "IfStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

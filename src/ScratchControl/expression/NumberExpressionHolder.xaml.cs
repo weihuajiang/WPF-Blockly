@@ -94,7 +94,11 @@ namespace ScratchControl
         }
         private void TextInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (Descriptor != null && Descriptor.IsOnlyNumberAllowed)
+            if (Descriptor!=null && Descriptor.NothingAllowed)
+            {
+                e.Handled = true;
+            }
+            else if (Descriptor != null && Descriptor.IsOnlyNumberAllowed)
             {
                 e.Handled = !IsTextAllowed(e.Text);
             }

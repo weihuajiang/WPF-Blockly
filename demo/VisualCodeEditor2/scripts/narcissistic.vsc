@@ -1,0 +1,317 @@
+<Script>
+  <Class type="ScratchNet.Script, VisualCodeEditor">
+    <Variables />
+    <Functions>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="186.233333333333" y="24.8333333333333">
+        <Format value="" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]" />
+        <Name value="main" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ForStatement, ScriptEngine">
+                <Init type="ScratchNet.VariableDeclarationExpression">
+                  <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                    <CanAssignValue value="True" />
+                    <Variable>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                      </Expression>
+                    </Variable>
+                    <Value>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="100" />
+                      </Expression>
+                    </Value>
+                  </Expression>
+                </Init>
+                <Test type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                        <VarType value="number|string|boolean" />
+                      </Expression>
+                    </Left>
+                    <Operator value="LessOrEqual" />
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="999" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="boolean" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Test>
+                <Update type="ScratchNet.UpdateExpression">
+                  <Expression type="ScratchNet.UpdateExpression, ScriptEngine">
+                    <Expression>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="i" />
+                        <VarType value="number|string|boolean" />
+                      </Expression>
+                    </Expression>
+                    <Operator value="Add" />
+                    <IsPrefix value="False" />
+                  </Expression>
+                </Update>
+                <Body type="ScratchNet.BlockStatement">
+                  <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                    <Body>
+                      <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                        <Expression type="ScratchNet.VariableDeclarationExpression">
+                          <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                            <CanAssignValue value="True" />
+                            <Variable>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="a" />
+                              </Expression>
+                            </Variable>
+                            <Value>
+                              <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                <Left>
+                                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                    <Variable value="i" />
+                                    <VarType value="number|string|boolean" />
+                                  </Expression>
+                                </Left>
+                                <Operator value="Divide" />
+                                <Right>
+                                  <Expression type="ScratchNet.Literal, ScriptEngine">
+                                    <Raw value="100" />
+                                  </Expression>
+                                </Right>
+                                <ValueType value="any" />
+                                <PropertyType value="any" />
+                              </Expression>
+                            </Value>
+                          </Expression>
+                        </Expression>
+                      </Statement>
+                      <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                        <Expression type="ScratchNet.VariableDeclarationExpression">
+                          <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                            <CanAssignValue value="True" />
+                            <Variable>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="b" />
+                              </Expression>
+                            </Variable>
+                            <Value>
+                              <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                <Left>
+                                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                    <Left>
+                                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                        <Variable value="i" />
+                                        <VarType value="number|string|boolean" />
+                                      </Expression>
+                                    </Left>
+                                    <Operator value="Divide" />
+                                    <Right>
+                                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                                        <Raw value="10" />
+                                      </Expression>
+                                    </Right>
+                                    <ValueType value="any" />
+                                    <PropertyType value="any" />
+                                  </Expression>
+                                </Left>
+                                <Operator value="Mod" />
+                                <Right>
+                                  <Expression type="ScratchNet.Literal, ScriptEngine">
+                                    <Raw value="10" />
+                                  </Expression>
+                                </Right>
+                                <ValueType value="any" />
+                                <PropertyType value="any" />
+                              </Expression>
+                            </Value>
+                          </Expression>
+                        </Expression>
+                      </Statement>
+                      <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                        <Expression type="ScratchNet.VariableDeclarationExpression">
+                          <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                            <CanAssignValue value="True" />
+                            <Variable>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="c" />
+                              </Expression>
+                            </Variable>
+                            <Value>
+                              <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                <Left>
+                                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                    <Variable value="i" />
+                                    <VarType value="number|string|boolean" />
+                                  </Expression>
+                                </Left>
+                                <Operator value="Mod" />
+                                <Right>
+                                  <Expression type="ScratchNet.Literal, ScriptEngine">
+                                    <Raw value="10" />
+                                  </Expression>
+                                </Right>
+                                <ValueType value="any" />
+                                <PropertyType value="any" />
+                              </Expression>
+                            </Value>
+                          </Expression>
+                        </Expression>
+                      </Statement>
+                      <Statement type="ScratchNet.IfStatement, ScriptEngine">
+                        <Test type="ScratchNet.BinaryExpression">
+                          <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                            <Left>
+                              <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                <Left>
+                                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                                    <Left>
+                                      <Expression type="ScratchNet.CallExpression, ScriptEngine">
+                                        <Function value="a3" />
+                                        <FunctionNameFormat value="[[{{0}}]]" />
+                                        <Args type="System.Collections.Generic.List`1[ScratchNet.Expression]">
+                                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                            <Variable value="a" />
+                                            <VarType value="number|string|boolean" />
+                                          </Expression>
+                                        </Args>
+                                        <ArgTyps type="System.Collections.Generic.List`1[System.String]">
+                                          <String value="number" />
+                                        </ArgTyps>
+                                      </Expression>
+                                    </Left>
+                                    <Operator value="Add" />
+                                    <Right>
+                                      <Expression type="ScratchNet.CallExpression, ScriptEngine">
+                                        <Function value="a3" />
+                                        <FunctionNameFormat value="[[{{0}}]]" />
+                                        <Args type="System.Collections.Generic.List`1[ScratchNet.Expression]">
+                                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                            <Variable value="b" />
+                                            <VarType value="number|string|boolean" />
+                                          </Expression>
+                                        </Args>
+                                        <ArgTyps type="System.Collections.Generic.List`1[System.String]">
+                                          <String value="number" />
+                                        </ArgTyps>
+                                      </Expression>
+                                    </Right>
+                                    <ValueType value="any" />
+                                    <PropertyType value="any" />
+                                  </Expression>
+                                </Left>
+                                <Operator value="Add" />
+                                <Right>
+                                  <Expression type="ScratchNet.CallExpression, ScriptEngine">
+                                    <Function value="a3" />
+                                    <FunctionNameFormat value="[[{{0}}]]" />
+                                    <Args type="System.Collections.Generic.List`1[ScratchNet.Expression]">
+                                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                        <Variable value="c" />
+                                        <VarType value="number|string|boolean" />
+                                      </Expression>
+                                    </Args>
+                                    <ArgTyps type="System.Collections.Generic.List`1[System.String]">
+                                      <String value="number" />
+                                    </ArgTyps>
+                                  </Expression>
+                                </Right>
+                                <ValueType value="any" />
+                                <PropertyType value="any" />
+                              </Expression>
+                            </Left>
+                            <Operator value="Equal" />
+                            <Right>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="i" />
+                                <VarType value="number|string|boolean" />
+                              </Expression>
+                            </Right>
+                            <ValueType value="boolean" />
+                            <PropertyType value="any" />
+                          </Expression>
+                        </Test>
+                        <Consequent type="ScratchNet.BlockStatement">
+                          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+                            <Body>
+                              <Statement type="ScratchNet.PrintLnStatement, Console">
+                                <Message type="ScratchNet.Identifier">
+                                  <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                    <Variable value="i" />
+                                    <VarType value="number|string|boolean" />
+                                  </Expression>
+                                </Message>
+                              </Statement>
+                            </Body>
+                          </BlockStatement>
+                        </Consequent>
+                      </Statement>
+                    </Body>
+                  </BlockStatement>
+                </Body>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="200.608333333333" y="404.833333333333">
+        <Format value="[[{{0}}]]" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]">
+          <Parameter type="ScratchNet.Parameter, ScriptEngine">
+            <Name value="a" />
+            <Type value="number" />
+            <Direction value="In" />
+          </Parameter>
+        </Params>
+        <Name value="a3" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ReturnStatement, ScriptEngine">
+                <Expression type="ScratchNet.BinaryExpression">
+                  <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.BinaryExpression, ScriptEngine">
+                        <Left>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="a" />
+                            <VarType value="number" />
+                          </Expression>
+                        </Left>
+                        <Operator value="Mulitiply" />
+                        <Right>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="a" />
+                            <VarType value="number" />
+                          </Expression>
+                        </Right>
+                        <ValueType value="any" />
+                        <PropertyType value="any" />
+                      </Expression>
+                    </Left>
+                    <Operator value="Mulitiply" />
+                    <Right>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="a" />
+                        <VarType value="number" />
+                      </Expression>
+                    </Right>
+                    <ValueType value="any" />
+                    <PropertyType value="any" />
+                  </Expression>
+                </Expression>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+    </Functions>
+    <Handlers />
+    <Expressions />
+    <BlockStatements />
+  </Class>
+</Script>

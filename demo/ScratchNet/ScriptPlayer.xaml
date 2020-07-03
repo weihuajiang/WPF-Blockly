@@ -24,7 +24,7 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="5" Grid.Column="0">
+                <Button Margin="5" Grid.Column="0" Click="OnChangeSizeClicked">
                     <Button.Template>
                         <ControlTemplate>
                             <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="ArrowsAlt"/>
@@ -57,10 +57,10 @@
                 </Button>
             </Grid>
         </Border>
-        <Canvas Name="PlayScreen" ClipToBounds="True" SizeChanged="PlayScreen_SizeChanged" Background="White"
+        <Canvas Name="PlayScreen" ClipToBounds="True" SizeChanged="PlayScreen_SizeChanged" Background="White" Focusable="True"
                 Height="{Binding ElementName=PlayerContainer, Path=ActualWidth, Converter={StaticResource ActualWidth43Converter}}" 
                 Grid.Row="1" MouseLeftButtonDown="OnMouseLeftDown" MouseLeftButtonUp="OnMouseLeftUp" 
-                MouseMove="OnMouseMove" MouseLeave="PlayScreen_MouseLeave"
+                MouseMove="OnMouseMove" MouseLeave="PlayScreen_MouseLeave" KeyDown="OnPalyerKeyDown" KeyUp="OnPlayerKeyUp"
         >
             
         </Canvas>

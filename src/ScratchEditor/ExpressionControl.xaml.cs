@@ -1,5 +1,4 @@
-﻿using ScratchEditor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -22,7 +22,7 @@ namespace ScratchNet
     /// <summary>
     /// Interaction logic for ExpressionControl.xaml
     /// </summary>
-    public partial class ExpressionControl : UserControl, IErrorHighlight
+    public partial class ExpressionControl : UserControl, ISelectable 
     {
         public ExpressionControl()
         {
@@ -43,6 +43,29 @@ namespace ScratchNet
             set
             {
                 this.SetValue(DesignModeProperty, value);
+            }
+        }
+        bool _isSelected = false;
+        public bool IsSelected
+        {
+            set
+            {
+                _isSelected = value;
+                if (value)
+                    ExpressionListView.Effect = new DropShadowEffect() { ShadowDepth = 3 };
+                else
+                    ExpressionListView.Effect = null;
+            }
+            get
+            {
+                return _isSelected;
+            }
+        }
+        public Node SelectedValue
+        {
+            get
+            {
+                return Expression;
             }
         }
         public Expression Expression
@@ -68,15 +91,6 @@ namespace ScratchNet
             {
                 e.Handled = true;
             }
-        }
-        public void HighlightError()
-        {
-            HighlightHelper.HighlightError(this);
-        }
-
-        public void ClearHighlightError()
-        {
-            HighlightHelper.ClearHighlightError();
         }
     }
     

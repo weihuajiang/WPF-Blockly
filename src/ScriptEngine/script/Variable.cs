@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public interface Variable : Declaration
+    public abstract class Variable : Declaration
     {
-        string Name { get; set; }
-        string Type { get; set; }
-        object Value { get; set; }
+        public abstract string Name { get; set; }
+        public abstract string Type { get; set; }
+        public abstract object Value { get; set; }
     }
 }

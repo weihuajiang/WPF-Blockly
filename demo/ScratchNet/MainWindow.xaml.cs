@@ -34,6 +34,18 @@ namespace ScratchNet
             this.SpriteList.SpriteListView.SelectionChanged += SpriteListView_SelectionChanged;
             //this.SpriteList.BackgroundContainer.Checked += BackgroundContainer_Checked;
             this.ScriptPlayer.PlayScreen.PreviewMouseMove += PlayScreen_PreviewMouseMove;
+
+            ScriptEditor.Register(((Color)ColorConverter.ConvertFromString("#4C97FF")), typeof(MoveStatement),
+                typeof(RotationStatement), typeof(ReflectionStatement), typeof(SetRotationModeStatement), typeof(SetDegreeStatement),
+                typeof(SetPositionStatement), typeof(SetPositionXStatement), typeof(SetPositionYStatement), typeof(TimedMoveStatement),
+                typeof(XPositionExpression), typeof(YPositionExpression), typeof(DegreeExpression));
+
+            ScriptEditor.Register(((Color)ColorConverter.ConvertFromString("#9966FF")), typeof(ResizeStatement),
+                typeof(SetImageStatement), typeof(SetNextImageStatement), typeof(ShowStatement), typeof(HideStatement), typeof(SizeExpression));
+
+            ScriptEditor.Register(((Color)ColorConverter.ConvertFromString("#FFBF00")), typeof(StartEventHandler),
+                typeof(ClickEventHandler), typeof(MessageEvetHandler));
+
             List<ScriptStepGroup> toolbar = new List<ScriptStepGroup>();
             toolbar.Add(new ScriptStepGroup()
             {
@@ -71,8 +83,8 @@ namespace ScratchNet
             {
                 Name = Localize.GetString("xc_Logic"),
                 Types = new List<object>(){
-                    new CompareExpression(),
-                    new LogicExpression(),
+                    new BinaryExpression(){ ValueType="boolean", Operator= Operator.Equal },//compare operator
+                    new BinaryExpression(){ValueType="boolean", Operator= Operator.And },//logical operator
                     new NotExpression()
                 }
             });
@@ -115,7 +127,7 @@ namespace ScratchNet
                 Name = Localize.GetString("xc_Variable"),
                 Types = new List<object>(){
                     "CreateVariable",
-                    new AssignmentStatement(),
+                    new ExpressionStatement(){ Expression= new AssignmentExpression() }
                 }
             });
             toolbar.Add(new ScriptStepGroup()

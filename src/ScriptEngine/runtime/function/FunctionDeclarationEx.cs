@@ -5,19 +5,23 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public class FunctionDeclarationEx : Function
+    public class FunctionDeclaration : Function
     {
-        public FunctionDeclarationEx()
+        public FunctionDeclaration()
         {
             Params = new List<Parameter>();
             Body = new BlockStatement();
         }
-        public string Format { get; set; }
-        public List<Parameter> Params { get; set; }
-        public string Name { get; set; }
-        public BlockStatement Body { get; set; }
+        public override string Format { get; set; }
+        public override List<Parameter> Params { get; set; }
+        /// <summary>
+        /// function name
+        /// </summary>
+        public override string Name { get; set; }
+        public override BlockStatement Body { get; set; }
+        public bool ShowFunctionName { get; set; } = true;
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Body == null)
                 return Completion.Void;
@@ -29,17 +33,18 @@ namespace ScratchNet
             return Completion.Void;
         }
 
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number|boolean|string"; }
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                if (!string.IsNullOrEmpty(Format))
+                desc.Add(new TextItemDescriptor(this, "function ", true));
+                if (!ShowFunctionName && !string.IsNullOrEmpty(Format))
                 {
                     string[] part = Format.Split(new string[] { "[[", "]]" }, StringSplitOptions.RemoveEmptyEntries);
                     int i = 0;
@@ -74,13 +79,13 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "FunctionDeclarationEx"; }
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {

@@ -8,28 +8,29 @@ namespace ScratchNet
     public class ExpressionStatement : Statement
     {
         public Expression Expression { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "boolean|number|string"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Expression == null)
-                return new Completion(null);
+                return Completion.Void;
             return Expression.Execute(enviroment);
             
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new ExpressionDescriptor(this, "Expression", "number|string|boolean"));
+                desc.Add(new ExpressionDescriptor(this, "Expression", "number|string|boolean") { AcceptVariableDeclaration = true, NothingAllowed = true });
+                desc.Add(new TextItemDescriptor(this, ";"));
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
@@ -38,13 +39,13 @@ namespace ScratchNet
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
 
 
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

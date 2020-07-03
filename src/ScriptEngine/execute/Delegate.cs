@@ -35,6 +35,14 @@ namespace ScratchNet
             Target = target;
             Method = method;
         }
+        public static DelegateFunction CreateDelegate(Type type, string method)
+        {
+            MethodInfo m = type.GetMethod(method);
+
+            if (m != null)
+                return new DelegateFunction(null, m);
+            return null;
+        }
         public static DelegateFunction CreateDelegate(object target, string method)
         {
             MethodInfo m = target.GetType().GetMethod(method);

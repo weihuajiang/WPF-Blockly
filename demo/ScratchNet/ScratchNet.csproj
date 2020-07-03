@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScratchNet</RootNamespace>
     <AssemblyName>ScratchNet</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -37,6 +37,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -177,6 +180,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,9 +188,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FontAwesome.WPF\FontAwesome.WPF.csproj">
-      <Project>{7006ac9f-d218-4d7b-98eb-5d2d91f69c57}</Project>
-      <Name>FontAwesome.WPF</Name>
+    <ProjectReference Include="..\..\src\Math\Math.csproj">
+      <Project>{a0ff7df5-1936-4cc7-9e49-e2af197ec70f}</Project>
+      <Name>Math</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\ScratchEditor\ScriptEditor.csproj">
       <Project>{801cfd14-89d2-4b1e-9332-b22ec959baba}</Project>
@@ -195,6 +199,10 @@
     <ProjectReference Include="..\..\src\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Thread\Thread.csproj">
+      <Project>{6e2ff20a-0a70-42eb-9d7f-232825741aff}</Project>
+      <Name>Thread</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

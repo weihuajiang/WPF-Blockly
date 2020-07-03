@@ -291,6 +291,24 @@ namespace ScratchNet
                             node.AppendChild(ceNode);
                             exNode.AppendChild(node);
                         }
+                        else if (v is List<Expression>)
+                        {
+                            XmlNode lnode = CreateNode(xmlDoc, p.Name, "type", v.GetType() + "");
+                            foreach (Expression exp in (v as List<Expression>))
+                            {
+                                lnode.AppendChild(CreateExpressionNode(exp, xmlDoc));
+                            }
+                            exNode.AppendChild(lnode);
+                        }
+                        else if (v is List<string>)
+                        {
+                            XmlNode lnode = CreateNode(xmlDoc, p.Name, "type", v.GetType() + "");
+                            foreach (string str in (v as List<string>))
+                            {
+                                lnode.AppendChild(CreateNode(xmlDoc, "String", "value", str + ""));
+                            }
+                            exNode.AppendChild(lnode);
+                        }
                         else if (v != null)
                         {
                             exNode.AppendChild(CreateNode(xmlDoc, p.Name, "value", v + ""));
@@ -701,7 +719,27 @@ namespace ScratchNet
                 if(!pType.Equals(typeof(object)) && pType.IsAssignableFrom(typeof(Expression))){
                     property.SetValue(exp, LoadExpression(node.ChildNodes[0]));
                 }
-                else{
+                else if (pType.IsAssignableFrom(typeof(List<Expression>)))
+                {
+                    List<Expression> expressions = new List<Expression>();
+                    foreach (XmlNode enode in node.ChildNodes)
+                    {
+                        expressions.Add(LoadExpression(enode));
+                    }
+                    property.SetValue(exp, expressions);
+                }
+                else if (pType.IsAssignableFrom(typeof(List<string>)))
+                {
+                    List<String> str = new List<string>();
+                    foreach (XmlNode snode in node.ChildNodes)
+                    {
+                        if (snode.Name == "String")
+                            str.Add(snode.Attributes["value"].Value);
+                    }
+                    property.SetValue(exp, str);
+                }
+                else
+                {
                     string value=node.Attributes["value"].Value;
                     object obj=ConvertTo(value, pType);
                     if(obj!=null)

@@ -5,22 +5,22 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public interface Function : Declaration
+    public abstract class Function : Declaration
     {
-        string ReturnType { get; }
+        public abstract string ReturnType { get; }
 
         //描述步骤组成，用来绘制
-        Descriptor Descriptor { get; }
+        public abstract Descriptor Descriptor { get; }
 
         //ID used to store and load
-        string Type { get; }
+        public abstract string Type { get; }
 
         //parameter descriptions
-        string Name { get; set; }
-        List<Parameter> Params { get; set; }
-        string Format { get;set;}
-        BlockStatement Body { get; set; }
-        BlockDescriptor BlockDescriptor { get; }
+        public abstract string Name { get; set; }
+        public abstract List<Parameter> Params { get; set; }
+        public abstract string Format { get;set;}
+        public abstract BlockStatement Body { get; set; }
+        public abstract BlockDescriptor BlockDescriptor { get; }
     }
     public class Parameter
     {

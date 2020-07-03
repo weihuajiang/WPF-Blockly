@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public interface EventHandler : Function
+    public abstract class EventHandler : Function
     {
-        bool IsProcessEvent(Event e);
-        Event Event { get; set; }
+        public abstract bool IsProcessEvent(Event e);
+        public abstract Event Event { get; set; }
     }
     public class Event
     {

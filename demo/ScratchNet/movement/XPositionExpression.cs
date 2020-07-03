@@ -7,18 +7,18 @@ namespace ScratchNet
 {
     public class XPositionExpression : Expression
     {
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number"; }
         }
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             double result = (enviroment.GetValue("$$INSTANCE$$") as Sprite).X;
             return new Completion(result);
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -28,7 +28,7 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "XPositionExpression"; }
         }

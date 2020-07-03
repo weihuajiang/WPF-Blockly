@@ -1,0 +1,172 @@
+<Script>
+  <Class type="ScratchNet.Script, VisualCodeEditor">
+    <Variables />
+    <Functions>
+      <Function type="ScratchNet.FunctionDeclaration, ScriptEngine" x="186.233333333333" y="24.8333333333333">
+        <Format value="" />
+        <Params type="System.Collections.Generic.List`1[ScratchNet.Parameter]" />
+        <Name value="main" />
+        <Body type="ScratchNet.BlockStatement">
+          <BlockStatement type="ScratchNet.BlockStatement, ScriptEngine">
+            <Body>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.VariableDeclarationExpression">
+                  <Expression type="ScratchNet.VariableDeclarationExpression, ScriptEngine">
+                    <CanAssignValue value="True" />
+                    <Variable>
+                      <Expression type="ScratchNet.Identifier, ScriptEngine">
+                        <Variable value="b" />
+                      </Expression>
+                    </Variable>
+                    <Value>
+                      <Expression type="ScratchNet.NewLinkedListExpression, DataStructure">
+                        <Value>
+                          <Expression type="ScratchNet.Literal, ScriptEngine">
+                            <Raw value="5" />
+                          </Expression>
+                        </Value>
+                      </Expression>
+                    </Value>
+                  </Expression>
+                </Expression>
+              </Statement>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.AssignmentExpression">
+                  <Expression type="ScratchNet.AssignmentExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.LinkedListPreviousExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="b" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Left>
+                    <Right>
+                      <Expression type="ScratchNet.NewLinkedListExpression, DataStructure">
+                        <Value>
+                          <Expression type="ScratchNet.Literal, ScriptEngine">
+                            <Raw value="3" />
+                          </Expression>
+                        </Value>
+                      </Expression>
+                    </Right>
+                    <Operator value="Equal" />
+                  </Expression>
+                </Expression>
+              </Statement>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.AssignmentExpression">
+                  <Expression type="ScratchNet.AssignmentExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.LinkedListNextExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="b" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Left>
+                    <Right>
+                      <Expression type="ScratchNet.NewLinkedListExpression, DataStructure">
+                        <Value>
+                          <Expression type="ScratchNet.Literal, ScriptEngine">
+                            <Raw value="6" />
+                          </Expression>
+                        </Value>
+                      </Expression>
+                    </Right>
+                    <Operator value="Equal" />
+                  </Expression>
+                </Expression>
+              </Statement>
+              <Statement type="ScratchNet.PrintLnStatement, Console">
+                <Message type="ScratchNet.LinkedListValueExpression">
+                  <Expression type="ScratchNet.LinkedListValueExpression, DataStructure">
+                    <Node>
+                      <Expression type="ScratchNet.LinkedListPreviousExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="b" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Node>
+                  </Expression>
+                </Message>
+              </Statement>
+              <Statement type="ScratchNet.PrintLnStatement, Console">
+                <Message type="ScratchNet.LinkedListValueExpression">
+                  <Expression type="ScratchNet.LinkedListValueExpression, DataStructure">
+                    <Node>
+                      <Expression type="ScratchNet.LinkedListNextExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="b" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Node>
+                  </Expression>
+                </Message>
+              </Statement>
+              <Statement type="ScratchNet.ExpressionStatement, ScriptEngine">
+                <Expression type="ScratchNet.AssignmentExpression">
+                  <Expression type="ScratchNet.AssignmentExpression, ScriptEngine">
+                    <Left>
+                      <Expression type="ScratchNet.LinkedListValueExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.LinkedListPreviousExpression, DataStructure">
+                            <Node>
+                              <Expression type="ScratchNet.Identifier, ScriptEngine">
+                                <Variable value="b" />
+                                <VarType value="number|string|boolean" />
+                              </Expression>
+                            </Node>
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Left>
+                    <Right>
+                      <Expression type="ScratchNet.Literal, ScriptEngine">
+                        <Raw value="2" />
+                      </Expression>
+                    </Right>
+                    <Operator value="Equal" />
+                  </Expression>
+                </Expression>
+              </Statement>
+              <Statement type="ScratchNet.PrintLnStatement, Console">
+                <Message type="ScratchNet.LinkedListValueExpression">
+                  <Expression type="ScratchNet.LinkedListValueExpression, DataStructure">
+                    <Node>
+                      <Expression type="ScratchNet.LinkedListPreviousExpression, DataStructure">
+                        <Node>
+                          <Expression type="ScratchNet.Identifier, ScriptEngine">
+                            <Variable value="b" />
+                            <VarType value="number|string|boolean" />
+                          </Expression>
+                        </Node>
+                      </Expression>
+                    </Node>
+                  </Expression>
+                </Message>
+              </Statement>
+            </Body>
+          </BlockStatement>
+        </Body>
+        <ShowFunctionName value="True" />
+      </Function>
+    </Functions>
+    <Handlers />
+    <Expressions />
+    <BlockStatements />
+    <Imports>
+      <String value="Data Structure" />
+    </Imports>
+  </Class>
+</Script>

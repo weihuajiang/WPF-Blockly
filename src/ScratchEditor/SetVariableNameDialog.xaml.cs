@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +23,21 @@ namespace ScratchNet
         public SetVariableNameDialog()
         {
             InitializeComponent();
+            VariableName.Focus();
         }
 
         private void OnConfirm(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
-            this.Close();
+            CodeDomProvider provider = CodeDomProvider.CreateProvider("C#");
+            if (provider.IsValidIdentifier(Variable))
+            {
+                DialogResult = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(string.Format(Properties.Language.VariableNameInvalid, Variable), Properties.Language.InvalidVariableName, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
         public string Variable
         {

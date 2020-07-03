@@ -8,33 +8,32 @@ namespace ScratchNet
     public class NotExpression : Expression
     {
         public Expression Argument { get; set; }
-        public  string ReturnType
+        public override string ReturnType
         {
             get { return "boolean"; }
         }
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Argument == null)
-                return new Completion("value can not be null", CompletionType.Exception);
+                return Completion.Exception(Properties.Language.NullException, this);
             var a = Argument.Execute(enviroment);
             if (a.Type != CompletionType.Value || !(a.ReturnValue is bool))
-                return new Completion("value is not a boolean value", CompletionType.Exception);
+                return new Completion(Properties.Language.NotBoolean, CompletionType.Exception);
             return new Completion(!(bool)a.ReturnValue);
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "not "));
-                desc.Add(new ExpressionDescriptor(this, "Argument", "boolean"));
+                desc.Add(new TextItemDescriptor(this, "! ", true));
+                desc.Add(new ExpressionDescriptor(this, "Argument", "boolean") { IsOnlyNumberAllowed = false });
                 return desc;
             }
         }
-        bool result;
-        public string Type
+        public override string Type
         {
             get { return "UnaryExpression"; }
         }

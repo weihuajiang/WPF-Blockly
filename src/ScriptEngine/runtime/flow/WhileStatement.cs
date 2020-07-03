@@ -6,7 +6,7 @@ using System.Text;
 namespace ScratchNet
 {
 
-    public class WhileStatement : Loop
+    public class WhileStatement : Statement
     {
         public WhileStatement()
         {
@@ -18,14 +18,14 @@ namespace ScratchNet
             get;
             set;
         }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
-            if (Test == null || Body == null || Body.Body.Count == 0)
-                return Completion.Void;
+            if (Test == null)
+                return Completion.Exception(Properties.Language.TestNullException, this);
             var c = Test.Execute(enviroment);
             if (c.Type == CompletionType.Value)
             {
@@ -48,28 +48,29 @@ namespace ScratchNet
                             return cx;
                         c = Test.Execute(enviroment);
                         if (!(c.ReturnValue is bool))
-                            return Completion.Exception("value is not boolean", Test);
+                            return Completion.Exception(Properties.Language.NotBoolean, Test);
                     }
                     return cx;
                 }
                 else
-                    return Completion.Exception("test variable is not boolean", Test);
+                    return Completion.Exception(Properties.Language.NotBoolean, Test);
             }
             return c;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "While("));
-                desc.Add(new ExpressionDescriptor(this, "Test", "boolean"));
+                desc.Add(new TextItemDescriptor(this, "while", true));
+                desc.Add(new TextItemDescriptor(this, "("));
+                desc.Add(new ExpressionDescriptor(this, "Test", "boolean") { IsOnlyNumberAllowed = false });
                 desc.Add(new TextItemDescriptor(this, " )"));
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
@@ -78,14 +79,14 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "WhileStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

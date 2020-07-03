@@ -20,9 +20,9 @@ namespace UnitTestProject
             e.RegisterValue("c", 5);
             e.RegisterValue("d", 6);
             IfStatement s = new IfStatement();
-            s.Test = new LogicExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
+            s.Test = new BinaryExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
             s.Consequent = new BlockStatement();
-            s.Consequent.Body.Add(new AssignmentStatement() { Left=new Identifier() { Variable = "c" }, Right = new Identifier() { Variable = "d" } }); 
+            s.Consequent.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "c" }, Right = new Identifier() { Variable = "d" } } }); 
             s.Alternate = new BlockStatement();
             s.Alternate.Body.Add(new ExpressionStatement() { Expression = new Identifier() { Variable = "d" } });
             Assert.AreEqual(s.Execute(e).ReturnValue, 6);
@@ -39,12 +39,12 @@ namespace UnitTestProject
             e.RegisterValue("c", 5);
             e.RegisterValue("d", 6);
             LoopStatement s = new LoopStatement();
-            s.Loop = new LogicExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
+            s.Loop = new BinaryExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
             s.Body = new BlockStatement();
-            s.Body.Body.Add(new AssignmentStatement() { Left=new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator=Operator.Add, Right=new Literal() { Raw = "2" } } });
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } } });
             var c = s.Execute(e);
-            Assert.AreEqual(c.Type,  CompletionType.Exception);
+            Assert.AreEqual(c.Type,  CompletionType.Value);
         }
         [TestMethod]
         public void TestWhileStatement()
@@ -55,10 +55,10 @@ namespace UnitTestProject
             e.RegisterValue("c", 5);
             e.RegisterValue("d", 6);
             WhileStatement s = new WhileStatement();
-            s.Test = new LogicExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
+            s.Test = new BinaryExpression() { Left = new Identifier() { Variable = "a" }, Right = new Identifier() { Variable = "b" }, Operator = Operator.And };
             s.Body = new BlockStatement();
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } });
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } } });
             var c = s.Execute(e);
             Assert.AreEqual(e.GetValue("c"), 7);
         }
@@ -73,8 +73,8 @@ namespace UnitTestProject
             WhileStatement s = new WhileStatement();
             s.Test = new Identifier() { Variable = "c" };
             s.Body = new BlockStatement();
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } });
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } } });
             var c = s.Execute(e);
             Assert.AreEqual(c.Type, CompletionType.Exception);
         }
@@ -89,8 +89,8 @@ namespace UnitTestProject
             LoopStatement s = new LoopStatement();
             s.Loop =  new Identifier() { Variable = "c" };
             s.Body = new BlockStatement();
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } });
-            s.Body.Body.Add(new AssignmentStatement() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "c" }, Right = new BinaryExpression() { Left = new Identifier() { Variable = "c" }, Operator = Operator.Add, Right = new Literal() { Raw = "2" } } } });
+            s.Body.Body.Add(new ExpressionStatement() { Expression = new AssignmentExpression() { Left = new Identifier() { Variable = "a" }, Right = new Literal() { Raw = "false" } } });
             var c = s.Execute(e);
             Assert.AreEqual(e.GetValue("c"), 5+5*2);
         }

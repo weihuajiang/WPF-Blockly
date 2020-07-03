@@ -25,6 +25,7 @@ namespace ScratchNet
             InitializeComponent();
             FunctionItems = new ObservableCollection<FunctionItem>();
             FunctionItems.Add(new TextFunctionItem() { Value = "text" });
+            FunctionStructure.Background = new SolidColorBrush( EditorColors.Get<FunctionDeclaration>());
             FunctionStructure.ItemsSource = FunctionItems;
         }
         public ObservableCollection<FunctionItem> FunctionItems

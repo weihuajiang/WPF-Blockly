@@ -7,11 +7,11 @@ namespace ScratchNet
 {
     public class HideStatement : Statement
     {
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             Sprite sp = enviroment.GetValue("$$INSTANCE$$") as Sprite;
             if (sp.Visible)
@@ -25,7 +25,7 @@ namespace ScratchNet
             return Completion.Void;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -34,7 +34,7 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
@@ -43,13 +43,13 @@ namespace ScratchNet
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
 
 
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

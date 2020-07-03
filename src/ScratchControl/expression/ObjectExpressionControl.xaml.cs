@@ -23,7 +23,6 @@ namespace ScratchControl
         public ObjectExpressionControl()
         {
             InitializeComponent();
-            ExpressionBorderBrush = new SolidColorBrush(Colors.Black);
         }
         public Brush ExpressionBackground
         {
@@ -68,7 +67,7 @@ namespace ScratchControl
             }
         }
 
-        public bool IsSelectetet
+        public bool IsSelected
         {
             set
             {

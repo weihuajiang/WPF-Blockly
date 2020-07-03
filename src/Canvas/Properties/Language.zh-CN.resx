@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AngleDescription" xml:space="preserve">
+    <value>方向角度</value>
+  </data>
+  <data name="ArcDescription" xml:space="preserve">
+    <value>绘制圆弧</value>
+  </data>
+  <data name="ClearDescription" xml:space="preserve">
+    <value>清除所有图形</value>
+  </data>
+  <data name="ColorBlackDesc" xml:space="preserve">
+    <value>黑色</value>
+  </data>
+  <data name="ColorBlueDesc" xml:space="preserve">
+    <value>蓝色</value>
+  </data>
+  <data name="ColorCategory" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="ColorCategoryDesc" xml:space="preserve">
+    <value>颜色数值</value>
+  </data>
+  <data name="ColorGreenDesc" xml:space="preserve">
+    <value>绿色</value>
+  </data>
+  <data name="ColorOrangeDesc" xml:space="preserve">
+    <value>桔色</value>
+  </data>
+  <data name="ColorRedDesc" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="ColorValueOutRangeException" xml:space="preserve">
+    <value>数值超出0-255范围</value>
+  </data>
+  <data name="ColorWhiteDesc" xml:space="preserve">
+    <value>白色</value>
+  </data>
+  <data name="ColorYellowDesc" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>绘制图形</value>
+  </data>
+  <data name="DrawCategory" xml:space="preserve">
+    <value>绘图</value>
+  </data>
+  <data name="DrawCategoryDesc" xml:space="preserve">
+    <value>绘图</value>
+  </data>
+  <data name="FillColorDesc" xml:space="preserve">
+    <value>填充颜色</value>
+  </data>
+  <data name="FontSizeDesc" xml:space="preserve">
+    <value>字体大小</value>
+  </data>
+  <data name="LineColorDesc" xml:space="preserve">
+    <value>线条颜色</value>
+  </data>
+  <data name="LineDescription" xml:space="preserve">
+    <value>绘制线条</value>
+  </data>
+  <data name="LineSizeDesc" xml:space="preserve">
+    <value>线条粗细</value>
+  </data>
+  <data name="LineToDescription" xml:space="preserve">
+    <value>画直线到某点</value>
+  </data>
+  <data name="MoveDescription" xml:space="preserve">
+    <value>移动到位置</value>
+  </data>
+  <data name="NotColorException" xml:space="preserve">
+    <value>值不是颜色类型</value>
+  </data>
+  <data name="NullException" xml:space="preserve">
+    <value>未填数据</value>
+  </data>
+  <data name="ParameterCategory" xml:space="preserve">
+    <value>绘制参数</value>
+  </data>
+  <data name="ParameterCategoryDesc" xml:space="preserve">
+    <value>绘图参数</value>
+  </data>
+  <data name="PenDownDescription" xml:space="preserve">
+    <value>落笔开始绘制</value>
+  </data>
+  <data name="PenUpDescription" xml:space="preserve">
+    <value>抬笔停止绘制</value>
+  </data>
+  <data name="PositionCategory" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="PositionCategoryDesc" xml:space="preserve">
+    <value>绘图位置</value>
+  </data>
+  <data name="ResetDescription" xml:space="preserve">
+    <value>重置画板</value>
+  </data>
+  <data name="RGBDesc" xml:space="preserve">
+    <value>设置红、绿、蓝三种颜色数值来获取颜色</value>
+  </data>
+  <data name="RotateDescription" xml:space="preserve">
+    <value>旋转</value>
+  </data>
+  <data name="SetFontDesc" xml:space="preserve">
+    <value>设置字体</value>
+  </data>
+  <data name="StartFillDescription" xml:space="preserve">
+    <value>开始填色</value>
+  </data>
+  <data name="StopFillDescription" xml:space="preserve">
+    <value>停止填色</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>绘制文字</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>绘图</value>
+  </data>
+  <data name="ValueNotNumberException" xml:space="preserve">
+    <value>值不是数字</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>画板</value>
+  </data>
+  <data name="XPosDescription" xml:space="preserve">
+    <value>x位置</value>
+  </data>
+  <data name="YPosDescription" xml:space="preserve">
+    <value>y位置</value>
+  </data>
+</root>

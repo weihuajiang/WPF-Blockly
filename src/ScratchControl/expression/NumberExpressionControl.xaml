@@ -11,15 +11,15 @@
         <ColumnDefinition Width="*"/>
         <ColumnDefinition Width="auto"/>
     </Grid.ColumnDefinitions>
-    <Border Name="LeftPart" Grid.Column="0" CornerRadius="7, 0, 0, 7" Background="Green" BorderBrush="Black"
+    <Border Name="LeftPart" Grid.Column="0" CornerRadius="7, 0, 0, 7" Background="Green" BorderBrush="LightGray"
                 Width="7"
                 BorderThickness="1, 1, 0, 1"/>
-    <Border Name="CenterPart" Grid.Column="1" MinWidth="20" BorderBrush="Black" BorderThickness="0,1,0,1" 
+    <Border Name="CenterPart" Grid.Column="1" MinWidth="20" BorderBrush="LightGray" BorderThickness="0,1,0,1" 
                 SnapsToDevicePixels="True"
                 Background="Green">
         <StackPanel Margin="3,0" Orientation="Horizontal"  Name="Container" VerticalAlignment="Center"/>
     </Border>
-    <Border Name="RightPart" Grid.Column="2" CornerRadius="0, 7,7, 0" Background="Green" BorderBrush="Black"
+    <Border Name="RightPart" Grid.Column="2" CornerRadius="0, 7,7, 0" Background="Green" BorderBrush="LightGray"
                 Width="7"
                 BorderThickness="0, 1, 1, 1"/>
 </Grid>

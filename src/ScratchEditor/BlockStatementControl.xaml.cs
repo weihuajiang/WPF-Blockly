@@ -23,9 +23,9 @@ namespace ScratchNet
         {
             InitializeComponent();
             //BlockStatementList.DataContext = this;
-        }
+        }        
         public static readonly DependencyProperty BlockStatementProperty =
-            DependencyProperty.Register("BlockStatement", typeof(BlockStatement), typeof(BlockStatementControl));
+            DependencyProperty.Register("BlockStatement", typeof(BlockStatement), typeof(BlockStatementControl));         
         public static readonly DependencyProperty DesignModeProperty =
             DependencyProperty.Register("DesignMode", typeof(Boolean), typeof(BlockStatementControl));
         public bool DesignMode
@@ -49,6 +49,6 @@ namespace ScratchNet
             {
                 this.SetValue(BlockStatementProperty, value);
             }
-        }
+        }       
     }
 }

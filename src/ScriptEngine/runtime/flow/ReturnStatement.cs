@@ -11,11 +11,11 @@ namespace ScratchNet
         {
         }
         public Expression Expression { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if(Expression==null)
                 return new Completion(null, CompletionType.Return);
@@ -27,30 +27,38 @@ namespace ScratchNet
             return c;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "Return "));
+                desc.Add(new TextItemDescriptor(this, "return ", true));
+                if (Expression != null)
+                {
+                    desc.Add(new TextItemDescriptor(this, "("));
+                    desc.Add(new ExpressionDescriptor(this, "Expression", "any") { IsOnlyNumberAllowed = false });
+                    desc.Add(new TextItemDescriptor(this, ");"));
+                }
+                else
+                    desc.Add(new TextItemDescriptor(this, ";"));
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
                 return null;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "ReturnStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return true; }
         }

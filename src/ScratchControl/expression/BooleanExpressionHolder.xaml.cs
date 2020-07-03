@@ -63,24 +63,26 @@ namespace ScratchControl
                 LeftPart.Visibility = Visibility.Collapsed;
                 CenterPart.Visibility = Visibility.Collapsed;
                 RightPart.Visibility = Visibility.Collapsed;
-                if (descriptor.Type == "number")
-                {
-                    NumberExpressionControl ctrl = new NumberExpressionControl();
-                    ctrl.Expression = exp;
-                    this.Children.Add(ctrl);
-                }
-                else if (descriptor.Type == "boolean")
+                
+                if (descriptor.Type == "boolean")
                 {
                     BooleanExpressionControl ctrl = new BooleanExpressionControl();
                     ctrl.Expression = exp;
                     this.Children.Add(ctrl);
                 }
+                //if (descriptor.Type == "number")
+                {
+                    NumberExpressionControl ctrl = new NumberExpressionControl();
+                    ctrl.Expression = exp;
+                    this.Children.Add(ctrl);
+                }
+                /*
                 else
                 {
                     ObjectExpressionControl ctrl = new ObjectExpressionControl();
                     ctrl.Expression = exp;
                     this.Children.Add(ctrl);
-                }
+                }*/
             }
         }
     }

@@ -10,11 +10,9 @@
         <script:CanBooleanConverter x:Key="CanBooleanConverter"/>
         <script:CanNumberConverter x:Key="CanNumberConverter"/>
         <script:ExpressionBarBackground x:Key="BarBackgroudConverter"/>
+        <script:BooleanVisiblityConverter x:Key="BooleanVisiblityConverter"/>
     </UserControl.Resources>
-    <Grid>
-        <Grid.Effect>
-            <DropShadowEffect BlurRadius="5" Direction="-90" RenderingBias="Performance" ShadowDepth="1"/>
-        </Grid.Effect>
+    <Grid Name="ParameterGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>

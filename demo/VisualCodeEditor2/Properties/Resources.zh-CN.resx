@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbountTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="ApplicationAbort" xml:space="preserve">
+    <value>程序运行终止</value>
+  </data>
+  <data name="ApplicationComplete" xml:space="preserve">
+    <value>程序运行结束，请按任意键关闭控制台窗口</value>
+  </data>
+  <data name="ArrayCollection" xml:space="preserve">
+    <value>数组</value>
+  </data>
+  <data name="ArrayLengthDescription" xml:space="preserve">
+    <value>数组长度</value>
+  </data>
+  <data name="ArrayValueDescription" xml:space="preserve">
+    <value>数组指定位置得值</value>
+  </data>
+  <data name="BinaryExpressionDescription" xml:space="preserve">
+    <value>二元操作符</value>
+  </data>
+  <data name="BreakDescription" xml:space="preserve">
+    <value>循环或者switch语句终止</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="ClearDescription" xml:space="preserve">
+    <value>清除控制台所有文本</value>
+  </data>
+  <data name="ClearError" xml:space="preserve">
+    <value>清除错误</value>
+  </data>
+  <data name="CommentCategory" xml:space="preserve">
+    <value>注释</value>
+  </data>
+  <data name="CommentCollection" xml:space="preserve">
+    <value>注释</value>
+  </data>
+  <data name="CommentDescription" xml:space="preserve">
+    <value>写一个注释</value>
+  </data>
+  <data name="CommentDescription1" xml:space="preserve">
+    <value>单行注释</value>
+  </data>
+  <data name="CommentDescription2" xml:space="preserve">
+    <value>多行注释</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>北京华瑞奥途科技有限公司</value>
+  </data>
+  <data name="ConditionExpressionCategory" xml:space="preserve">
+    <value>条件表达式</value>
+  </data>
+  <data name="ConditionExpressionDescription" xml:space="preserve">
+    <value>条件表达式</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="ConsoleCategory" xml:space="preserve">
+    <value>控制台</value>
+  </data>
+  <data name="ContinueDescription" xml:space="preserve">
+    <value>循环继续运行</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="CopyRight" xml:space="preserve">
+    <value>版权所有北京华瑞奥途科技有限公司</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="DoWhileDescription" xml:space="preserve">
+    <value>do-while循环</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>示例</value>
+  </data>
+  <data name="ExampleArray" xml:space="preserve">
+    <value>数组</value>
+  </data>
+  <data name="ExampleArray2" xml:space="preserve">
+    <value>二维数组</value>
+  </data>
+  <data name="ExampleArray2Desc" xml:space="preserve">
+    <value>如何使用二维数组</value>
+  </data>
+  <data name="ExampleArrayDesc" xml:space="preserve">
+    <value>如何使用数组</value>
+  </data>
+  <data name="ExampleBinaryTree" xml:space="preserve">
+    <value>二叉树</value>
+  </data>
+  <data name="ExampleBinaryTreeDesc" xml:space="preserve">
+    <value>使用二叉树保存数据</value>
+  </data>
+  <data name="ExampleCanvas" xml:space="preserve">
+    <value>绘图</value>
+  </data>
+  <data name="ExampleCanvasDesc" xml:space="preserve">
+    <value>如何使用绘图功能绘制有趣图形</value>
+  </data>
+  <data name="ExampleLinkedList" xml:space="preserve">
+    <value>链表</value>
+  </data>
+  <data name="ExampleLinkedListDesc" xml:space="preserve">
+    <value>使用链表保存数据</value>
+  </data>
+  <data name="ExampleList" xml:space="preserve">
+    <value>列表</value>
+  </data>
+  <data name="ExampleListDesc" xml:space="preserve">
+    <value>使用列表保存数据</value>
+  </data>
+  <data name="ExampleLogic" xml:space="preserve">
+    <value>逻辑</value>
+  </data>
+  <data name="ExampleLogicDesc" xml:space="preserve">
+    <value>使用if语句</value>
+  </data>
+  <data name="ExampleLoop" xml:space="preserve">
+    <value>循环</value>
+  </data>
+  <data name="ExampleLoopDesc" xml:space="preserve">
+    <value>如何使用循环语句</value>
+  </data>
+  <data name="ExampleNumber" xml:space="preserve">
+    <value>玫瑰数计算</value>
+  </data>
+  <data name="ExampleNumberDesc" xml:space="preserve">
+    <value>计算玫瑰数的例子</value>
+  </data>
+  <data name="ExamplePrime" xml:space="preserve">
+    <value>质数计算</value>
+  </data>
+  <data name="ExamplePrimeDesc" xml:space="preserve">
+    <value>如何计算质数</value>
+  </data>
+  <data name="ExampleQueue" xml:space="preserve">
+    <value>如何使用队列</value>
+  </data>
+  <data name="ExampleQueueDesc" xml:space="preserve">
+    <value>如何使用队列</value>
+  </data>
+  <data name="ExampleRecursive" xml:space="preserve">
+    <value>递归</value>
+  </data>
+  <data name="ExampleRecursiveDesc" xml:space="preserve">
+    <value>如何使用函数和递归</value>
+  </data>
+  <data name="ExampleSpeech" xml:space="preserve">
+    <value>语音合成</value>
+  </data>
+  <data name="ExampleSpeechDesc" xml:space="preserve">
+    <value>使用语音合成工程让计算机说出你的话</value>
+  </data>
+  <data name="ExampleStack" xml:space="preserve">
+    <value>堆栈</value>
+  </data>
+  <data name="ExampleStackDesc" xml:space="preserve">
+    <value>如何使用堆栈</value>
+  </data>
+  <data name="ExampleTitle" xml:space="preserve">
+    <value>示例列表</value>
+  </data>
+  <data name="ExampleVariableScope" xml:space="preserve">
+    <value>变量作用域</value>
+  </data>
+  <data name="ExampleVariableScopeDesc" xml:space="preserve">
+    <value>如何定义变量的作用域</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>程序运行中报错</value>
+  </data>
+  <data name="ExceptionCategory" xml:space="preserve">
+    <value>异常</value>
+  </data>
+  <data name="ExceptionDuringRun" xml:space="preserve">
+    <value>程序运行中发生异常</value>
+  </data>
+  <data name="ExceptionLoadFile" xml:space="preserve">
+    <value>读取文件{0}时候发生异常</value>
+  </data>
+  <data name="ExpressionStatementCategory" xml:space="preserve">
+    <value>表达式语句</value>
+  </data>
+  <data name="ExpressionStatementDescription" xml:space="preserve">
+    <value>表达式作为一条语句</value>
+  </data>
+  <data name="ForDescription" xml:space="preserve">
+    <value>for循环</value>
+  </data>
+  <data name="FunctionCallCategory" xml:space="preserve">
+    <value>函数调用</value>
+  </data>
+  <data name="FunctionCollection" xml:space="preserve">
+    <value>函数</value>
+  </data>
+  <data name="FunctionNewCategory" xml:space="preserve">
+    <value>新建函数</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>高亮运行步骤和当前值</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>如何使用本编辑器</value>
+  </data>
+  <data name="IfCategory" xml:space="preserve">
+    <value>条件语句</value>
+  </data>
+  <data name="IfDescription" xml:space="preserve">
+    <value>if语句</value>
+  </data>
+  <data name="IfElseStatementDescription" xml:space="preserve">
+    <value>if-else语句</value>
+  </data>
+  <data name="IfStatementDescription" xml:space="preserve">
+    <value>if语句</value>
+  </data>
+  <data name="IOCollection" xml:space="preserve">
+    <value>输入和输出</value>
+  </data>
+  <data name="LanguageChange" xml:space="preserve">
+    <value>语言已经更改，请重启软件才能显示正确的语言。</value>
+  </data>
+  <data name="LanguageTooltip" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="LibraryTitle" xml:space="preserve">
+    <value>使用类库</value>
+  </data>
+  <data name="LocateException" xml:space="preserve">
+    <value>定位异常位置？</value>
+  </data>
+  <data name="LogicCategory" xml:space="preserve">
+    <value>逻辑操作</value>
+  </data>
+  <data name="LogicValueCategory" xml:space="preserve">
+    <value>逻辑</value>
+  </data>
+  <data name="LoopCategory" xml:space="preserve">
+    <value>循环</value>
+  </data>
+  <data name="MainNotFound" xml:space="preserve">
+    <value>没有定义main函数，请先定义main函数</value>
+  </data>
+  <data name="NewArray2Description" xml:space="preserve">
+    <value>新建二维数组</value>
+  </data>
+  <data name="NewArrayDescription" xml:space="preserve">
+    <value>新建一个数组</value>
+  </data>
+  <data name="NewStringDescription" xml:space="preserve">
+    <value>新建一个字符串</value>
+  </data>
+  <data name="NoMain" xml:space="preserve">
+    <value>没有main函数</value>
+  </data>
+  <data name="NotExpressionDescription" xml:space="preserve">
+    <value>not表达式</value>
+  </data>
+  <data name="NullCategory" xml:space="preserve">
+    <value>null</value>
+  </data>
+  <data name="NumberOperatorCategory" xml:space="preserve">
+    <value>数字和操作符</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>打开文件</value>
+  </data>
+  <data name="OperatorCollection" xml:space="preserve">
+    <value>操作符</value>
+  </data>
+  <data name="ParseDoubleDescription" xml:space="preserve">
+    <value>将值转成double类型</value>
+  </data>
+  <data name="ParseFloatDescription" xml:space="preserve">
+    <value>将值转成float类型</value>
+  </data>
+  <data name="ParseIntDescription" xml:space="preserve">
+    <value>将值转成整数</value>
+  </data>
+  <data name="ParseLongDescription" xml:space="preserve">
+    <value>将值转成long类型</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>粘贴</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>在控制台输入文本</value>
+  </data>
+  <data name="PrintLnDescription" xml:space="preserve">
+    <value>在控制台输出文本，并在结尾换行</value>
+  </data>
+  <data name="ReadDescripiton" xml:space="preserve">
+    <value>从控制台读取一个字符</value>
+  </data>
+  <data name="ReadLnDescription" xml:space="preserve">
+    <value>从控制台读取一行文本，用户需要最后以回车结束</value>
+  </data>
+  <data name="RequestRate" xml:space="preserve">
+    <value>您是否愿意在微软商店里，对本程序进行评分？您的评价对我们提高软件非常珍贵。</value>
+  </data>
+  <data name="RequestRateTitle" xml:space="preserve">
+    <value>反馈</value>
+  </data>
+  <data name="RequestSave" xml:space="preserve">
+    <value>代码已经发生修改，您是否要保存所作的修改？</value>
+  </data>
+  <data name="RequestSaveTitle" xml:space="preserve">
+    <value>保存代码？</value>
+  </data>
+  <data name="RequestVideo" xml:space="preserve">
+    <value>这是您第一次使用本程序，您是否想看看怎么使用本软件？如果点击是，将播放一段视频，向您展示如何使用。</value>
+  </data>
+  <data name="ReturnCategory" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="ReturnDescription" xml:space="preserve">
+    <value>返回语句</value>
+  </data>
+  <data name="ReturnValueDescription" xml:space="preserve">
+    <value>返回数值</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>另存</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>运行速度</value>
+  </data>
+  <data name="StackMessage" xml:space="preserve">
+    <value>运行堆栈超过最大允许值</value>
+  </data>
+  <data name="StackTitle" xml:space="preserve">
+    <value>堆栈溢出</value>
+  </data>
+  <data name="StatementCollection" xml:space="preserve">
+    <value>语句</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="StringCategory" xml:space="preserve">
+    <value>字符串</value>
+  </data>
+  <data name="StringIndexDescription" xml:space="preserve">
+    <value>找到一个字符串的位置</value>
+  </data>
+  <data name="StringLastIndexDescription" xml:space="preserve">
+    <value>找到最后一个字符串的位置</value>
+  </data>
+  <data name="StringLengthDescription" xml:space="preserve">
+    <value>字符串长度</value>
+  </data>
+  <data name="StringSubDescription" xml:space="preserve">
+    <value>从指定位置获得子字符串</value>
+  </data>
+  <data name="SuccessLodFile" xml:space="preserve">
+    <value>成功读取文件{0}</value>
+  </data>
+  <data name="TryDescription" xml:space="preserve">
+    <value>异常捕获语句</value>
+  </data>
+  <data name="TypeConvertCategory" xml:space="preserve">
+    <value>类型转换</value>
+  </data>
+  <data name="UpdateExpressionDescription" xml:space="preserve">
+    <value>更新操作符</value>
+  </data>
+  <data name="VariableAssignmentCategory" xml:space="preserve">
+    <value>变量赋值</value>
+  </data>
+  <data name="VariableAssignmentDescription" xml:space="preserve">
+    <value>将值赋给变量</value>
+  </data>
+  <data name="VariableDecDescription" xml:space="preserve">
+    <value>声明一个变量</value>
+  </data>
+  <data name="VariableDecDescription2" xml:space="preserve">
+    <value>声明一个变量并赋值</value>
+  </data>
+  <data name="VariableDefCategory" xml:space="preserve">
+    <value>变量定义</value>
+  </data>
+  <data name="VariableExample" xml:space="preserve">
+    <value>变量</value>
+  </data>
+  <data name="VariableExampleDescription" xml:space="preserve">
+    <value>如何定义变量</value>
+  </data>
+  <data name="VariableTypeCollection" xml:space="preserve">
+    <value>变量和类型</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="VisualCodeEditor" xml:space="preserve">
+    <value>图形化代码编辑器</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>https://www.huaruirobot.com</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>欢迎</value>
+  </data>
+  <data name="WhileDescription" xml:space="preserve">
+    <value>while语句</value>
+  </data>
+</root>

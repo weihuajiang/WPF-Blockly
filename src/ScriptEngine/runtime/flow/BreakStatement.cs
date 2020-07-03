@@ -10,39 +10,40 @@ namespace ScratchNet
         public BreakStatement()
         {
         }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             return new Completion(null, CompletionType.Break);
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "Break"));
+                desc.Add(new TextItemDescriptor(this, "break", true));
+                desc.Add(new TextItemDescriptor(this, ";"));
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
                 return null;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "WhileStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return true; }
         }

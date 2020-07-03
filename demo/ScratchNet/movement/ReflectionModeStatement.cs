@@ -11,17 +11,21 @@ namespace ScratchNet
         public ReflectionStatement()
         {
         }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
+            if(enviroment.HasValue("$$ReflectionOnTouchSide&&"))
             enviroment.SetValue("$$ReflectionOnTouchSide&&", true);
+            else
+                enviroment.RegisterValue("$$ReflectionOnTouchSide&&", true);
+
             return Completion.Void;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -30,7 +34,7 @@ namespace ScratchNet
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
@@ -39,13 +43,13 @@ namespace ScratchNet
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
 
 
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

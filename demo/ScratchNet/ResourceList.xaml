@@ -29,14 +29,14 @@
                     <Button Margin="5" Click="OnImportImage">
                         <Button.Template>
                             <ControlTemplate>
-                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="CloudUpload"/>
+                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="FolderOpen"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Margin="5" >
                         <Button.Template>
                             <ControlTemplate>
-                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="TimesCircleOutlined"/>
+                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="FileOutline"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
@@ -120,14 +120,14 @@
                     <Button Margin="5" >
                         <Button.Template>
                             <ControlTemplate>
-                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="PlayCircleOutlined"/>
+                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="PlayCircle"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                     <Button Margin="5" >
                         <Button.Template>
                             <ControlTemplate>
-                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="TimesCircleOutlined"/>
+                                <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="TimesCircleOutline"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>

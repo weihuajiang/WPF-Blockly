@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:ScratchNet"
              xmlns:script="clr-namespace:ScratchNet;assembly=ScriptEngine"
              xmlns:t="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
-             xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -213,8 +212,17 @@
         <local:ActualWidthMinusConverter x:Key="ActualWidthMinusConverter"/>
         <local:CurrentEnviroment x:Key="AllVariable"/>
         <local:ImageConverter x:Key="ImageConverter"/>
+        <local:KeywordForegroundConverter x:Key="KeywordForegroundConverter"/>
+        <local:KeywordFontWeightConverter x:Key="KeywordFontWeightConverter"/>
+        <local:VerticalAlignmentConverter x:Key="VerticalAlignmentConverter"/>
+        <DataTemplate DataType="{x:Type script:VariableDeclarationDescription}">
+            <local:ParameterIndicator Parameter="{Binding}" VerticalAlignment="Center"/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type script:StringInputDesciptor}">
-            <TextBox Text="{Binding Path=Raw}" MinWidth="20" BorderThickness="0"/>
+            <TextBox Text="{Binding Path=Value}" MinWidth="50" BorderThickness="0"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type script:MultiLineStringInputDesciptor}">
+            <TextBox Text="{Binding Path=Value}" AcceptsReturn="True" AcceptsTab="True" TextWrapping="NoWrap" MinWidth="50" BorderThickness="0"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:VariableDescriptor}">
             <ComboBox Margin="0" MinWidth="30" BorderThickness="0"   Style="{DynamicResource ButtonlessComboBoxStyle}"
@@ -225,7 +233,7 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:SelectionItemDescriptor}">
             <ComboBox Margin="0" MinWidth="30" BorderThickness="0" Padding="3,2,3,2"  Style="{DynamicResource ButtonlessComboBoxStyle}"
-                      Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Backgroud}"
+                      Background="White"
                       SelectedValue="{Binding Path=Value}" ItemsSource="{Binding Path=Texts}" />
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:SelectionExpressionItemDescriptor}">
@@ -238,7 +246,15 @@
                 <ToggleButton Margin="2,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Name="SelectionButton">
                     <ToggleButton.Template>
                         <ControlTemplate>
-                            <fa:FontAwesome Foreground="White" Icon="AngleDoubleDown"/>
+                            <Image>
+                                <Image.Source>
+                                    <DrawingImage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                                        <DrawingImage.Drawing>
+                                            <GeometryDrawing Brush="White" Geometry="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z" />
+                                        </DrawingImage.Drawing>
+                                    </DrawingImage>
+                                </Image.Source>
+                            </Image>
                         </ControlTemplate>
                     </ToggleButton.Template>
                 </ToggleButton>
@@ -265,12 +281,14 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:TextItemDescriptor}">
             <TextBlock Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" 
-                       VerticalAlignment="Center"
+                       VerticalAlignment="{Binding Path=VerticalAlignment, Converter={StaticResource VerticalAlignmentConverter}}"
+                       Foreground="{Binding Path=IsKeyword, Converter={StaticResource KeywordForegroundConverter}}"
+                       FontWeight="{Binding Path=IsKeyword, Converter={StaticResource KeywordFontWeightConverter}}"
                      Focusable="False"  Margin="0" Text="{Binding Path=Text}" Padding="0"
                        />
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:ExpressionDescriptor}">
-            <local:TextBoxExpressionHolder ExpressionDescriptor="{Binding}" />
+            <local:TextBoxExpressionHolder ExpressionDescriptor="{Binding}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type script:BlockStatementDescriptor}">
             <Grid Margin="0, 0, 0,0" HorizontalAlignment="Left">
@@ -301,12 +319,12 @@
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type script:ParameterDescriptor}">
-            <local:ParameterIndicator Parameter="{Binding}"/>
+            <local:ParameterIndicator Parameter="{Binding}" VerticalAlignment="Center"/>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type script:ExpressionStatementDescription}">
             <ItemsControl SnapsToDevicePixels="True" HorizontalAlignment="Left"
-                      Width="{Binding ElementName=ViewBorder, Path=ActualWidth, Converter={StaticResource ActualWidthMinusConverter}}"
+                      MinWidth="{Binding ElementName=ViewBorder, Path=ActualWidth, Converter={StaticResource ActualWidthMinusConverter}}"
                       Background="{Binding ElementName=BlockStatementListView, Path=Background}"
               ItemsSource="{Binding Path=Descriptor}">
                 <ItemsControl.ItemsPanel>
@@ -329,7 +347,7 @@
               Padding="0,0,0,0">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <StackPanel Orientation="Horizontal"  MinWidth="60" Focusable="False" IsItemsHost="True"/>
+                <StackPanel Orientation="Horizontal"  MinWidth="60" Focusable="False" IsItemsHost="True" VerticalAlignment="Center"/>
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
         <ItemsControl.Template>
@@ -346,7 +364,7 @@
                         <ColumnDefinition Width="10" MaxWidth="10"/>
                         <ColumnDefinition Width="20" MaxWidth="20"/>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="1" />
                     </Grid.ColumnDefinitions>
 
                     <Polygon Grid.Column="1" Points="5,0,0,4,20,4,15,0" 
@@ -380,11 +398,16 @@
                             </ControlTemplate>
                         </ItemsControl.Template>
                     </ItemsControl>
-                    
-                    <Border Margin="0, 0, 0,0" Grid.Row="3" Grid.ColumnSpan="3" Height="6"
+<!--
+                    <Border Grid.Row="3" Grid.Column="0"
+                            Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                            SnapsToDevicePixels="True">
+                    </Border>-->
+                    <Border Margin="0, 0, 0,0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Height="6"
                                 Visibility="{Binding Path=Statement.BlockDescriptor, Converter={StaticResource IsNullVisibilityConverter}}"
                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
-                                SnapsToDevicePixels="True"/>
+                                SnapsToDevicePixels="True">
+                    </Border>
                     <Border Grid.Row="4" Grid.Column="0"  
                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                 SnapsToDevicePixels="True"/>

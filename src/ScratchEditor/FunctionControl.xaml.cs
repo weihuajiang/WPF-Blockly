@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -19,7 +20,7 @@ namespace ScratchNet
     /// <summary>
     /// Interaction logic for FunctionalControl.xaml
     /// </summary>
-    public partial class FunctionControl : UserControl, ActualSizeAdjustment
+    public partial class FunctionControl : UserControl, ActualSizeAdjustment, ISelectable
     {
         public FunctionControl()
         {
@@ -35,6 +36,29 @@ namespace ScratchNet
             set { SetValue(FunctionProperty, value); }
         }
 
+        bool _isSelected = false;
+        public bool IsSelected
+        {
+            set
+            {
+                _isSelected = value;
+                if (value)
+                    FunctionListView.Effect = new DropShadowEffect() { ShadowDepth = 3 };
+                else
+                    FunctionListView.Effect = null;
+            }
+            get
+            {
+                return _isSelected;
+            }
+        }
+        public Node SelectedValue
+        {
+            get
+            {
+                return Function;
+            }
+        }
         public void GetActualSize(out double width, out double height)
         {
             width = 0;

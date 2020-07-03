@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,7 +22,7 @@ namespace ScratchNet
     /// <summary>
     /// Interaction logic for StatementControl.xaml
     /// </summary>
-    public partial class StatementControl : UserControl, ActualSizeAdjustment, IErrorHighlight
+    public partial class StatementControl : UserControl, ActualSizeAdjustment, ISelectable
     {
         public StatementControl()
         {
@@ -46,6 +47,29 @@ namespace ScratchNet
             set
             {
                 this.SetValue(DesignModeProperty, value);
+            }
+        }
+        bool _isSelected = false;
+        public bool IsSelected
+        {
+            set
+            {
+                _isSelected = value;
+                if (value)
+                    StatementListView.Effect = new DropShadowEffect() { ShadowDepth = 3 };
+                else
+                    StatementListView.Effect = null;
+            }
+            get
+            {
+                return _isSelected;
+            }
+        }
+        public Node SelectedValue
+        {
+            get
+            {
+                return Statement;
             }
         }
         public Statement Statement
@@ -91,15 +115,5 @@ namespace ScratchNet
                 this.SetValue(HoverOnBottomProperty, value);
             }
         }
-        public void HighlightError()
-        {
-            HighlightHelper.HighlightError(this);
-        }
-
-        public void ClearHighlightError()
-        {
-            HighlightHelper.ClearHighlightError();
-        }
-
     }
 }

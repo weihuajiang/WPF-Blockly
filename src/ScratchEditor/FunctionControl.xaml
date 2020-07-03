@@ -206,6 +206,8 @@
         <local:EventHandlerVisibilityConverter x:Key="HandlerVisibility"/>
         <local:EventHandlerCollapseConverter x:Key="FunctionVisiblity"/>
         <local:ExpressionBarBackground x:Key="BarBackgroudConverter"/>
+        <local:KeywordForegroundConverter x:Key="KeywordForegroundConverter"/>
+        <local:KeywordFontWeightConverter x:Key="KeywordFontWeightConverter"/>
         <local:ImageConverter x:Key="ImageConverter"/>
         <DataTemplate DataType="{x:Type script:SelectionItemDescriptor}">
             <ComboBox Margin="0" MinWidth="30" BorderThickness="0" Padding="3,2,3,2" Style="{DynamicResource ButtonlessComboBoxStyle}"
@@ -216,6 +218,8 @@
         <DataTemplate DataType="{x:Type script:TextItemDescriptor}">
             <TextBlock Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                        VerticalAlignment="Center"
+                       Foreground="{Binding Path=IsKeyword, Converter={StaticResource KeywordForegroundConverter}}"
+                       FontWeight="{Binding Path=IsKeyword, Converter={StaticResource KeywordFontWeightConverter}}"
                        Focusable="False" Margin="0" Text="{Binding Path=Text}"
                        />
         </DataTemplate>

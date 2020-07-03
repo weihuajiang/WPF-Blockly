@@ -1,0 +1,14 @@
+﻿<Window x:Class="ScratchNet.VideoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScratchNet"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ShowInTaskbar="False"
+        xmlns:loc="clr-namespace:ScratchNet.Properties"
+        Title="{x:Static loc:Resources.HowTo}" Height="450" Width="800">
+    <Grid>
+        <MediaElement Name="MediaPlayer" LoadedBehavior="Play" Source="video2.mp4" />
+        
+    </Grid>
+</Window>

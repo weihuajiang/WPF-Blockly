@@ -34,24 +34,27 @@
                      Grid.Column="1" Grid.Row="0" MinWidth="20"
                              Padding="0" PreviewTextInput="TextBoxHolder_PreviewTextInput"
                      DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
-                     Height="16"
-                     FontSize="12"
-                     Background="White" 
+                     Background="White"  VerticalAlignment="Center"
                      BorderThickness="0"
                      Visibility="{Binding Path=ExpressionDescriptor.Type, Converter={StaticResource CanNotBooleanConverter}}"
                      Text="{Binding Path=ExpressionDescriptor.Value, Mode=TwoWay}"
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBox.Style>
+                    <Style>
+                        
+                    </Style>
+                </TextBox.Style>
             </TextBox>
             <Border SnapsToDevicePixels="True" Margin="0" Grid.Column="1" 
                     DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                     Visibility="{Binding Path=ExpressionDescriptor.Type, Converter={StaticResource CanBooleanConverter}}"
                      Background="{Binding Path=BkColor}" BorderBrush="White" BorderThickness="0,1,0,1"/>
-            <Label Name="TextLabelHolder" 
+            <Label Name="TextLabelHolder" Foreground="Black"
                    DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                    SnapsToDevicePixels="True" Margin="0, 0,0,0" 
                      Grid.Column="1" Grid.Row="0" MinWidth="20" 
                              Padding="0"
-                     Height="16" Visibility="{Binding Path=ExpressionDescriptor.Type, Converter={StaticResource CanBooleanConverter}}"
+                      Visibility="{Binding Path=ExpressionDescriptor.Type, Converter={StaticResource CanBooleanConverter}}"
                      Background="{Binding Path=BkColor}" BorderBrush="White" BorderThickness="0,1,0,1"
                      Content=" "
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch">

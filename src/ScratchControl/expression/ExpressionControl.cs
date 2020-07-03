@@ -14,7 +14,7 @@ namespace ScratchControl
         Brush ExpressionBorderBrush {  set; }
         Expression Expression { get; set; }
 
-        bool IsSelectetet {set; }
+        bool IsSelected {set; }
         bool IsHovered {  set; }
         Nullable<bool> CanDrop { set; }
     }

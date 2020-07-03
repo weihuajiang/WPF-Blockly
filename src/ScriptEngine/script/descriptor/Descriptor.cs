@@ -53,7 +53,7 @@ namespace ScratchNet
         public event PropertyChangedEventHandler PropertyChanged;
         internal void OnPropertyChanged(string name){
             if(PropertyChanged!=null)
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
     public class StringInputDesciptor : ItemDescriptor
@@ -80,19 +80,74 @@ namespace ScratchNet
             }
         }
     }
+    public class MultiLineStringInputDesciptor : ItemDescriptor
+    {
+        public MultiLineStringInputDesciptor(object source, string name)
+        {
+            Name = name;
+            Source = source;
+
+            Type t = Source.GetType();
+            Property = t.GetProperty(name);
+        }
+        public override object Value
+        {
+            get
+            {
+                object v = Property.GetValue(Source, null);
+                return v;
+            }
+            set
+            {
+                Property.SetValue(Source, value, null);
+                OnPropertyChanged("Value");
+            }
+        }
+    }
     public class ParameterDescriptor : ItemDescriptor
     {
-        public string Name { get; internal set; }
         public string Type { get; internal set; }
         public ParamDirection Direction { get; internal set; }
         public int Index { get; set; }
+        public bool Editable { get; set; }
         public ParameterDescriptor(object source,int index, string name, string type, ParamDirection direction)
         {
             Source = source;
             Name = name;
             Type = type;
             Direction = direction;
+            Editable = false;
         }
+    }
+    public class VariableDeclarationDescription : ParameterDescriptor
+    {
+        public VariableDeclarationDescription(object source, string name, string type) :base(source, -1, name, type, ParamDirection.Ref)
+        {
+            Editable = true;
+        }
+    }
+    //
+    // Summary:
+    //     Describes how a child element is vertically positioned or stretched within a
+    //     parent's layout slot.
+    public enum VerticalAlignmentEnum
+    {
+        //
+        // Summary:
+        //     The child element is aligned to the top of the parent's layout slot.
+        Top = 0,
+        //
+        // Summary:
+        //     The child element is aligned to the center of the parent's layout slot.
+        Center = 1,
+        //
+        // Summary:
+        //     The child element is aligned to the bottom of the parent's layout slot.
+        Bottom = 2,
+        //
+        // Summary:
+        //     The child element stretches to fill the parent's layout slot.
+        Stretch = 3
     }
     public class SelectionItemDescriptor : ItemDescriptor
     {
@@ -140,11 +195,14 @@ namespace ScratchNet
     }
     public class TextItemDescriptor : ItemDescriptor
     {
-        public TextItemDescriptor(object source, string text)
+        public TextItemDescriptor(object source, string text, bool isKeyword=false)
         {
             Text = text;
             Source = source;
+            this.IsKeyword = isKeyword;
         }
+        public VerticalAlignmentEnum VerticalAlignment { get; set; } = VerticalAlignmentEnum.Center;
+        public bool IsKeyword { get; set; } = false;
         public string Text { get; internal set; }
     }
     public class ImageItemDescriptor : ItemDescriptor
@@ -212,9 +270,11 @@ namespace ScratchNet
 
             Type t = Source.GetType();
             Property = t.GetProperty(name);
-            IsOnlyNumberAllowed = true;
+            IsOnlyNumberAllowed = false;
         }
+        public bool AcceptVariableDeclaration { get; set; } = false;
         public bool IsOnlyNumberAllowed { get; set; }
+        public bool NothingAllowed { get; set; } = false;
         public string Type { get; internal set; }
     }
     public class ArgumentDescriptor : ExpressionDescriptor

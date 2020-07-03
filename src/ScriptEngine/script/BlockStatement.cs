@@ -9,7 +9,7 @@ namespace ScratchNet
 {
 
     //定义代码块和flow control， 比如if, while
-    public class BlockStatement : Execution, INode
+    public class BlockStatement : Node
     {
         ObservableCollection<Statement> _body = new ObservableCollection<Statement>();
         public ObservableCollection<Statement> Body
@@ -20,8 +20,7 @@ namespace ScratchNet
                 _body = value;
             }
         }
-
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Body == null || Body.Count == 0)
                 return Completion.Void;

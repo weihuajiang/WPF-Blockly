@@ -2,7 +2,7 @@
 
 This is a visual programming editor like google blocky and scratch, but implemented by WPF and dotnet. Compared with existing tools, the visual script is more like real code, and it has more programming feature. With this tool, you can simply enable your application with a visual code editor and run your visual code. 
 
-In the demo, we write a visual code editor, and scratch like editor. If you use it inot other situation, please tell us.
+In the demo, we write a visual code editor, and scratch like editor. If you use it in other application, please tell us.
 
 ## Features
 
@@ -16,6 +16,11 @@ Now following feature was achieved
  - loop flow control, including break, continue and return
  - try catch finally, exception handling
  - array
+ - support string operation
+ - support stack, queue, dictionary, list and binary tree
+ - support sound synthesis
+ - support translation
+ - support drawing canvas liking python turtle
 
 Besides the programming feature, this tool has following feature
 
@@ -81,9 +86,6 @@ If your execution function, you must return the right completion type, return ex
 ## Future Plan
 
 - support EV3 control
-- support string operation
-- support stack, queue, dictionary, list and binary tree
-- support sound synthesis
 - support file handling
 - support switch statement
 - static key word for variable and function.
@@ -94,4 +96,5 @@ If your execution function, you must return the right completion type, return ex
  ## Screenshot
 
 ![ScreenShot](PrintScreen3.png)
+![ScreenShot](canvas.png)
 ![ScreenShot](PrintScreen.PNG)

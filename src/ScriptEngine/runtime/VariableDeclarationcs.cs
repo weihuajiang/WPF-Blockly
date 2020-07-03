@@ -9,27 +9,27 @@ namespace ScratchNet
     public class VariableDeclarationcs : Variable
     {
 
-        public object Value
+        public override object Value
         {
             get;
             set;
         }
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (string.IsNullOrEmpty(Name))
-                return new Completion("Variable name can not be null", CompletionType.Exception);
+                return new Completion(Properties.Language.VariableNameException, CompletionType.Exception);
             enviroment.RegisterValue(Name, Value);
             return new Completion(Value, CompletionType.Value);
         }
 
-        public string Name
+        public override string Name
         {
             get;
             set;
         }
 
-        public string Type
+        public override string Type
         {
             get;
             set;

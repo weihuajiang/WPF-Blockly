@@ -35,11 +35,11 @@ namespace ScratchNet
             get;
             set;
         }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "void"; }
         }
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             if (Try == null || Try.Body.Count == 0)
                 return Completion.Void;
@@ -47,11 +47,17 @@ namespace ScratchNet
             var c = Try.Execute(te);
             if(c.Type== CompletionType.Exception)
             {
-                if(Catch!=null && Catch.Body.Count > 0)
+                ExecutionEnvironment ec = new ExecutionEnvironment(enviroment);
+                ec.RegisterValue("e", c.ReturnValue);
+                if (Catch != null && Catch.Body.Count > 0)
                 {
-                    ExecutionEnvironment ee = new ExecutionEnvironment(enviroment);
+                    ExecutionEnvironment ee = new ExecutionEnvironment(ec);
                     c = Catch.Execute(ee);
                 }
+                else
+                    c = Completion.Void;
+                if (c.Type == CompletionType.Exception)
+                    return c;
             }
             Completion fc = Completion.Void;
             if(Finally!=null && Finally.Body.Count>0)
@@ -62,30 +68,31 @@ namespace ScratchNet
             if (c.Type == CompletionType.Return)
                 return c;
             else if (c.Type == CompletionType.Value)
-                return fc;
+                return c;
             if (fc.Type == CompletionType.Return)
                 return fc;
             return c;
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
                 Descriptor desc = new Descriptor();
-                desc.Add(new TextItemDescriptor(this, "Try"));
+                desc.Add(new TextItemDescriptor(this, "try", true));
                 return desc;
             }
         }
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
                 BlockDescriptor desc = new BlockDescriptor();
                 desc.Add(new BlockStatementDescriptor(this, "Try"));
 
-                Descriptor d = new ScratchNet.Descriptor();
-                d.Add(new TextItemDescriptor(this, "Catch("));
+                Descriptor d = new Descriptor();
+                d.Add(new TextItemDescriptor(this, "catch", true));
+                d.Add(new TextItemDescriptor(this, "("));
                 d.Add(new ParameterDescriptor(this, 0, Exception[0].Name, "exception", ParamDirection.In));
                 d.Add(new TextItemDescriptor(this, ")"));
                 desc.Add(new ExpressionStatementDescription(this, "catchFunc",d));
@@ -93,20 +100,22 @@ namespace ScratchNet
                 desc.Add(new BlockStatementDescriptor(this, "Catch"));
                 if (Finally != null)
                 {
-                    desc.Add(new TextBlockStatementDescritor(this, "Finally", "Finally"));
+                    Descriptor fd = new Descriptor();
+                    fd.Add(new TextItemDescriptor(this, "finally", true));
+                    desc.Add(new ExpressionStatementDescription(this, "finally", fd));
                     desc.Add(new BlockStatementDescriptor(this, "Finally"));
                 }
                 return desc;
             }
         }
-        public string Type
+        public override string Type
         {
             get
             {
                 return "IfStatement";
             }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

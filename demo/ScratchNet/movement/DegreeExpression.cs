@@ -7,18 +7,18 @@ namespace ScratchNet
 {
     public class DegreeExpression: Expression
     {
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number"; }
         }
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
             Sprite sp = enviroment.GetValue("$$INSTANCE$$") as Sprite;
             return new Completion(sp.Direction);
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -28,7 +28,7 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "DegreeExpression"; }
         }

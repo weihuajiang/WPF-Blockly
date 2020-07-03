@@ -7,14 +7,14 @@ namespace ScratchNet
 {
     //定义表达式
     //expression中不能有statement
-    public interface Expression : Execution, INode
+    public abstract class Expression : Node
     {
-        string ReturnType { get; }
+        public abstract string ReturnType { get; }
 
         //描述步骤组成，用来绘制
-        Descriptor Descriptor { get; }
+        public abstract Descriptor Descriptor { get; }
 
         //ID used to store and load
-        string Type { get; }
+        public abstract string Type { get; }
     }
 }

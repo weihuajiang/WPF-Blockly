@@ -5,34 +5,51 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScratchNet"
              xmlns:script="clr-namespace:ScratchNet;assembly=ScriptEngine"
-             xmlns:fa="http://schemas.fontawesome.io/icons/"
+            xmlns:loc="clr-namespace:ScratchNet.Properties;assembly=ScriptEditor"
+            xmlns:fc="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" AllowDrop="True"
              BorderBrush="Gray" BorderThickness="1"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <local:ContainerWidthConverter x:Key="ContainerWidthConverter"/>
         <local:ActualWidthMinusConverter2 x:Key="WithConvert"/>
+
     </UserControl.Resources>
     <Canvas Name="ScriptContainer">
-        <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Name="StepContainer"
+        <Canvas.ContextMenu>
+            <ContextMenu Name="PopupMenu">
+                <MenuItem Header="{x:Static loc:Language.Copy}" Name="CopyCommand" Click="OnCopy">
+                    <MenuItem.Icon>
+                        <fc:FontAwesome Icon="Copy"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{x:Static loc:Language.Paste}" Name="PasteCommand" Click="OnPaste" >
+                    <MenuItem.Icon>
+                        <fc:FontAwesome Icon="Paste"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Canvas.ContextMenu>
+        <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Name="StepContainer" Panel.ZIndex="99"
             Canvas.Left="0" Canvas.Top="0" Height="{Binding ElementName=ScriptContainer, Path=ActualHeight}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition MinHeight="10" MaxHeight="10"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel Name="GroupList" Orientation="Vertical" HorizontalAlignment="Center">
-                    <Button Content="运动" Width="65" Margin="1,1"/>
-                    <Button Content="外观" Width="65" Margin="1,1"/>
-                    <Button Content="数据" Width="65" Margin="1,1"/>
-                    <Button Content="事件" Width="65" Margin="1,1"/>
-                    <Button Content="控制" Width="65" Margin="1,1"/>
-                    <Button Content="侦测" Width="65" Margin="1,1"/>
-                    <Button Content="运算" Width="65" Margin="1,1"/>
+                    <Button Content="运动" MinWidth="65" Margin="1,1"/>
+                    <Button Content="外观" MinWidth="65" Margin="1,1"/>
+                    <Button Content="数据" MinWidth="65" Margin="1,1"/>
+                    <Button Content="事件" MinWidth="65" Margin="1,1"/>
+                    <Button Content="控制" MinWidth="65" Margin="1,1"/>
+                    <Button Content="侦测" MinWidth="65" Margin="1,1"/>
+                    <Button Content="运算" MinWidth="65" Margin="1,1"/>
                     <Button Content="更多积木" Width="65" Margin="1,1"/>
                 </StackPanel>
+                <Button Name="LibraryButton" Content="+/-" MinWidth="65" Margin="2,1" Padding="10, 5" Grid.Row="1" Click="OnLibrary" 
+                        ToolTip="{x:Static loc:Language.LibraryDesc}" Visibility="Collapsed"/>
                 <Popup Name="StepListPopup" StaysOpen="False" IsOpen="False" Placement="Right" 
                        PlacementTarget="{Binding ElementName=GroupList}" HorizontalOffset="5" VerticalOffset="0">
                     <Border BorderBrush="LightGray" BorderThickness="1" Height="{Binding ElementName=StepContainer, Path=ActualHeight}">
@@ -43,7 +60,7 @@
                     </Border>
                 </Popup>
                 <Border Name="DeleteIndicator" Grid.Row="0" Grid.RowSpan="3"  Background="#99808080" Opacity="90" Visibility="Collapsed">
-                    <Image VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                    <Image VerticalAlignment="Center" HorizontalAlignment="Center"
                            Width="70"
                            Source="images/delete-512.png"
                            />
@@ -60,7 +77,20 @@
                     <Binding ElementName="StepContainer" Path="ActualWidth"/>
                 </MultiBinding>
             </ScrollViewer.Width>
-            <Canvas Name="ScriptBoard" Background="White" AllowDrop="True">
+            <Canvas Name="ScriptBoard" Background="Transparent" AllowDrop="True">
+                <Border BorderBrush="Red" BorderThickness="2" Panel.ZIndex="999" Canvas.Left="50" Canvas.Top="50" Width="50" Height="30" Name="HighlightBorder" Visibility="Collapsed">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="1, 1, 0, 0" FontWeight="Bold" FontSize="9" Name="ValueText" Padding="0" Foreground="Red"></Label>
+                    </Grid>
+                </Border>
                 <Canvas.LayoutTransform>
                     <ScaleTransform CenterX="0" CenterY="0" ScaleX="1" ScaleY="1"/>
                 </Canvas.LayoutTransform>
@@ -82,18 +112,50 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Button Margin="0,0,10,20" Click="OnZoomIn">
                 <Button.Template>
                     <ControlTemplate>
-                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="SearchMinus"/>
+                        <Image Width="24" Height="24">
+                            <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="DarkBlue" Geometry="M9,2A7,7 0 0,1 16,9C16,10.57 15.5,12 14.61,13.19L15.41,14H16L22,20L20,22L14,16V15.41L13.19,14.61C12,15.5 10.57,16 9,16A7,7 0 0,1 2,9A7,7 0 0,1 9,2M5,8V10H13V8H5Z" />
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                            </Image.Source>
+                        </Image>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Column="1" Margin="0,0,20,20" Click="OnZoomOut">
+            <Button Margin="0,0,10,20" Grid.Column="1" Click="OnZoomNon">
                 <Button.Template>
                     <ControlTemplate>
-                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="SearchPlus"/>
+                        <Image Width="24" Height="24">
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <GeometryDrawing Brush="DarkBlue" Geometry="M4,6V19H20V6H4M18,17H6V8H18V17Z" />
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="2" Margin="0,0,20,20" Click="OnZoomOut">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Width="24" Height="24">
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <GeometryDrawing Brush="DarkBlue" Geometry="M9,2A7,7 0 0,1 16,9C16,10.57 15.5,12 14.61,13.19L15.41,14H16L22,20L20,22L14,16V15.41L13.19,14.61C12,15.5 10.57,16 9,16A7,7 0 0,1 2,9A7,7 0 0,1 9,2M8,5V8H5V10H8V13H10V10H13V8H10V5H8Z" />
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
                     </ControlTemplate>
                 </Button.Template></Button>
         </Grid>

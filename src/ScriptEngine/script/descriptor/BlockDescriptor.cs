@@ -73,13 +73,15 @@ namespace ScratchNet
     }
     public class BlockStatementDescriptor : BlockItemDescriptor
     {
-        public BlockStatementDescriptor(object source, string name)
+        public BlockStatementDescriptor(object source, string name, bool keyword=false)
         {
             Name = name;
             Source = source;
+            IsKeyword = keyword;
 
             Type t = Source.GetType();
             Property = t.GetProperty(name);
         }
+        public bool IsKeyword { get; set; } = false;
     }
 }

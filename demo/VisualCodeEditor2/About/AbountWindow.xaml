@@ -1,0 +1,42 @@
+﻿<Window x:Class="ScratchNet.About.AbountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScratchNet.About"
+        mc:Ignorable="d"
+        ShowInTaskbar="False"
+        xmlns:loc="clr-namespace:ScratchNet.Properties"
+        Title="{x:Static loc:Resources.AbountTitle}" Height="188.518" Width="444.8">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image Width="70" Margin="5" Grid.RowSpan="4" Source="/VisualCodeEditor;component/icon1.ico"/>
+        <TextBlock Grid.Row="0" Margin="5, 3" Grid.ColumnSpan="2" Grid.Column="1" Text="{x:Static loc:Resources.VisualCodeEditor}"/>
+        <TextBlock Grid.Row="1" Margin="5, 3" Grid.Column="1" Text="{x:Static loc:Resources.Version}"/>
+        <TextBlock Grid.Row="1" Margin="5, 3" Grid.Column="2" Name="VersionLabel"/>
+        <TextBlock Grid.Row="2" Margin="5, 3" Grid.ColumnSpan="2" Grid.Column="1" Text="{x:Static loc:Resources.CopyRight}"/>
+        <TextBlock Grid.Row="3" Margin="5, 3" Grid.ColumnSpan="2" Grid.Column="1">
+            <Hyperlink NavigateUri="https://www.huaruirobot.com" Click="OnGoto">https://www.huaruirobot.com</Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="4" Margin="5, 3" Grid.ColumnSpan="2" Grid.Column="1">
+            <Hyperlink NavigateUri="mailto:info@huaruirobot.com" Click="OnMailto">info@huaruirobot.com</Hyperlink>
+        </TextBlock>
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 3">
+            <Button Name="OkButton" Margin="5" IsDefault="True" Content="{x:Static loc:Resources.Confirm}" Padding="35, 5" Click="OnConfirm"/>
+        </StackPanel>
+    </Grid>
+</Window>

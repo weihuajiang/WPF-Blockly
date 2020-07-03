@@ -10,16 +10,26 @@ using System.Windows.Media.Imaging;
 
 namespace ScratchControl
 {
-    class ExpressionHelper
+    public class ExpressionHelper
     {
-        public static void SetupExpressionControl(ScratchNet.Expression expresion, StackPanel container)
+        public static ExpressionControl Build(ScratchNet.Expression expression)
+        {
+            if ("boolean".Equals(expression.Type))
+            {
+                return new BooleanExpressionControl() { Expression = expression };
+            }
+            if ("number".Equals(expression.Type))
+                return new NumberExpressionControl() { Expression = expression };
+            return new NumberExpressionControl() { Expression = expression };
+        }
+        internal static void SetupExpressionControl(ScratchNet.Expression expresion, StackPanel container)
         {
             foreach (ItemDescriptor d in expresion.Descriptor)
             {
                 container.Children.Add(GetUIFor(d));
             }
         }
-        public static UIElement GetUIFor(ItemDescriptor item)
+        internal static UIElement GetUIFor(ItemDescriptor item)
         {
             if (item is TextItemDescriptor)
             {
@@ -37,12 +47,15 @@ namespace ScratchControl
                     holder.Descriptor = (item as ExpressionDescriptor);
                     return holder;
                 }
-                //if (d.Type == "number")
+                if (d.Type == "number")
                 {
                     NumberExpressionHolder holder = new NumberExpressionHolder();
                     holder.Descriptor = (item as ExpressionDescriptor);
                     return holder;
                 }
+                ObjectExpressionHolder h = new ObjectExpressionHolder();
+                h.Descriptor = item as ExpressionDescriptor;
+                return h;
             }
             if (item is SelectionItemDescriptor)
             {

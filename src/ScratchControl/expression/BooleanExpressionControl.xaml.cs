@@ -67,7 +67,7 @@ namespace ScratchControl
             }
         }
 
-        public bool IsSelectetet
+        public bool IsSelected
         {
             set
             {

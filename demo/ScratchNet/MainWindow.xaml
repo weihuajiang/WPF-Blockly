@@ -33,13 +33,11 @@
             <Button Margin="5" Click="OnLoadFile">
                 <Button.Template>
                     <ControlTemplate>
-                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="FolderOpenOutlined"/>
+                        <fa:FontAwesome FontSize="25" Foreground="DarkBlue" Icon="FolderOpen"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </StackPanel>
-        <local:ScriptPlayer x:Name="ScriptPlayer"
-            Grid.Row="1" Margin="5,0,0,0"/>
         <StackPanel Margin="5,0,0,0" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
             <TextBlock Width="25" HorizontalAlignment="Right">X:</TextBlock>
             <TextBlock Name="PositionX" Width="25" HorizontalAlignment="Right"></TextBlock>
@@ -61,5 +59,7 @@
                 <local:ResourceList x:Name="ResourceEditor"/>
             </TabItem>
         </TabControl>
+        <local:ScriptPlayer x:Name="ScriptPlayer"
+            Grid.Row="1" Margin="5,0,0,0"/>
     </Grid>
 </Window>

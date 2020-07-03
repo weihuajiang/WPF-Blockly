@@ -5,7 +5,7 @@
     Loaded="Window_Loaded"
     FontSize="12"
         Title="MainWindow" Height="350" Width="525">
-    <Canvas Background="White">
+    <Canvas Background="White" Name="Editor">
 
         <local:NumberExpressionControl x:Name="NbExp" Canvas.Top="20" Canvas.Left="20"/>
         <local:BooleanExpressionControl x:Name="BnExp" Canvas.Left="75" Canvas.Top="109"/>
