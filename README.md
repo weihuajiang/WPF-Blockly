@@ -2,7 +2,9 @@
 
 This is a visual programming editor like google blocky and scratch, but implemented by WPF and dotnet. Compared with existing tools, the visual script is more like real code, and it has more programming feature. With this tool, you can simply enable your application with a visual code editor and run your visual code. 
 
-In the demo, we write a visual code editor, and scratch like editor. If you use it in other application, please tell us.
+In the demo, we write a visual code editor, and scratch like editor. 
+
+You can also download it from [windows store](https://www.microsoft.com/store/apps/9NG2QVSXT34H)
 
 ## Features
 
@@ -12,7 +14,7 @@ Now following feature was achieved
  - recursive function
  - variable and variable scope (local variable)
  - operator, including +, -, *, /, %, &, |, ^, >>, <<, ++, --, &&, ||, !, +=, -=,*=,/=, &=, |=, ^=, >>=, <<=
- - if else, for, while, do while statement
+ - if else, for, while, do while and case statement
  - loop flow control, including break, continue and return
  - try catch finally, exception handling
  - array
@@ -27,6 +29,14 @@ Besides the programming feature, this tool has following feature
  - execution step highlight
  - error position highlight
  - script serialization and deserialization
+ 
+## The version in microsoft store achieved following feature
+
+- support object-oriented programming, write and use object
+- support module programming, use script as library or type
+- support variable, function and class visibility in library
+- support const variable
+- support EV3 control
  
 ## Use Script Editor in your application
 
@@ -82,19 +92,11 @@ Level of ExecutionEnvironment
 There are five completion type, Value, Exception, Break, Continue and Return. The loop statement will handle the break, continue completion, function statement will handle the return completion, try-catch statement will handle exception.
 
 If your execution function, you must return the right completion type, return exception completion when exception happens, otherwise the execution of script will go wrong.
-
-## Future Plan
-
-- support EV3 control
-- support file handling
-- support switch statement
-- static key word for variable and function.
-- class and new expression for class
-- use script as library or type
-- performance improvement
  
  ## Screenshot
-
+community version
 ![ScreenShot](PrintScreen3.png)
 ![ScreenShot](canvas.png)
-![ScreenShot](PrintScreen.PNG)
+store version
+![ScreenShot](MPX.png)
+![ScreenShot](ooplib.png)
