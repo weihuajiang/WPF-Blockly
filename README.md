@@ -33,7 +33,9 @@ Besides the programming feature, this tool has following feature
 ## The version in microsoft store achieved following feature
 
 - support object-oriented programming, write and use object
+- support class inheritance and function override
 - support module programming, use script as library or type
+- support thread and thread synchronization
 - support variable, function and class visibility in library
 - support const variable
 - support EV3 control
