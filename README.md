@@ -38,7 +38,12 @@ Besides the programming feature, this tool has following feature
 - support thread and thread synchronization
 - support variable, function and class visibility in library
 - support const variable
+- support array and dictionary initialization expression
+- support code folding
+- support code copy and paste
+- more library like file system, string, date and time, json, scratch editor
 - support EV3 control
+- support internalization, English and Chinese
  
 ## Use Script Editor in your application
 
