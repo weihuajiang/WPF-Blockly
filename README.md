@@ -37,6 +37,7 @@ Besides the programming feature, this tool has following feature
 - support module programming, use script as library or type
 - support thread and thread synchronization
 - support variable, function and class visibility in library
+- support using COM/Active-X/.Net (property, function and event) in script
 - support const variable
 - support array and dictionary initialization expression
 - support code folding
