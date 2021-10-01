@@ -109,3 +109,6 @@ community version
 store version
 ![ScreenShot](MPX.png)
 ![ScreenShot](ooplib.png)
+![use COM](COM.png)
+![use Active-X](activex.png)
+![use dll](dll.png)
