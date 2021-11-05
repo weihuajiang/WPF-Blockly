@@ -3,7 +3,7 @@
 This is a visual programming editor like google blocky and scratch, but implemented by WPF and dotnet. Compared with existing tools, the visual script is more like real code, and it has more programming feature. With this tool, you can simply enable your application with a visual code editor and run your visual code. 
 
 In the demo, we write a visual code editor, and scratch like editor. 
-
+![ScreenShot](blockly.png)
 You can also download it from [windows store](https://www.microsoft.com/store/apps/9NG2QVSXT34H)
 
 ## Features

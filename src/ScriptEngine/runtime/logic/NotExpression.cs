@@ -13,16 +13,6 @@ namespace ScratchNet
             get { return "boolean"; }
         }
 
-        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
-        {
-            if (Argument == null)
-                return Completion.Exception(Properties.Language.NullException, this);
-            var a = Argument.Execute(enviroment);
-            if (a.Type != CompletionType.Value || !(a.ReturnValue is bool))
-                return new Completion(Properties.Language.NotBoolean, CompletionType.Exception);
-            return new Completion(!(bool)a.ReturnValue);
-        }
-
         public override Descriptor Descriptor
         {
             get
@@ -37,9 +27,15 @@ namespace ScratchNet
         {
             get { return "UnaryExpression"; }
         }
-        public bool IsClosing
+
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
         {
-            get { return false; }
+            if (Argument == null)
+                return Completion.Exception(Properties.Language.NullException, this);
+            var a = Argument.Execute(enviroment);
+            if (a.Type != CompletionType.Value || !(a.ReturnValue is bool))
+                return new Completion(Properties.Language.NotBoolean, CompletionType.Exception);
+            return new Completion(!(bool)a.ReturnValue);
         }
     }
 }
