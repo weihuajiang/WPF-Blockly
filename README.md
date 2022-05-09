@@ -41,6 +41,7 @@ Besides the programming feature, this tool has following feature
 - support array and dictionary initialization expression
 - support code folding
 - support code copy and paste
+- support unod/redo when editing
 - more library like file system, string, date and time, json, scratch editor
 - support using COM/Active-X/.Net (property, function and event) in script
 - support using dynamic linked library (dll) in script
