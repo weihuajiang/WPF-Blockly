@@ -109,7 +109,7 @@ community version
 ![ScreenShot](PrintScreen3.png)
 ![ScreenShot](canvas.png)
 store version
-![ScreenShot](MPX.png)
+![ScreenShot](chess.png)
 ![ScreenShot](ooplib.png)
 ![use COM](COM.png)
 ![use Active-X](activex.png)
